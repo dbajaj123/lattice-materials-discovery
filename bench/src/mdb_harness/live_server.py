@@ -30,6 +30,24 @@ KEY_PROVIDERS={
     'openrouter':('OpenRouter','OPENROUTER_API_KEY'),
     'materials_project':('Materials Project (optional)','MP_API_KEY'),
 }
+SETTINGS_FIELDS={'model','review_model','rounds','candidates_per_round','routes_per_candidate',
+                 'max_total_tokens','max_model_calls','thermal','thermal_max_displacements','simulation_timeout_seconds'}
+
+
+def validate_settings(cfg,updates):
+    if not isinstance(updates,dict) or set(updates)-SETTINGS_FIELDS:
+        raise ValueError('Unsupported campaign settings')
+    updates=dict(updates)
+    for field in ['model','review_model']:
+        if field not in updates:continue
+        value=updates[field]
+        if field=='review_model' and (value is None or value==''):
+            updates[field]=None;continue
+        if not isinstance(value,str) or not re.fullmatch(r'(openai|anthropic|google|openrouter)/[A-Za-z0-9][A-Za-z0-9._:/-]{0,199}',value):
+            raise ValueError('Use provider/model-id with openai, anthropic, google or openrouter')
+        if any(part in ['','.','..'] for part in value.split('/')):
+            raise ValueError('Model ID contains an invalid path segment')
+    return CampaignConfig.model_validate({**cfg.model_dump(),**updates})
 
 
 def read_json(path,default=None):
@@ -102,10 +120,18 @@ class Studio:
         return result
 
     def config(self):
-        return load_config(self.bench/'discovery.json')
+        cfg=load_config(self.bench/'discovery.json')
+        return validate_settings(cfg,read_json(self.root/'studio-settings.json',{}))
+
+    def set_settings(self,payload):
+        with self.lock:
+            cfg=validate_settings(self.config(),payload)
+            settings={k:getattr(cfg,k) for k in sorted(SETTINGS_FIELDS)}
+            atomic_json(self.root/'studio-settings.json',settings)
+            return {'settings':settings,'applies_to':'new_runs'}
 
     def key_options(self,cfg):
-        providers=list(dict.fromkeys([cfg.model.split('/',1)[0],(cfg.review_model or cfg.model).split('/',1)[0],'materials_project']))
+        providers=list(KEY_PROVIDERS)
         return [{'provider':provider,'label':KEY_PROVIDERS[provider][0],
                  'present':bool(os.environ.get(KEY_PROVIDERS[provider][1])),
                  'session_override':provider in self.session_keys}
@@ -153,9 +179,7 @@ class Studio:
                 raise ValueError('A run is already active. Stop it before starting another.')
             cfg=self.config()
             updates=payload.get('settings',{})
-            allowed={'rounds','candidates_per_round','routes_per_candidate','max_total_tokens','thermal','simulation_timeout_seconds'}
-            if not isinstance(updates,dict) or set(updates)-allowed: raise ValueError('Unsupported campaign settings')
-            cfg=CampaignConfig.model_validate({**cfg.model_dump(),**updates})
+            cfg=validate_settings(cfg,updates)
             if mode=='discovery':
                 for model in [cfg.model,cfg.review_model or cfg.model]:
                     credential=credentials_ready(model)
@@ -168,11 +192,12 @@ class Studio:
             atomic_json(directory/'run.json',{'id':identifier,'kind':mode,'label':label,'created_at':datetime.now(timezone.utc).isoformat(),'status':'starting'})
             if mode=='discovery':
                 atomic_json(directory/'launch-config.json',cfg.model_dump())
-                command=[sys.executable,'-u','-m','mdb_harness.cli','discover','run','--config',str(directory/'launch-config.json'),'--output',str(directory)]
+                command=[sys.executable,'-u','-m','mdb_harness.cli','discover','run','--config',str(directory/'launch-config.json'),'--output',str(directory),'--frozen-config']
             else:
                 command=[sys.executable,'-u','-m','mdb_harness.cli','screen',str(self.bench/'examples/silicon-control.json'),
                          '--output',str(directory/'calculation'),'--backend','petmad','--elastic','--timeout',str(cfg.simulation_timeout_seconds)]
-                if cfg.thermal: command.append('--thermal')
+                if cfg.thermal: command+=['--thermal','--thermal-max-displacements',str(cfg.thermal_max_displacements)]
+                atomic_json(directory/'config.json',cfg.model_dump())
             emit(directory,'starting','Starting a discovery campaign' if mode=='discovery' else 'Starting a real silicon control calculation')
             log=(directory/'process.log').open('w')
             try:
@@ -199,6 +224,9 @@ class Studio:
                 if not physical.get('converged'): status='failed'
             meta.update(status=status,returncode=returncode,finished_at=datetime.now(timezone.utc).isoformat())
             atomic_json(directory/'run.json',meta)
+            if state and state.get('status')!=status:
+                state['status']=status
+                atomic_json(directory/'state.json',state)
             emit(directory,status,{'complete':'Run finished; results saved','stopped':'Run stopped; completed artifacts retained',
                                   'failed':'Run failed; inspect the saved progress and process.log'}.get(status,status.replace('_',' ')))
             if self.active_id==directory.name: self.stopping=False
@@ -266,13 +294,17 @@ class Studio:
         from .schema import Crystal
         from .chemistry import composition_audit,property_status
         from .evolution import assess_candidate
+        from .capabilities import evaluator_capabilities
+        run_config=read_json(run['path']/'config.json',{}) if run else {}
+        audit_config=CampaignConfig.model_validate(run_config) if run_config else cfg
         for candidate in candidates:
             h=candidate['hypothesis'];subject=SimpleNamespace(name=h.get('name',''),crystal=Crystal.model_validate(h['crystal']))
-            candidate['property_status']=property_status(candidate['physics'])
+            candidate['property_status']=property_status(candidate['physics'],run_config)
             candidate['composition_audit']=candidate.get('composition_audit') or composition_audit(subject)
-            if not candidate.get('assessment'):
-                candidate['assessment']=assess_candidate(subject,candidate['physics'],candidate.get('novelty',{}),candidate.get('route_assessments',[]),cfg)
-                candidate['assessment']['audit_origin']='Current deterministic audit of saved output; original run is unchanged'
+            candidate['original_assessment']=candidate.get('assessment')
+            candidate['assessment']=assess_candidate(subject,candidate['physics'],candidate.get('novelty',{}),candidate.get('route_assessments',[]),audit_config)
+            candidate['assessment']['composition_audit']=candidate['composition_audit']
+            candidate['assessment']['audit_origin']='Current deterministic audit of saved output; original run and critic are unchanged'
             if run and run['kind']!='control':
                 folder=run['path']/'candidates'/candidate['id']
                 candidate['critic']=candidate.get('critic') or read_json(folder/'critic.json')
@@ -286,15 +318,17 @@ class Studio:
             'active_run':self.active_id if running else None,'running':running,
             'runs':[{k:v for k,v in r.items() if k!='path'} for r in reversed(list(catalog.values()))],
             'candidates':candidates,'events':events,'sources':sources,
-            'model':run_config.get('model',cfg.model),'credentials':credentials_ready(cfg.model),
-            'review_credentials':credentials_ready(cfg.review_model or cfg.model),
+            'model':run_config.get('model',cfg.model),
+            'review_model':run_config.get('review_model') or run_config.get('model',cfg.model),
+            'credentials':credentials_ready(run_config.get('model',cfg.model)),
+            'review_credentials':credentials_ready(run_config.get('review_model') or run_config.get('model',cfg.model)),
             'key_options':self.key_options(cfg),
             'budget':{'calls':len(calls),'tokens':used,'max_tokens':run_config.get('max_total_tokens',cfg.max_total_tokens),
                 'max_calls':run_config.get('max_model_calls',cfg.max_model_calls),
                 'stop':read_json(run['path']/'model-calls/ledger.json',{}).get('budget_stop') if run else None},
-            'knowledge':self.knowledge(),'synthesis_paused':not cfg.synthesis_enabled,
+            'knowledge':self.knowledge(),'capabilities':evaluator_capabilities(),'synthesis_paused':not cfg.synthesis_enabled,
             'population':read_json(run['path']/'population.json',{}) if run else {},
-            'settings':{k:getattr(cfg,k) for k in ['rounds','candidates_per_round','routes_per_candidate','max_total_tokens','thermal','simulation_timeout_seconds']},
+            'settings':{k:getattr(cfg,k) for k in sorted(SETTINGS_FIELDS)},
             'completed':len([c for c in candidates if c['complete']]),'state':state}
 
 
@@ -361,6 +395,7 @@ def make_server(studio,port=8768):
                 if self.path=='/api/start': return self.send(200,studio.start(payload))
                 if self.path=='/api/stop': return self.send(200,studio.stop())
                 if self.path=='/api/credentials': return self.send(200,studio.set_api_key(payload))
+                if self.path=='/api/settings': return self.send(200,studio.set_settings(payload))
                 return self.send(404,{'error':'Not found'})
             except ValueError as exc: return self.send(409,{'error':str(exc)[:600]})
             except Exception as exc: return self.send(500,{'error':f'Action failed ({type(exc).__name__})'})

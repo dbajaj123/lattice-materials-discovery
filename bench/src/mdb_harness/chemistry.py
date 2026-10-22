@@ -27,13 +27,31 @@ def composition_audit(hypothesis):
             'electronic_validation':'not_computed'}
 
 
-def property_status(physics):
+def hypothesis_preflight(hypothesis):
+    audit=composition_audit(hypothesis)
+    issues=[]
+    if audit['label_discrepancies']:
+        issues.append('Correct the formula in the name to match the submitted cell.')
+    if audit['charge_status']=='requires_bonding_justification' and not getattr(hypothesis,'bonding_justification','').strip():
+        issues.append('Nonzero nominal charge requires an explicit bonding_justification and electronic-structure test; a claim of charge balance alone is insufficient.')
+    return {'status':'requires_revision' if issues else 'ready_for_screening','issues':issues,
+            'scope':'Proposal consistency only; this does not prove phase stability or validate alternative bonding.'}
+
+
+def property_status(physics,config=None):
     statuses={}
+    artifacts=physics.get('artifacts',{})
+    thermal=artifacts.get('thermal',{})
+    requested=artifacts.get('requested_calculations',config or {})
     for key in ['youngs_gpa','shear_gpa','kappa_w_mk','epsilon_static','minimum_phonon_thz']:
         if physics.get(key) is not None:status='predicted'
-        elif key in ['youngs_gpa','shear_gpa'] and 'elastic_tensor_gpa' in physics.get('artifacts',{}):status='withheld_invalid_or_unconverged'
-        elif key=='kappa_w_mk' and (physics.get('minimum_phonon_thz') or 0)<-1:status='withheld_dynamic_instability'
         elif key=='epsilon_static':status='backend_not_configured'
+        elif key=='kappa_w_mk' and requested.get('thermal') is False:status='disabled_by_configuration'
+        elif key in ['youngs_gpa','shear_gpa'] and 'elastic_tensor_gpa' in artifacts:status='withheld_invalid_or_unconverged'
+        elif key=='kappa_w_mk' and (physics.get('minimum_phonon_thz') or 0)<-1:status='withheld_dynamic_instability'
+        elif key=='kappa_w_mk' and thermal.get('status'):status=thermal['status']
+        elif physics.get('relaxed') and not physics.get('converged'):status='withheld_relaxation_unconverged'
+        elif artifacts.get('worker_status') in ['timeout','failed']:status='worker_'+artifacts['worker_status']
         else:status='not_calculated_or_incomplete'
         statuses[key]=status
     return statuses

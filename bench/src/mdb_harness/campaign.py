@@ -14,7 +14,7 @@ from pymatgen.core import Structure
 from pymatgen.io.ase import AseAtomsAdaptor
 
 from .discovery_schema import CampaignConfig, HypothesisBatch, HypothesisCritique, RouteAssessment, RoutePortfolio
-from .chemistry import composition_audit, property_status
+from .chemistry import composition_audit, property_status, hypothesis_preflight
 from .evolution import Population, assess_candidate, critic_prompt, ground_critique
 from .literature_memory import retrieve_shared, commit_research_memory
 from .engine import Engine, dump
@@ -31,12 +31,12 @@ def code_hash():
     return hashlib.sha256(b''.join(p.read_bytes() for p in sorted(Path(__file__).parent.glob('*.py')))).hexdigest()
 
 
-def load_config(path:Path):
+def load_config(path:Path,*,environment_models=True):
     from dotenv import load_dotenv
     load_dotenv(path.parent / '.env', override=False)
     payload=json.loads(path.read_text())
-    if os.environ.get('DISCOVERY_MODEL'): payload['model']=os.environ['DISCOVERY_MODEL']
-    if os.environ.get('DISCOVERY_REVIEW_MODEL'): payload['review_model']=os.environ['DISCOVERY_REVIEW_MODEL']
+    if environment_models and os.environ.get('DISCOVERY_MODEL'): payload['model']=os.environ['DISCOVERY_MODEL']
+    if environment_models and os.environ.get('DISCOVERY_REVIEW_MODEL'): payload['review_model']=os.environ['DISCOVERY_REVIEW_MODEL']
     config=CampaignConfig.model_validate(payload)
     # Relative paths resolve against the config, not the shell's current directory.
     config.literature_files=[str((path.parent / p).resolve()) for p in config.literature_files]
@@ -123,7 +123,8 @@ def _evaluate(config,root,identifier,hypothesis):
         while (root/'physics'/f'{identifier}-retry-{index}').exists(): index+=1
         directory=root/'physics'/f'{identifier}-retry-{index}'
     engine=Engine(directory,backend=config.backend,elastic=config.elastic,
-                  timeout=config.simulation_timeout_seconds,max_screen_calls=1,thermal=config.thermal)
+                  timeout=config.simulation_timeout_seconds,max_screen_calls=1,thermal=config.thermal,
+                  thermal_max_displacements=config.thermal_max_displacements)
     p=Proposal(name=hypothesis.name,hypothesis=hypothesis.hypothesis,crystal=hypothesis.crystal)
     return engine.screen(p.model_dump())
 
@@ -189,9 +190,13 @@ def run_campaign(config:CampaignConfig,root:Path,*,client=None,skip_credential_c
                     raise ValueError('Hypothesis parent must be an already evaluated candidate in this campaign')
                 chemistry=composition_audit(hypothesis)
                 dump(cdir/'composition-audit.json',chemistry)
+                preflight=hypothesis_preflight(hypothesis)
+                dump(cdir/'proposal-preflight.json',preflight)
                 duplicate=registry.register(identifier,hypothesis.crystal.structure())
                 citation_checks=[store.validate_citation(c) for c in hypothesis.citations]
-                physical=_evaluate(config,root,identifier,hypothesis)
+                physical=_evaluate(config,root,identifier,hypothesis) if preflight['status']=='ready_for_screening' else {
+                    'physics':{'backend':'proposal_preflight','converged':None,'warnings':preflight['issues'],
+                               'artifacts':{'proposal_preflight':preflight}}}
                 physics=physical.get('physics',{})
                 evaluated_crystal=Crystal.model_validate(physics['relaxed']) if physics.get('relaxed') else hypothesis.crystal
                 relaxed_match=registry.register(identifier+':relaxed',evaluated_crystal.structure())
@@ -253,7 +258,8 @@ def run_campaign(config:CampaignConfig,root:Path,*,client=None,skip_credential_c
                             'status':'unknown' if physics.get('epsilon_static') is None else 'predicted_pass' if 1<=physics['epsilon_static']<config.epsilon_static_max else 'predicted_fail'}}
                 assessment=assess_candidate(hypothesis,physics,novelty,reviews,config)
                 assessment['composition_audit']=chemistry
-                assessment['property_status']=property_status(physics)
+                assessment['proposal_preflight']=preflight
+                assessment['property_status']=property_status(physics,config.model_dump())
                 dump(cdir/'assessment.json',assessment)
                 critic=None
                 if config.critic_enabled:

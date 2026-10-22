@@ -4,6 +4,7 @@ from pathlib import Path
 import json
 
 from .live_events import atomic_json
+from .schema import Crystal
 
 
 def assess_candidate(hypothesis,physics,novelty,reviews,config):
@@ -16,13 +17,27 @@ def assess_candidate(hypothesis,physics,novelty,reviews,config):
         'kappa_w_mk':physics.get('kappa_w_mk'),'epsilon_static':physics.get('epsilon_static'),
         'minimum_phonon_thz':physics.get('minimum_phonon_thz'),
         'energy_ev_per_atom':physics.get('artifacts',{}).get('energy_ev_per_atom'),
-        'provenance':'Geometry from submitted structure; predicted properties only from evaluator output. No borrowed reference values.',
+        'provenance':'Input geometry and final evaluator geometry are separate. Final geometry is relaxed only when converged. No borrowed reference values.',
     }
+    if physics.get('relaxed'):
+        final=Crystal.model_validate(physics['relaxed']).structure()
+        properties.update(final_density_g_cm3=float(final.density),
+                          final_volume_per_atom_angstrom3=float(final.volume/len(final)),
+                          final_geometry_converged=physics.get('converged',False))
+    properties['phonon_interpretation']=physics.get('artifacts',{}).get('phonon_diagnostics',{}).get('interpretation',
+        'A near-zero minimum alone does not indicate marginal stability: Gamma acoustic translations approach zero. Inspect q points and modes; finite-mesh screening is not a convergence study.')
+    young,shear=physics.get('youngs_gpa'),physics.get('shear_gpa')
+    if young is not None and shear is not None and math.isfinite(young) and math.isfinite(shear) and young>0 and 3*shear>young:
+        properties['bulk_gpa']=young*shear/(3*(3*shear-young))
+        properties['poisson_ratio']=young/(2*shear)-1
+        properties['elastic_derived_provenance']='Isotropic identities from evaluator Voigt–Reuss–Hill Young and shear moduli; not independent tests.'
+    for key in ['max_force_ev_a','stress_gpa','pressure_gpa']:
+        properties[key]=physics.get('artifacts',{}).get(key)
     gates=[]
     def gate(name,value,condition,reason):
         status='unknown' if value is None else 'pass' if isinstance(value,(float,int,bool)) and math.isfinite(value) and condition(value) else 'fail'
         gates.append({'name':name,'value':value,'status':status,'reason':reason})
-    gate('relaxation',physics.get('converged') if physics.get('backend')!='unconfigured' else None,bool,'Converged interatomic-potential relaxation')
+    gate('relaxation',physics.get('converged') if physics.get('backend')!='unconfigured' else None,bool,'Converged interatomic-potential relaxation; failure within the step budget is inconclusive about phase stability')
     gate('dynamic_stability',physics.get('minimum_phonon_thz'),lambda v:v>=-1,'Minimum sampled phonon frequency >= -1 THz; finite-mesh screening only')
     if physics.get('minimum_phonon_thz') is not None and -1<=physics['minimum_phonon_thz']<-.1:
         gates[-1].update(status='unknown',reason='Small imaginary modes require displacement/supercell convergence checks; not credited as stable')
@@ -35,6 +50,9 @@ def assess_candidate(hypothesis,physics,novelty,reviews,config):
     else:gates.append({'name':'structural_novelty','status':'unknown','value':None,'reason':'No match is not a proof of worldwide novelty'})
     gates.append({'name':'thermodynamic_stability','status':'unknown','value':None,'reason':'Complete same-model competing-phase hull not yet computed'})
     gates.append({'name':'synthesis_validation','status':'unknown','value':None,'reason':'Model route critique is not experimental validation'})
+    preflight=physics.get('artifacts',{}).get('proposal_preflight')
+    if preflight and preflight['status']=='requires_revision':
+        gates.append({'name':'proposal_consistency','status':'fail','value':None,'reason':'; '.join(preflight['issues'])+' This rejects the unsupported rationale, not the existence of the phase.'})
     tensor=physics.get('artifacts',{}).get('elastic_tensor_gpa')
     if tensor is not None:
         import numpy as np
@@ -56,6 +74,12 @@ def assess_candidate(hypothesis,physics,novelty,reviews,config):
 
 def critic_prompt(hypothesis,assessment,novelty,reviews,evidence):
     return json.dumps({'task':'Act as a skeptical materials-science critic. Explain the current candidate\'s specific physical weaknesses and why changing composition or structure may address them. Do not invent properties, fabricate certainty, or override evaluator-owned numbers. Every finding must reference supplied evidence_fields or exact source citations. Separate measured/model-computed quantities from speculative mechanisms. Recommend a discriminating physical test and state tradeoffs.',
+        'interpretation_rules':[
+            'Use final_density_g_cm3 for the evaluated geometry. Never describe input density as relaxed density.',
+            'Relaxation nonconvergence within a bounded budget does not prove an unstable stationary phase.',
+            'Near-zero Gamma acoustic translations are expected; a minimum frequency near zero alone does not establish softness or marginal stability.',
+            'A nonzero nominal charge contradicts a simple ionic balance claim, not the existence of every covalent or mixed-valent material.',
+            'Do not infer thermal conductivity or dielectric response from stiffness. Missing calculations remain unknown.'],
         'hypothesis':hypothesis.model_dump(),'assessment':assessment,'novelty':novelty,'route_reviews':reviews,
         'evidence':evidence,'allowed_evidence_fields':list(assessment['properties'])+[g['name'] for g in assessment['gates']]+['composition_audit.'+k for k in assessment.get('composition_audit',{})]})
 
@@ -66,8 +90,9 @@ def ground_critique(critique,assessment,store):
     for original,finding in zip(critique.findings,result['findings']):
         checks=[store.validate_citation(c) for c in original.citations]
         fields=[f for f in finding['evidence_fields'] if f in allowed]
+        invalid=any(not c['valid'] for c in checks)
         findings.append({**finding,'valid_evidence_fields':fields,'citation_checks':checks,
-                         'grounding':'traceable_inputs_not_verified_entailment' if fields or any(c['valid'] for c in checks) else 'unsupported_opinion'})
+                         'grounding':'invalid_citation_requires_revision' if invalid else 'traceable_inputs_not_verified_entailment' if fields or checks else 'unsupported_opinion'})
     result.update(findings=findings,calibrated=False,can_override_physics=False)
     return result
 

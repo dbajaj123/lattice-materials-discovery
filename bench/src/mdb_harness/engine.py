@@ -23,7 +23,7 @@ def dump(path: Path, value):
 class Engine:
     """Bounded operator-owned evaluator; the agent cannot supply grading results."""
 
-    def __init__(self, root: Path, *, max_screen_calls=8, timeout=240, backend="none", elastic=False, thermal=False):
+    def __init__(self, root: Path, *, max_screen_calls=8, timeout=240, backend="none", elastic=False, thermal=False,thermal_max_displacements=300):
         self.root = root.resolve()
         self.root.mkdir(parents=True, exist_ok=True)
         self.max_screen_calls = max_screen_calls
@@ -31,6 +31,7 @@ class Engine:
         self.backend = backend
         self.elastic = elastic
         self.thermal = thermal
+        self.thermal_max_displacements=thermal_max_displacements
         self.registry = StructureRegistry()
         self.screen_calls = 0
         self.submitted = set()
@@ -51,6 +52,7 @@ class Engine:
             "created_at": datetime.now(timezone.utc).isoformat(), "source_sha256": self.source_hash,
             "backend": backend, "max_screen_calls": max_screen_calls, "timeout_seconds": timeout,
             "elastic": elastic, "thermal": thermal, "official_comparable": False,
+            "thermal_max_displacements":thermal_max_displacements,
             "protocol": "current-public-methods-local-reconstruction",
             "packages": {p: importlib.metadata.version(p) for p in ['pymatgen', 'ase', 'phonopy', 'inspect-ai']},
         })
@@ -87,7 +89,7 @@ class Engine:
             if self.elastic:
                 command.append("--elastic")
             if self.thermal:
-                command.append("--thermal")
+                command += ["--thermal","--thermal-max-displacements",str(self.thermal_max_displacements)]
             try:
                 with (workdir / "worker.log").open("w") as log:
                     environment = dict(os.environ)
@@ -106,6 +108,11 @@ class Engine:
                     if checkpoint.input_digest==proposal.crystal.digest():
                         checkpoint.warnings.append('Worker stopped after partial physics: '+str(exc))
                         result=checkpoint
+                result.artifacts['worker_status']='timeout' if isinstance(exc,subprocess.TimeoutExpired) else 'failed'
+                if result.artifacts.get('thermal',{}).get('status')=='running':
+                    progress=workdir/'thermal-progress.json'
+                    details=json.loads(progress.read_text()) if progress.exists() else {}
+                    result.artifacts['thermal'].update(details,status=result.artifacts['worker_status'])
         else:
             result = PhysicsResult(status="partial", backend="unconfigured", input_digest=proposal.crystal.digest(),
                                    warnings=["No simulation backend configured; all scientific properties remain unknown"])

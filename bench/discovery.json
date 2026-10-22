@@ -19,7 +19,7 @@
   "max_output_tokens": 6000,
   "backend": "petmad",
   "elastic": true,
-  "thermal": false,
+  "thermal": true,
   "simulation_timeout_seconds": 300,
   "network_enabled": true,
   "papers_per_query": 5,

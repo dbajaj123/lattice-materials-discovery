@@ -4,6 +4,12 @@
 
 **Start here for our own discovery pipeline: [DISCOVERY.md](DISCOVERY.md).** It connects a 907,259-record reference library, searchable literature memory, population-based proposals, simulations, and a physics critic. Synthesis is currently paused. It can operate independently of the unavailable official benchmark source. The rest of this document describes the benchmark audit and comparison tooling.
 
+For the missing dielectric evaluator, see [the Quantum ESPRESSO integration workflow](DFPT.md). DFPT is not connected yet. The shipped discovery configuration now requests thermal transport after stable screening; displacement budgets, timeouts and disabled calculations are reported separately. Enabling transport does not guarantee that a candidate fits the computational budget.
+
+**Choose models in Run settings:** enter `provider/model-id` for the proposer and optionally a separate critic; an empty critic field follows the proposer. OpenAI, Anthropic, Google and OpenRouter keys can be configured from the API key dialog. Settings persist locally in ignored `runs/studio-settings.json`. Explicit dashboard choices override environment model defaults and are frozen into each new run. Saving settings makes no provider request and does not verify model access. Existing runs keep their original models.
+
+The **What can we test?** panel distinguishes available geometry, energy/force/stress, phonon and elastic evaluations from budget-limited lattice thermal conductivity and unavailable dielectric/electronic/hull workflows. Bulk modulus and Poisson ratio are derived from isotropic elastic moduli, not independent validation. All atomistic outputs are model predictions. Run settings expose both simulator timeout and maximum anharmonic displacements; increasing either does not establish physical convergence. Synthesis stays paused.
+
 The goal is a useful new chip material with a defensible synthesis route, and an eventual matched-budget comparison with Material Discovery Bench. This directory is the new project direction. The older Al–Sc prototype is separate.
 
 **Status: working independent development harness; exact upstream port and official SOTA evaluation blocked on unavailable upstream assets.**

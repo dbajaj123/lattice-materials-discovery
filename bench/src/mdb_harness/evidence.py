@@ -151,11 +151,18 @@ class EvidenceStore:
 
     def validate_citation(self,citation):
         row=self.db.execute('SELECT c.*,s.kind FROM chunks c JOIN sources s ON s.id=c.source_id WHERE c.id=?',(citation.chunk_id,)).fetchone()
+        correction=None
+        # Repair only an omitted source prefix, never a quote or source mismatch.
+        if row is None and not citation.chunk_id.startswith(citation.source_id+':'):
+            canonical=citation.source_id+':'+citation.chunk_id
+            row=self.db.execute('SELECT c.*,s.kind FROM chunks c JOIN sources s ON s.id=c.source_id WHERE c.id=?',(canonical,)).fetchone()
+            if row is not None:correction={'original_chunk_id':citation.chunk_id,'resolved_chunk_id':canonical}
         if row is None or row['source_id']!=citation.source_id:
             return {'valid':False,'full_text':False,'reason':'Unknown source/chunk identity'}
         quote=' '.join(citation.quote.split())
-        valid=quote in row['text']
+        valid=quote in ' '.join(row['text'].split())
         return {'valid':valid,'full_text':row['kind'].startswith('full_text'),
+                **({'identity_correction':correction} if correction else {}),
                 'reason':'Exact quote found; entailment still needs review' if valid else 'Quoted text is absent from source chunk'}
 
     def sources(self):

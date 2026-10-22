@@ -4,6 +4,7 @@ import json
 import os
 from pathlib import Path
 import time
+from datetime import datetime,timezone
 from urllib.parse import urljoin, urlparse
 
 from pymatgen.core import Structure
@@ -11,6 +12,21 @@ import requests
 
 from .evidence import now
 from .novelty import StructureRegistry
+
+
+def request_with_retry(url,**kwargs):
+    """One bounded retry for transient failures; never log headers or credentials."""
+    for attempt in range(2):
+        try:
+            response=requests.get(url,**kwargs)
+            response.raise_for_status()
+            return response
+        except (requests.Timeout,requests.ConnectionError):
+            if attempt:raise
+        except requests.HTTPError as exc:
+            code=exc.response.status_code if exc.response is not None else 0
+            if attempt or code not in [429,500,502,503,504]:raise
+        time.sleep(.5)
 
 
 def optimade_structure(record):
@@ -44,7 +60,7 @@ class MaterialData:
         params={'filter':filters,'page_limit':self.config.database_page_limit}
         try:
             for _ in range(self.config.database_max_pages):
-                response=requests.get(url,params=params,timeout=20)
+                response=request_with_retry(url,params=params,timeout=20)
                 response.raise_for_status()
                 data=response.json()
                 if 'data' not in data:
@@ -82,7 +98,7 @@ class MaterialData:
             return {**result,'status':'missing_optional_key'}
         try:
             for page in range(self.config.database_max_pages):
-                response=requests.get('https://api.materialsproject.org/materials/summary/',headers={'X-API-KEY':key},
+                response=request_with_retry('https://api.materialsproject.org/materials/summary/',headers={'X-API-KEY':key},
                     params={'chemsys':'-'.join(elements),'_fields':'material_id,structure,formula_pretty',
                             '_limit':self.config.database_page_limit,'_skip':page*self.config.database_page_limit},timeout=25)
                 response.raise_for_status()
@@ -102,14 +118,25 @@ class MaterialData:
                   'mp_key_present':bool(os.environ.get('MP_API_KEY') or os.environ.get('MATERIALS_PROJECT_API_KEY'))}
         digest=hashlib.sha256(json.dumps(identity,sort_keys=True).encode()).hexdigest()[:20]
         file=self.cache/f'{digest}.json'
-        if file.exists(): return json.loads(file.read_text())
         shared=Path(self.config.reference_library).parent/'api-cache'/file.name if self.config.reference_library else None
-        if shared and shared.exists() and time.time()-shared.stat().st_mtime<7*86400:
-            result=json.loads(shared.read_text());file.write_text(json.dumps(result,indent=2));return result
+        cached={}
+        for path in [shared,file]:
+            if path and path.exists():
+                try:cached.update({p['provider']:p for p in json.loads(path.read_text()).get('providers',[])})
+                except (ValueError,KeyError,TypeError):pass
         if not self.config.network_enabled:
             return {'chemical_system':'-'.join(elements),'providers':[],'status':'network_disabled'}
-        providers=[self._fetch_optimade(name,url,elements) for name,url in self.config.optimade_endpoints.items()]
-        providers.append(self._fetch_mp(elements))
+        def fresh(name,fetch):
+            item=cached.get(name)
+            if item:
+                try:
+                    age=(datetime.now(timezone.utc)-datetime.fromisoformat(item['retrieved_at'])).total_seconds()
+                    ttl=7*86400 if item.get('status')=='ok' else 60
+                    if 0<=age<ttl:return item
+                except (ValueError,KeyError,TypeError):pass
+            return fetch()
+        providers=[fresh(name,lambda name=name,url=url:self._fetch_optimade(name,url,elements)) for name,url in self.config.optimade_endpoints.items()]
+        providers.append(fresh('materials_project',lambda:self._fetch_mp(elements)))
         result={'chemical_system':'-'.join(elements),'providers':providers,'status':'queried'}
         file.write_text(json.dumps(result,indent=2))
         if shared and any(p['records'] for p in providers):
@@ -128,11 +155,14 @@ class MaterialData:
             matches.extend({'provider':r['dataset'],'id':r['material_id'],'reference_properties':r['reference_properties']} for r in local['matches'])
         data={'providers':[]} if matches else self.lookup(crystal.species)
         for provider in data['providers']:
+            provider['match_parse_failures']=0
             for row in provider['records']:
                 try:
                     if matcher.fit(crystal.structure(),Structure.from_dict(row['structure'])):
                         matches.append({'provider':provider['provider'],'id':row['id']})
                 except (ValueError,KeyError,TypeError):
+                    provider['match_parse_failures']+=1
+                    provider['complete']=False
                     continue
         return {'structure_status':'known_structure_match' if matches else 'unresolved', 'matches':matches,
                 'coverage':[{k:v for k,v in p.items() if k!='records'}|{'records_checked':len(p['records'])} for p in data['providers']],

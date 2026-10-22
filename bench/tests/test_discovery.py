@@ -161,3 +161,37 @@ def test_json_client_validates_caches_and_records_usage(tmp_path,monkeypatch):
     assert client.request('review','prompt',RouteAssessment)==review()
     assert len(calls)==1
     assert client.ledger['calls'][0]['tokens_charged']==200
+
+
+def test_lookup_retries_expired_failures_without_refetching_success(tmp_path,monkeypatch):
+    from mdb_harness.evidence import now
+    cfg=CampaignConfig(optimade_endpoints={'oqmd':'https://example.org'})
+    data=MaterialData(tmp_path,cfg);calls={'oqmd':0,'mp':0}
+    def oqmd(*args):
+        calls['oqmd']+=1
+        return {'provider':'oqmd','retrieved_at':'2000-01-01T00:00:00+00:00' if calls['oqmd']==1 else now(),
+                'status':'error' if calls['oqmd']==1 else 'ok','records':[],'complete':False}
+    def mp(*args):
+        calls['mp']+=1
+        return {'provider':'materials_project','retrieved_at':now(),'status':'ok','records':[],'complete':True}
+    monkeypatch.setattr(data,'_fetch_optimade',oqmd);monkeypatch.setattr(data,'_fetch_mp',mp)
+    assert data.lookup(['Si'])['providers'][0]['status']=='error'
+    assert data.lookup(['Si'])['providers'][0]['status']=='ok'
+    assert calls=={'oqmd':2,'mp':1}
+
+
+def test_selected_review_model_reaches_provider(tmp_path,monkeypatch):
+    from inspect_ai import model
+    from inspect_ai.model import ModelOutput,ModelUsage
+    seen=[]
+    class Provider:
+        async def generate(self,messages):
+            result=ModelOutput.from_content(model='mock',content=review().model_dump_json())
+            result.usage=ModelUsage(input_tokens=100,output_tokens=100)
+            return result
+    def get(name,**kwargs):seen.append(name);return Provider()
+    monkeypatch.setattr(model,'get_model',get)
+    client=JSONResearchClient(tmp_path,CampaignConfig(model='openai/chosen',review_model='anthropic/critic'))
+    client.request('propose','prompt',RouteAssessment)
+    client.request('critic','prompt',RouteAssessment,review=True)
+    assert seen==['openai/chosen','anthropic/critic']

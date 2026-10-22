@@ -77,6 +77,22 @@ def test_default_view_keeps_completed_result_after_stop(studio):
     assert studio.snapshot()['selected_run']=='a-finished'
 
 
+def test_current_audit_uses_saved_run_settings_and_preserves_original(studio):
+    root=studio.root/'live'/'historical'
+    atomic_json(root/'run.json',{'id':'historical','kind':'discovery','label':'Fixture','status':'complete'})
+    atomic_json(root/'config.json',CampaignConfig(thermal=False).model_dump())
+    crystal={'lattice':[[4,0,0],[0,4,0],[0,0,4]],'species':['Si'],'frac_coords':[[0,0,0]]}
+    original={'properties':{'input_density_g_cm3':123},'test_marker':'historical'}
+    path=root/'candidates/r00-c00/dossier.json'
+    atomic_json(path,{'hypothesis':{'name':'Fixture','crystal':crystal},'physics':{},'assessment':original})
+    before=path.read_bytes()
+    candidate=studio.snapshot('historical')['candidates'][0]
+    assert candidate['property_status']['kappa_w_mk']=='disabled_by_configuration'
+    assert candidate['original_assessment']==original
+    assert candidate['assessment']['properties']['input_density_g_cm3']!=123
+    assert path.read_bytes()==before
+
+
 def test_api_key_session_storage_never_writes_or_returns_secret(studio,monkeypatch):
     import os
     monkeypatch.delenv('OPENAI_API_KEY',raising=False)
@@ -138,3 +154,51 @@ def test_persistent_key_rejects_symlink_destination(studio,monkeypatch):
     with pytest.raises(ValueError,match='regular file'):
         studio.set_api_key({'provider':'openai','api_key':'do-not-write-test-key','persist':True})
     assert target.read_text()=='UNCHANGED=yes\n'
+
+
+def test_model_settings_persist_and_override_environment(studio,monkeypatch):
+    monkeypatch.setenv('DISCOVERY_MODEL','openai/environment-default')
+    monkeypatch.setenv('DISCOVERY_REVIEW_MODEL','openai/environment-critic')
+    result=studio.set_settings({'model':'anthropic/proposer-id','review_model':'openrouter/vendor/reviewer-id',
+                               'thermal_max_displacements':500,'max_model_calls':30})
+    reloaded=Studio(studio.bench)
+    assert reloaded.config().model=='anthropic/proposer-id'
+    assert reloaded.config().review_model=='openrouter/vendor/reviewer-id'
+    assert result['settings']['thermal_max_displacements']==500
+    reloaded.set_settings({'review_model':''})
+    assert reloaded.config().review_model is None
+    assert {r['provider'] for r in reloaded.key_options(reloaded.config())}=={'openai','anthropic','google','openrouter','materials_project'}
+
+
+@pytest.mark.parametrize('payload',[{'model':'not-a-provider/model'},{'model':'openai/model with spaces'},
+    {'model':42},{'model':'openai/../../secret'},{'thermal_max_displacements':0},{'command':'pwd'}])
+def test_invalid_settings_leave_defaults_unchanged(studio,payload):
+    with pytest.raises(ValueError):studio.set_settings(payload)
+    assert not (studio.root/'studio-settings.json').exists()
+
+
+def test_launched_config_keeps_selected_models(studio,monkeypatch):
+    from mdb_harness.campaign import load_config
+    captured={}
+    monkeypatch.setenv('DISCOVERY_MODEL','openai/environment-default')
+    monkeypatch.setenv('DISCOVERY_REVIEW_MODEL','openai/environment-critic')
+    monkeypatch.setenv('OPENAI_API_KEY','test-not-a-real-key')
+    def launch(command,**kwargs):
+        captured['command']=command
+        return SimpleNamespace(poll=lambda:None)
+    monkeypatch.setattr('mdb_harness.live_server.subprocess.Popen',launch)
+    monkeypatch.setattr('mdb_harness.live_server.threading.Thread',lambda **kwargs:SimpleNamespace(start=lambda:None))
+    result=studio.start({'settings':{'model':'openai/selected-model','review_model':None}})
+    assert '--frozen-config' in captured['command']
+    cfg=load_config(studio.root/'live'/result['id']/'launch-config.json',environment_models=False)
+    assert cfg.model=='openai/selected-model' and cfg.review_model is None
+
+
+def test_stopping_updates_both_run_and_campaign_status(studio):
+    directory=studio.root/'live'/'stopped'
+    atomic_json(directory/'run.json',{'id':'stopped','kind':'discovery'})
+    atomic_json(directory/'state.json',{'status':'running','completed_candidates':['r00-c00']})
+    studio.active_id='stopped';studio.stopping=True
+    studio._watch(SimpleNamespace(wait=lambda:-15),directory)
+    assert json.loads((directory/'state.json').read_text())['status']=='stopped'
+    assert json.loads((directory/'state.json').read_text())['completed_candidates']==['r00-c00']

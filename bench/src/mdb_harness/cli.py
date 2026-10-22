@@ -18,6 +18,8 @@ def main():
     screen = sub.add_parser('screen'); screen.add_argument('proposal', type=Path); screen.add_argument('--output', type=Path, required=True); screen.add_argument('--backend', choices=['none','petmad'], default='petmad'); screen.add_argument('--timeout', type=int, default=240); screen.add_argument('--elastic', action='store_true'); screen.add_argument('--thermal', action='store_true')
     worker = sub.add_parser('_physics'); worker.add_argument('proposal', type=Path); worker.add_argument('output', type=Path); worker.add_argument('--elastic', action='store_true'); worker.add_argument('--thermal', action='store_true')
     pipeline=sub.add_parser('discover'); pipeline.add_argument('action',choices=['prepare','run','report','status']); pipeline.add_argument('--config',type=Path,default=Path('discovery.json')); pipeline.add_argument('--output',type=Path,default=Path('runs/discovery'))
+    for command in [screen,worker]: command.add_argument('--thermal-max-displacements',type=int,default=300,choices=range(1,50001),metavar='1..50000')
+    pipeline.add_argument('--frozen-config',action='store_true',help='Use the saved model choices without environment overrides')
     sub.add_parser('doctor')
     sub.add_parser('schema')
     validation=sub.add_parser('validate');validation.add_argument('--library',type=Path,default=Path('data/reference/materials.sqlite'));validation.add_argument('--output',type=Path,required=True);validation.add_argument('--simulate',action='store_true');validation.add_argument('--cases',type=int,default=12)
@@ -37,7 +39,7 @@ def main():
         create_report(args.snapshot, json.loads(args.audit.read_text()), args.output)
         print(args.output)
     elif args.command == 'screen':
-        engine = Engine(args.output, backend=args.backend, timeout=args.timeout, elastic=args.elastic,thermal=args.thermal)
+        engine = Engine(args.output, backend=args.backend, timeout=args.timeout, elastic=args.elastic,thermal=args.thermal,thermal_max_displacements=args.thermal_max_displacements)
         result = engine.screen(json.loads(args.proposal.read_text()))
         if result.get('candidate_id') in engine.results:
             engine.submit(result['candidate_id'])
@@ -45,7 +47,7 @@ def main():
     elif args.command == '_physics':
         from .physics import petmad_screen
         proposal = Proposal.model_validate_json(args.proposal.read_text())
-        result = petmad_screen(proposal.crystal, args.output, elastic=args.elastic,thermal=args.thermal)
+        result = petmad_screen(proposal.crystal, args.output, elastic=args.elastic,thermal=args.thermal,thermal_max_displacements=args.thermal_max_displacements)
         dump(args.output / 'physics.json', result.model_dump())
     elif args.command == 'doctor':
         print(json.dumps({
@@ -64,7 +66,7 @@ def main():
         elif args.action=='status':
             print((args.output/'state.json').read_text())
         else:
-            config=load_config(args.config)
+            config=load_config(args.config,environment_models=not args.frozen_config)
             result=prepare(config,args.output) if args.action=='prepare' else run_campaign(config,args.output)
             print(json.dumps(result,indent=2))
 

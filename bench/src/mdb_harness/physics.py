@@ -11,7 +11,7 @@ from .schema import Crystal, PhysicsResult
 from .live_events import atomic_json, emit
 
 
-def petmad_screen(crystal: Crystal, workdir: Path, *, version="1.0.2", elastic=False, thermal=False) -> PhysicsResult:
+def petmad_screen(crystal: Crystal, workdir: Path, *, version="1.0.2", elastic=False, thermal=False,thermal_max_displacements=300) -> PhysicsResult:
     import torch
     from ase import Atoms
     from ase.filters import FrechetCellFilter
@@ -47,9 +47,12 @@ def petmad_screen(crystal: Crystal, workdir: Path, *, version="1.0.2", elastic=F
                   "Static dielectric evaluator is not configured; thermal transport runs only when explicitly enabled.",
                   "Phonons use finite displacements and a finite q mesh, without polar nonanalytic corrections; not a full convergence study."],
         artifacts={"packages": {x: importlib.metadata.version(x) for x in ['pet-mad', 'ase', 'phonopy', 'torch']},
+                   "requested_calculations": {"elastic":elastic,"thermal":thermal},
                    "exported_model_sha256": model_sha,
                    "energy_ev_per_atom": float(atoms.get_potential_energy() / len(atoms)),
                    "max_force_ev_a": float(np.linalg.norm(atoms.get_forces(), axis=1).max()),
+                   "stress_gpa":(atoms.get_stress(voigt=False)*160.21766208).tolist(),
+                   "pressure_gpa":float(-np.trace(atoms.get_stress(voigt=False))*160.21766208/3),
                    "relaxation_steps": optimizer.nsteps,
                    "phonon_supercell": [2, 2, 2], "phonon_mesh": [6, 6, 6]},
     )
@@ -82,8 +85,13 @@ def petmad_screen(crystal: Crystal, workdir: Path, *, version="1.0.2", elastic=F
         raise ValueError("Nonfinite phonon frequencies")
     result.minimum_phonon_thz = float(frequencies.min())
     result.artifacts["phonon_displacements"] = len(forces)
+    qpoints=np.asarray(phonon.get_mesh_dict()['qpoints'])
+    result.artifacts['phonon_diagnostics']={
+        'modes_below_minus_0_1_thz':int((frequencies<-.1).sum()),
+        'gamma_frequencies_thz':frequencies[np.linalg.norm(qpoints-np.rint(qpoints),axis=1)<1e-8].tolist(),
+        'interpretation':'Three Gamma acoustic translations approach zero. Near-zero numerical signs alone are not evidence of marginal stability; convergence and mode inspection are still required.'}
     np.savez_compressed(workdir / "phonons.npz", frequencies_thz=frequencies,
-                        force_constants=phonon.force_constants)
+                        qpoints=qpoints, force_constants=phonon.force_constants)
     result.artifacts["phonon_data"] = "phonons.npz"
     atomic_json(workdir/'physics-partial.json',result.model_dump())
     if result.minimum_phonon_thz < -1:
@@ -128,17 +136,25 @@ def petmad_screen(crystal: Crystal, workdir: Path, *, version="1.0.2", elastic=F
         else:
             result.warnings.append("Elasticity invalid or internally unconverged; moduli withheld")
         atomic_json(workdir/'physics-partial.json',result.model_dump())
-    if thermal and result.minimum_phonon_thz is not None and result.minimum_phonon_thz>=-1:
+    if thermal and result.minimum_phonon_thz is not None and result.minimum_phonon_thz<-.1:
+        result.artifacts['thermal']={'status':'withheld_unresolved_phonons','reason':'Resolve imaginary modes before transport calculations'}
+    elif thermal and result.minimum_phonon_thz is not None:
+        result.artifacts['thermal']={'status':'running'}
         atomic_json(workdir/'physics-partial.json',result.model_dump())
         emit(workdir,'thermal','Computing anharmonic forces and thermal transport')
         from .thermal import calculate_thermal
         try:
-            transport=calculate_thermal(atoms,workdir)
+            transport=calculate_thermal(atoms,workdir,max_displacements=thermal_max_displacements)
             result.artifacts['thermal']=transport
             if transport['status']=='computed_preliminary':
                 result.kappa_w_mk=transport['minimum_eigenvalue_w_mk']
                 result.warnings.append('Thermal conductivity is a preliminary bulk RTA estimate; supercell and q-mesh convergence are not established.')
+            else:
+                result.warnings.append('Thermal conductivity withheld: '+str(transport))
         except Exception as exc:
+            result.artifacts['thermal']={'status':'failed','error_type':type(exc).__name__}
+            atomic_json(workdir/'thermal-progress.json',result.artifacts['thermal'])
             result.warnings.append(f'Thermal calculation unavailable/failed ({type(exc).__name__}); conductivity withheld')
+        atomic_json(workdir/'physics-partial.json',result.model_dump())
     emit(workdir,'physics_complete','Physics screening finished')
     return result

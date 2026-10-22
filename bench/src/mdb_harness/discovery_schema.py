@@ -29,6 +29,7 @@ class CampaignConfig(StrictModel):
     simulation_timeout_seconds: int = Field(default=300, ge=5, le=7200)
     elastic: bool = True
     thermal: bool = False
+    thermal_max_displacements: int = Field(default=300,ge=1,le=50000)
     max_wafer_temperature_c: float = Field(default=400, ge=20, le=2000)
     kappa_min_w_mk: float = Field(default=20, gt=0)
     epsilon_static_max: float = Field(default=10, gt=1)
@@ -70,6 +71,7 @@ class CandidateHypothesis(StrictModel):
     change_rationale: str = ''
     expected_tradeoffs: list[str] = Field(default_factory=list)
     predicted_mechanism: str = ''
+    bonding_justification: str = Field(default='',description='If nominal ionic charges do not balance, explain the alternative bonding or electron count and an electronic-structure test. This is a hypothesis, not validation.')
 
 
 class HypothesisBatch(StrictModel):

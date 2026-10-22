@@ -7,7 +7,7 @@ from ase.build import bulk
 from pymatgen.io.ase import AseAtomsAdaptor
 
 from mdb_harness.campaign import run_campaign
-from mdb_harness.chemistry import composition_audit,property_status
+from mdb_harness.chemistry import composition_audit,property_status,hypothesis_preflight
 from mdb_harness.discovery_schema import CampaignConfig,CandidateHypothesis,HypothesisBatch,HypothesisCritique,CriticFinding,Citation
 from mdb_harness.evidence import EvidenceStore
 from mdb_harness.evolution import assess_candidate,ground_critique
@@ -121,3 +121,62 @@ def test_synthesis_cannot_run_after_instability(tmp_path,monkeypatch):
     cfg=CampaignConfig(model='scripted/control',network_enabled=False,backend='none',rounds=1,candidates_per_round=1,synthesis_enabled=True)
     client=EvolutionFixture();root=tmp_path/'run';run_campaign(cfg,root,client=client,skip_credential_check=True)
     d=json.loads((root/'candidates/r00-c00/dossier.json').read_text());assert d['synthesis_status']=='blocked_by_physics'
+
+
+def test_final_geometry_and_acoustic_minimum_do_not_reuse_input_density():
+    h=hypothesis();final=h.crystal.model_copy(deep=True)
+    final.lattice=[[v*.8 for v in row] for row in final.lattice]
+    assessment=assess_candidate(h,{'converged':True,'relaxed':final.model_dump(),
+        'minimum_phonon_thz':-3e-7},{},[],CampaignConfig())
+    p=assessment['properties']
+    assert p['final_density_g_cm3']==pytest.approx(p['input_density_g_cm3']/.8**3)
+    assert p['final_geometry_converged']
+    assert next(g for g in assessment['gates'] if g['name']=='dynamic_stability')['status']=='pass'
+
+
+def test_bulk_and_poisson_are_derived_only_from_valid_isotropic_moduli():
+    a=assess_candidate(hypothesis(),{'youngs_gpa':180.,'shear_gpa':75.},{},[],CampaignConfig())
+    assert a['properties']['bulk_gpa']==pytest.approx(100.)
+    assert a['properties']['poisson_ratio']==pytest.approx(.2)
+    invalid=assess_candidate(hypothesis(),{'youngs_gpa':300.,'shear_gpa':75.},{},[],CampaignConfig())
+    assert 'bulk_gpa' not in invalid['properties']
+
+
+def test_property_status_distinguishes_disabled_budget_and_timeout():
+    assert property_status({}, {'thermal':False})['kappa_w_mk']=='disabled_by_configuration'
+    assert property_status({'artifacts':{'thermal':{'status':'budget_exceeded'}}})['kappa_w_mk']=='budget_exceeded'
+    assert property_status({'artifacts':{'thermal':{'status':'timeout'}}})['kappa_w_mk']=='timeout'
+    assert property_status({})['epsilon_static']=='backend_not_configured'
+
+
+def test_citation_prefix_repair_does_not_repair_false_quotes(tmp_path):
+    store=EvidenceStore(tmp_path/'e.sqlite')
+    sid=store.add('Example','https://example.org/source','abstract',[('abstract','Silicon has a diamond structure.')])
+    chunk=store.retrieve('silicon')[0]['id']
+    c=Citation(source_id=sid,chunk_id=chunk.removeprefix(sid+':'),quote='Silicon has a diamond structure.')
+    check=store.validate_citation(c)
+    assert check['valid'] and check['identity_correction']['resolved_chunk_id']==chunk
+    c.quote='Silicon has an invented structure.'
+    critique=HypothesisCritique(recommendation='test_further',findings=[CriticFinding(domain='physics',severity='uncertain',
+        issue='A fabricated quote with a real field',evidence_fields=['youngs_gpa'],citations=[c],recommended_test='Compute')],
+        why_try_a_different_material='Fixture',suggested_changes=[],tradeoffs=[],next_discriminating_test='Compute')
+    a=assess_candidate(hypothesis(),{}, {},[],CampaignConfig())
+    assert ground_critique(critique,a,store)['findings'][0]['grounding']=='invalid_citation_requires_revision'
+    store.close()
+
+
+def test_unexplained_valence_repair_is_blocked_before_physics(tmp_path,monkeypatch):
+    h=hypothesis();h.name='SiB2O4 candidate'
+    h.crystal=Crystal(lattice=[[7,0,0],[0,7,0],[0,0,7]],species=['Si','B','B','O','O','O','O'],
+        frac_coords=[[i/7,i/7,i/7] for i in range(7)])
+    assert hypothesis_preflight(h)['status']=='requires_revision'
+    def forbidden(*args):raise AssertionError('Inconsistent proposal must not consume a physics call')
+    monkeypatch.setattr('mdb_harness.campaign._evaluate',forbidden)
+    class Client:
+        def request(self,*args,**kwargs):return HypothesisBatch(candidates=[h],reasoning_summary='Fixture')
+    cfg=CampaignConfig(network_enabled=False,backend='none',rounds=1,candidates_per_round=1,critic_enabled=False)
+    run_campaign(cfg,tmp_path/'run',client=Client(),skip_credential_check=True)
+    d=json.loads((tmp_path/'run/candidates/r00-c00/dossier.json').read_text())
+    assert 'proposal_consistency' in d['assessment']['failed']
+    h.bonding_justification='Hypothesize mixed bonding; test the electronic occupations with DFT.'
+    assert hypothesis_preflight(h)['status']=='ready_for_screening'
