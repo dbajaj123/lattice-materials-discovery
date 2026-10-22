@@ -1,0 +1,985 @@
+[
+  {
+    "run": {
+      "id": "20261022-211911-3eae5d",
+      "kind": "control",
+      "label": "Silicon control \u00b7 02:49",
+      "created_at": "2026-10-22T21:19:11.807032+00:00",
+      "status": "complete",
+      "returncode": 0,
+      "finished_at": "2026-10-22T21:19:18.661803+00:00"
+    },
+    "configuration": {
+      "name": "chip-dielectrics",
+      "objective": "Find a new crystalline dielectric candidate for chip integration, with useful heat transport and several evidence-supported synthesis-route hypotheses.",
+      "model": "openai/gpt-5.4",
+      "review_model": null,
+      "critic_enabled": true,
+      "synthesis_enabled": false,
+      "search_strategy": "evolution",
+      "population_size": 12,
+      "reference_seed_limit": 12,
+      "allowed_elements": [
+        "B",
+        "C",
+        "N",
+        "Si",
+        "Al",
+        "O"
+      ],
+      "rounds": 2,
+      "candidates_per_round": 2,
+      "routes_per_candidate": 3,
+      "max_model_calls": 24,
+      "max_total_tokens": 120000,
+      "max_output_tokens": 6000,
+      "backend": "petmad",
+      "simulation_timeout_seconds": 300,
+      "elastic": true,
+      "thermal": true,
+      "thermal_max_displacements": 1,
+      "max_wafer_temperature_c": 400.0,
+      "kappa_min_w_mk": 20.0,
+      "epsilon_static_max": 10.0,
+      "network_enabled": true,
+      "papers_per_query": 5,
+      "max_open_papers": 4,
+      "database_page_limit": 25,
+      "database_max_pages": 2,
+      "literature_queries": [
+        "boron nitride phonon stability",
+        "silicon nitride crystal stability",
+        "boron silicon nitride electronic structure",
+        "aluminum nitride dielectric phonon",
+        "silicon carbide thermal conductivity",
+        "diamond lattice thermal conductivity",
+        "boron carbon nitride crystal structure",
+        "nitride metastability phase diagrams"
+      ],
+      "optimade_endpoints": {
+        "oqmd": "https://www.oqmd.org/optimade/structures",
+        "jarvis": "https://jarvis.nist.gov/optimade/jarvisdft/v1/structures/"
+      }
+    },
+    "calculation_manifest": {
+      "created_at": "2026-10-22T21:19:12.462857+00:00",
+      "source_sha256": "1d2cb7311feedfe76d28d489a49b9b4245fb962b77cd73fd92bf5204f9e5dc5f",
+      "backend": "petmad",
+      "max_screen_calls": 8,
+      "timeout_seconds": 300,
+      "elastic": true,
+      "thermal": true,
+      "official_comparable": false,
+      "thermal_max_displacements": 1,
+      "protocol": "current-public-methods-local-reconstruction",
+      "packages": {
+        "pymatgen": "2026.9.24",
+        "ase": "3.29.0",
+        "phonopy": "4.8.3",
+        "inspect-ai": "0.3.283"
+      }
+    },
+    "evaluation": {
+      "candidate_id": "a9ea46710efb72ee",
+      "screen_calls": 1,
+      "elapsed_seconds": 6.116583958006231,
+      "physics": {
+        "status": "partial",
+        "backend": "PET-MAD/1.0.2",
+        "input_digest": "87acf0ad14d6944496cf84f45bba8efc5846f974e5ad9a40abe38b434d1af7fb",
+        "relaxed": {
+          "lattice": [
+            [
+              3.0248530402450333e-05,
+              2.698953759620876,
+              2.699560743479403
+            ],
+            [
+              2.698333019989507,
+              0.00019998608246410017,
+              2.6993910055372163
+            ],
+            [
+              2.698246328814958,
+              2.698697333633156,
+              0.0002866765869335001
+            ]
+          ],
+          "species": [
+            "Si",
+            "Si"
+          ],
+          "frac_coords": [
+            [
+              0.9999640185422852,
+              8.813257736131883e-05,
+              3.0164718660874535e-05
+            ],
+            [
+              0.2500359811916372,
+              0.24991186737391943,
+              0.24996983546438867
+            ]
+          ]
+        },
+        "converged": true,
+        "minimum_phonon_thz": -2.2496346145894514e-07,
+        "youngs_gpa": 176.89410826057556,
+        "shear_gpa": 70.84832627359098,
+        "kappa_w_mk": null,
+        "epsilon_static": null,
+        "epsilon_infinity": null,
+        "warnings": [
+          "Independent local prescreen; official model revision/settings unavailable.",
+          "Static dielectric evaluator is not configured; thermal transport runs only when explicitly enabled.",
+          "Phonons use finite displacements and a finite q mesh, without polar nonanalytic corrections; not a full convergence study.",
+          "Thermal conductivity withheld: {'status': 'budget_exceeded', 'required_displacements': 194, 'budget': 1, 'completed_displacements': 0, 'temperature_k': 300, 'mesh': [9, 9, 9], 'reason': 'Required displacements exceed configured budget'}"
+        ],
+        "artifacts": {
+          "packages": {
+            "pet-mad": "1.4.4",
+            "ase": "3.29.0",
+            "phonopy": "4.8.3",
+            "torch": "2.10.0"
+          },
+          "requested_calculations": {
+            "elastic": true,
+            "thermal": true
+          },
+          "exported_model_sha256": "1a9be0c5f3acdf64e99e2d537c44cba7d5ee4db2c0d206609ed0eb8a23f027e7",
+          "energy_ev_per_atom": -5.608390808105469,
+          "max_force_ev_a": 0.001073372883067738,
+          "stress_gpa": [
+            [
+              -0.05831723434686938,
+              -0.012809427927582759,
+              0.0003323189547843486
+            ],
+            [
+              -0.012809427927582759,
+              -0.09202886787078157,
+              -0.013211231505687312
+            ],
+            [
+              0.0003323189547843486,
+              -0.013211231505687312,
+              -0.11797399367186218
+            ]
+          ],
+          "pressure_gpa": 0.08944003196317103,
+          "relaxation_steps": 2,
+          "phonon_supercell": [
+            2,
+            2,
+            2
+          ],
+          "phonon_mesh": [
+            6,
+            6,
+            6
+          ],
+          "phonon_displacements": 6,
+          "phonon_diagnostics": {
+            "modes_below_minus_0_1_thz": 0,
+            "gamma_frequencies_thz": [
+              [
+                -2.2496346145894514e-07,
+                1.3000586788001887e-07,
+                1.8010795186132742e-07,
+                13.440784365116881,
+                13.46986857427311,
+                13.504920868435654
+              ]
+            ],
+            "interpretation": "Three Gamma acoustic translations approach zero. Near-zero numerical signs alone are not evidence of marginal stability; convergence and mode inspection are still required."
+          },
+          "phonon_data": "phonons.npz",
+          "elastic_tensor_gpa": [
+            [
+              196.78967935108412,
+              77.65552564630164,
+              77.51564001386973,
+              -0.5472891192579302,
+              0.15247271323694261,
+              1.0960718097990576
+            ],
+            [
+              77.65552564630164,
+              197.0217001665938,
+              77.87772442883214,
+              -1.0011036528623791,
+              -0.02805872661349567,
+              0.9779265588822593
+            ],
+            [
+              77.51564001386973,
+              77.87772442883214,
+              194.78443279435274,
+              -0.5459952532805554,
+              -0.419604643138375,
+              0.37693164836228454
+            ],
+            [
+              -0.5472891192579302,
+              -1.0011036528623791,
+              -0.5459952532805554,
+              79.73934473650807,
+              0.671435569258619,
+              0.10247662471255638
+            ],
+            [
+              0.15247271323694261,
+              -0.02805872661349567,
+              -0.419604643138375,
+              0.671435569258619,
+              79.86029040808037,
+              -0.6874514994557206
+            ],
+            [
+              1.0960718097990576,
+              0.9779265588822593,
+              0.37693164836228454,
+              0.10247662471255638,
+              -0.6874514994557206,
+              79.9135916303449
+            ]
+          ],
+          "elastic_internal_relaxation_converged": true,
+          "elastic_strain": 0.005,
+          "elastic_reduction": "Voigt-Reuss-Hill isotropic aggregate; not a specified film orientation",
+          "thermal": {
+            "status": "budget_exceeded",
+            "required_displacements": 194,
+            "budget": 1,
+            "completed_displacements": 0,
+            "temperature_k": 300,
+            "mesh": [
+              9,
+              9,
+              9
+            ],
+            "reason": "Required displacements exceed configured budget"
+          }
+        }
+      },
+      "gates": [
+        {
+          "name": "relaxation",
+          "status": "pass",
+          "reason": "Converged structure relaxation"
+        },
+        {
+          "name": "dynamic_stability",
+          "status": "pass",
+          "reason": "Minimum sampled phonon frequency >= -1 THz"
+        },
+        {
+          "name": "thermal_conductivity",
+          "status": "unknown",
+          "reason": "Thermal conductivity > 20 W/(m K)"
+        },
+        {
+          "name": "static_dielectric",
+          "status": "unknown",
+          "reason": "Static dielectric constant >= 1 and < 10; high-frequency epsilon is not interchangeable"
+        },
+        {
+          "name": "youngs_modulus",
+          "status": "pass",
+          "reason": "Young's modulus >= 20 GPa"
+        },
+        {
+          "name": "shear_modulus",
+          "status": "pass",
+          "reason": "Shear modulus >= 6 GPa"
+        },
+        {
+          "name": "literature_novelty",
+          "status": "unknown",
+          "reason": "No independent dated literature novelty review"
+        },
+        {
+          "name": "synthesis_plausibility",
+          "status": "unknown",
+          "reason": "Official expert-calibrated rubric and reviewer unavailable"
+        }
+      ],
+      "synthesis_steps": [],
+      "relaxed_duplicate_of": null,
+      "eligible": false,
+      "official_comparable": false
+    }
+  },
+  {
+    "run": {
+      "id": "20261022-212006-237161",
+      "kind": "control",
+      "label": "Silicon control \u00b7 02:50",
+      "created_at": "2026-10-22T21:20:06.886028+00:00",
+      "status": "complete",
+      "returncode": 0,
+      "finished_at": "2026-10-22T21:20:19.448250+00:00"
+    },
+    "configuration": {
+      "name": "chip-dielectrics",
+      "objective": "Find a new crystalline dielectric candidate for chip integration, with useful heat transport and several evidence-supported synthesis-route hypotheses.",
+      "model": "openai/gpt-5.4",
+      "review_model": null,
+      "critic_enabled": true,
+      "synthesis_enabled": false,
+      "search_strategy": "evolution",
+      "population_size": 12,
+      "reference_seed_limit": 12,
+      "allowed_elements": [
+        "B",
+        "C",
+        "N",
+        "Si",
+        "Al",
+        "O"
+      ],
+      "rounds": 2,
+      "candidates_per_round": 2,
+      "routes_per_candidate": 3,
+      "max_model_calls": 24,
+      "max_total_tokens": 120000,
+      "max_output_tokens": 6000,
+      "backend": "petmad",
+      "simulation_timeout_seconds": 300,
+      "elastic": true,
+      "thermal": true,
+      "thermal_max_displacements": 300,
+      "max_wafer_temperature_c": 400.0,
+      "kappa_min_w_mk": 20.0,
+      "epsilon_static_max": 10.0,
+      "network_enabled": true,
+      "papers_per_query": 5,
+      "max_open_papers": 4,
+      "database_page_limit": 25,
+      "database_max_pages": 2,
+      "literature_queries": [
+        "boron nitride phonon stability",
+        "silicon nitride crystal stability",
+        "boron silicon nitride electronic structure",
+        "aluminum nitride dielectric phonon",
+        "silicon carbide thermal conductivity",
+        "diamond lattice thermal conductivity",
+        "boron carbon nitride crystal structure",
+        "nitride metastability phase diagrams"
+      ],
+      "optimade_endpoints": {
+        "oqmd": "https://www.oqmd.org/optimade/structures",
+        "jarvis": "https://jarvis.nist.gov/optimade/jarvisdft/v1/structures/"
+      }
+    },
+    "calculation_manifest": {
+      "created_at": "2026-10-22T21:20:07.613325+00:00",
+      "source_sha256": "1d2cb7311feedfe76d28d489a49b9b4245fb962b77cd73fd92bf5204f9e5dc5f",
+      "backend": "petmad",
+      "max_screen_calls": 8,
+      "timeout_seconds": 300,
+      "elastic": true,
+      "thermal": true,
+      "official_comparable": false,
+      "thermal_max_displacements": 300,
+      "protocol": "current-public-methods-local-reconstruction",
+      "packages": {
+        "pymatgen": "2026.9.24",
+        "ase": "3.29.0",
+        "phonopy": "4.8.3",
+        "inspect-ai": "0.3.283"
+      }
+    },
+    "evaluation": {
+      "candidate_id": "a9ea46710efb72ee",
+      "screen_calls": 1,
+      "elapsed_seconds": 11.77475554200646,
+      "physics": {
+        "status": "partial",
+        "backend": "PET-MAD/1.0.2",
+        "input_digest": "87acf0ad14d6944496cf84f45bba8efc5846f974e5ad9a40abe38b434d1af7fb",
+        "relaxed": {
+          "lattice": [
+            [
+              3.0248530402450333e-05,
+              2.698953759620876,
+              2.699560743479403
+            ],
+            [
+              2.698333019989507,
+              0.00019998608246410017,
+              2.6993910055372163
+            ],
+            [
+              2.698246328814958,
+              2.698697333633156,
+              0.0002866765869335001
+            ]
+          ],
+          "species": [
+            "Si",
+            "Si"
+          ],
+          "frac_coords": [
+            [
+              0.9999640185422852,
+              8.813257736131883e-05,
+              3.0164718660874535e-05
+            ],
+            [
+              0.2500359811916372,
+              0.24991186737391943,
+              0.24996983546438867
+            ]
+          ]
+        },
+        "converged": true,
+        "minimum_phonon_thz": -2.2496346145894514e-07,
+        "youngs_gpa": 176.89410826057556,
+        "shear_gpa": 70.84832627359098,
+        "kappa_w_mk": 61.910184569413886,
+        "epsilon_static": null,
+        "epsilon_infinity": null,
+        "warnings": [
+          "Independent local prescreen; official model revision/settings unavailable.",
+          "Static dielectric evaluator is not configured; thermal transport runs only when explicitly enabled.",
+          "Phonons use finite displacements and a finite q mesh, without polar nonanalytic corrections; not a full convergence study.",
+          "Thermal conductivity is a preliminary bulk RTA estimate; supercell and q-mesh convergence are not established."
+        ],
+        "artifacts": {
+          "packages": {
+            "pet-mad": "1.4.4",
+            "ase": "3.29.0",
+            "phonopy": "4.8.3",
+            "torch": "2.10.0"
+          },
+          "requested_calculations": {
+            "elastic": true,
+            "thermal": true
+          },
+          "exported_model_sha256": "2dab5cda3d9df48313ee6f50dd12a6d2f8e45251716ed66d20d5e34e12dc067f",
+          "energy_ev_per_atom": -5.608390808105469,
+          "max_force_ev_a": 0.001073372883067738,
+          "stress_gpa": [
+            [
+              -0.05831723434686938,
+              -0.012809427927582759,
+              0.0003323189547843486
+            ],
+            [
+              -0.012809427927582759,
+              -0.09202886787078157,
+              -0.013211231505687312
+            ],
+            [
+              0.0003323189547843486,
+              -0.013211231505687312,
+              -0.11797399367186218
+            ]
+          ],
+          "pressure_gpa": 0.08944003196317103,
+          "relaxation_steps": 2,
+          "phonon_supercell": [
+            2,
+            2,
+            2
+          ],
+          "phonon_mesh": [
+            6,
+            6,
+            6
+          ],
+          "phonon_displacements": 6,
+          "phonon_diagnostics": {
+            "modes_below_minus_0_1_thz": 0,
+            "gamma_frequencies_thz": [
+              [
+                -2.2496346145894514e-07,
+                1.3000586788001887e-07,
+                1.8010795186132742e-07,
+                13.440784365116881,
+                13.46986857427311,
+                13.504920868435654
+              ]
+            ],
+            "interpretation": "Three Gamma acoustic translations approach zero. Near-zero numerical signs alone are not evidence of marginal stability; convergence and mode inspection are still required."
+          },
+          "phonon_data": "phonons.npz",
+          "elastic_tensor_gpa": [
+            [
+              196.78967935108412,
+              77.65552564630164,
+              77.51564001386973,
+              -0.5472891192579302,
+              0.15247271323694261,
+              1.0960718097990576
+            ],
+            [
+              77.65552564630164,
+              197.0217001665938,
+              77.87772442883214,
+              -1.0011036528623791,
+              -0.02805872661349567,
+              0.9779265588822593
+            ],
+            [
+              77.51564001386973,
+              77.87772442883214,
+              194.78443279435274,
+              -0.5459952532805554,
+              -0.419604643138375,
+              0.37693164836228454
+            ],
+            [
+              -0.5472891192579302,
+              -1.0011036528623791,
+              -0.5459952532805554,
+              79.73934473650807,
+              0.671435569258619,
+              0.10247662471255638
+            ],
+            [
+              0.15247271323694261,
+              -0.02805872661349567,
+              -0.419604643138375,
+              0.671435569258619,
+              79.86029040808037,
+              -0.6874514994557206
+            ],
+            [
+              1.0960718097990576,
+              0.9779265588822593,
+              0.37693164836228454,
+              0.10247662471255638,
+              -0.6874514994557206,
+              79.9135916303449
+            ]
+          ],
+          "elastic_internal_relaxation_converged": true,
+          "elastic_strain": 0.005,
+          "elastic_reduction": "Voigt-Reuss-Hill isotropic aggregate; not a specified film orientation",
+          "thermal": {
+            "status": "computed_preliminary",
+            "tensor_w_mk": [
+              [
+                64.23574218591928,
+                0.0013125094118385562,
+                -0.002739674731147591
+              ],
+              [
+                0.0013125094118385562,
+                62.5467459347067,
+                0.6223360321487964
+              ],
+              [
+                -0.002739674731147591,
+                0.6223360321487964,
+                62.51862012300992
+              ]
+            ],
+            "minimum_eigenvalue_w_mk": 61.910184569413886,
+            "temperature_k": 300,
+            "mesh": [
+              9,
+              9,
+              9
+            ],
+            "supercell": [
+              2,
+              2,
+              2
+            ],
+            "displacement_angstrom": 0.03,
+            "displacements": 194,
+            "method": "PET-MAD forces + phono3py 3-phonon RTA with isotopes",
+            "phono3py_version": "4.8.2",
+            "convergence_established": false,
+            "thin_film_effects_included": false
+          }
+        }
+      },
+      "gates": [
+        {
+          "name": "relaxation",
+          "status": "pass",
+          "reason": "Converged structure relaxation"
+        },
+        {
+          "name": "dynamic_stability",
+          "status": "pass",
+          "reason": "Minimum sampled phonon frequency >= -1 THz"
+        },
+        {
+          "name": "thermal_conductivity",
+          "status": "pass",
+          "reason": "Thermal conductivity > 20 W/(m K)"
+        },
+        {
+          "name": "static_dielectric",
+          "status": "unknown",
+          "reason": "Static dielectric constant >= 1 and < 10; high-frequency epsilon is not interchangeable"
+        },
+        {
+          "name": "youngs_modulus",
+          "status": "pass",
+          "reason": "Young's modulus >= 20 GPa"
+        },
+        {
+          "name": "shear_modulus",
+          "status": "pass",
+          "reason": "Shear modulus >= 6 GPa"
+        },
+        {
+          "name": "literature_novelty",
+          "status": "unknown",
+          "reason": "No independent dated literature novelty review"
+        },
+        {
+          "name": "synthesis_plausibility",
+          "status": "unknown",
+          "reason": "Official expert-calibrated rubric and reviewer unavailable"
+        }
+      ],
+      "synthesis_steps": [],
+      "relaxed_duplicate_of": null,
+      "eligible": false,
+      "official_comparable": false
+    }
+  },
+  {
+    "run": {
+      "id": "20261022-212211-d9fef6",
+      "kind": "control",
+      "label": "Silicon control \u00b7 02:52",
+      "created_at": "2026-10-22T21:22:11.048673+00:00",
+      "status": "complete",
+      "returncode": 0,
+      "finished_at": "2026-10-22T21:22:23.813987+00:00"
+    },
+    "configuration": {
+      "name": "chip-dielectrics",
+      "objective": "Find a new crystalline dielectric candidate for chip integration, with useful heat transport and several evidence-supported synthesis-route hypotheses.",
+      "model": "openai/gpt-5.4",
+      "review_model": null,
+      "critic_enabled": true,
+      "synthesis_enabled": false,
+      "search_strategy": "evolution",
+      "population_size": 12,
+      "reference_seed_limit": 12,
+      "allowed_elements": [
+        "B",
+        "C",
+        "N",
+        "Si",
+        "Al",
+        "O"
+      ],
+      "rounds": 2,
+      "candidates_per_round": 2,
+      "routes_per_candidate": 3,
+      "max_model_calls": 24,
+      "max_total_tokens": 120000,
+      "max_output_tokens": 6000,
+      "backend": "petmad",
+      "simulation_timeout_seconds": 300,
+      "elastic": true,
+      "thermal": true,
+      "thermal_max_displacements": 300,
+      "max_wafer_temperature_c": 400.0,
+      "kappa_min_w_mk": 20.0,
+      "epsilon_static_max": 10.0,
+      "network_enabled": true,
+      "papers_per_query": 5,
+      "max_open_papers": 4,
+      "database_page_limit": 25,
+      "database_max_pages": 2,
+      "literature_queries": [
+        "boron nitride phonon stability",
+        "silicon nitride crystal stability",
+        "boron silicon nitride electronic structure",
+        "aluminum nitride dielectric phonon",
+        "silicon carbide thermal conductivity",
+        "diamond lattice thermal conductivity",
+        "boron carbon nitride crystal structure",
+        "nitride metastability phase diagrams"
+      ],
+      "optimade_endpoints": {
+        "oqmd": "https://www.oqmd.org/optimade/structures",
+        "jarvis": "https://jarvis.nist.gov/optimade/jarvisdft/v1/structures/"
+      }
+    },
+    "calculation_manifest": {
+      "created_at": "2026-10-22T21:22:11.703714+00:00",
+      "source_sha256": "5f94a182f70ea18d41cb3f202a3b36e12a36a42aa9242a069b0d725b93f886df",
+      "backend": "petmad",
+      "max_screen_calls": 8,
+      "timeout_seconds": 300,
+      "elastic": true,
+      "thermal": true,
+      "official_comparable": false,
+      "thermal_max_displacements": 300,
+      "protocol": "current-public-methods-local-reconstruction",
+      "packages": {
+        "pymatgen": "2026.9.24",
+        "ase": "3.29.0",
+        "phonopy": "4.8.3",
+        "inspect-ai": "0.3.283"
+      }
+    },
+    "evaluation": {
+      "candidate_id": "a9ea46710efb72ee",
+      "screen_calls": 1,
+      "elapsed_seconds": 12.03909437499533,
+      "physics": {
+        "status": "partial",
+        "backend": "PET-MAD/1.0.2",
+        "input_digest": "87acf0ad14d6944496cf84f45bba8efc5846f974e5ad9a40abe38b434d1af7fb",
+        "relaxed": {
+          "lattice": [
+            [
+              3.0248530402450333e-05,
+              2.698953759620876,
+              2.699560743479403
+            ],
+            [
+              2.698333019989507,
+              0.00019998608246410017,
+              2.6993910055372163
+            ],
+            [
+              2.698246328814958,
+              2.698697333633156,
+              0.0002866765869335001
+            ]
+          ],
+          "species": [
+            "Si",
+            "Si"
+          ],
+          "frac_coords": [
+            [
+              0.9999640185422852,
+              8.813257736131883e-05,
+              3.0164718660874535e-05
+            ],
+            [
+              0.2500359811916372,
+              0.24991186737391943,
+              0.24996983546438867
+            ]
+          ]
+        },
+        "converged": true,
+        "minimum_phonon_thz": -2.2496346145894514e-07,
+        "youngs_gpa": 176.89410826057556,
+        "shear_gpa": 70.84832627359098,
+        "kappa_w_mk": 61.910184569413886,
+        "epsilon_static": null,
+        "epsilon_infinity": null,
+        "warnings": [
+          "Independent local prescreen; official model revision/settings unavailable.",
+          "Static dielectric evaluator is not configured; thermal transport runs only when explicitly enabled.",
+          "Phonons use finite displacements and a finite q mesh, without polar nonanalytic corrections; not a full convergence study.",
+          "Thermal conductivity is a preliminary bulk RTA estimate; supercell and q-mesh convergence are not established."
+        ],
+        "artifacts": {
+          "packages": {
+            "pet-mad": "1.4.4",
+            "ase": "3.29.0",
+            "phonopy": "4.8.3",
+            "torch": "2.10.0"
+          },
+          "requested_calculations": {
+            "elastic": true,
+            "thermal": true
+          },
+          "exported_model_sha256": "b501c1f9fed1c6c2138c0f1bdd78b33fbc74f6fea3fdf9074b612c37cc46ab6d",
+          "energy_ev_per_atom": -5.608390808105469,
+          "max_force_ev_a": 0.001073372883067738,
+          "stress_gpa": [
+            [
+              -0.05831723434686938,
+              -0.012809427927582759,
+              0.0003323189547843486
+            ],
+            [
+              -0.012809427927582759,
+              -0.09202886787078157,
+              -0.013211231505687312
+            ],
+            [
+              0.0003323189547843486,
+              -0.013211231505687312,
+              -0.11797399367186218
+            ]
+          ],
+          "pressure_gpa": 0.08944003196317103,
+          "relaxation_steps": 2,
+          "phonon_supercell": [
+            2,
+            2,
+            2
+          ],
+          "phonon_mesh": [
+            6,
+            6,
+            6
+          ],
+          "phonon_displacements": 6,
+          "phonon_diagnostics": {
+            "modes_below_minus_0_1_thz": 0,
+            "gamma_frequencies_thz": [
+              [
+                -2.2496346145894514e-07,
+                1.3000586788001887e-07,
+                1.8010795186132742e-07,
+                13.440784365116881,
+                13.46986857427311,
+                13.504920868435654
+              ]
+            ],
+            "interpretation": "Three Gamma acoustic translations approach zero. Near-zero numerical signs alone are not evidence of marginal stability; convergence and mode inspection are still required."
+          },
+          "phonon_data": "phonons.npz",
+          "elastic_tensor_gpa": [
+            [
+              196.78967935108412,
+              77.65552564630164,
+              77.51564001386973,
+              -0.5472891192579302,
+              0.15247271323694261,
+              1.0960718097990576
+            ],
+            [
+              77.65552564630164,
+              197.0217001665938,
+              77.87772442883214,
+              -1.0011036528623791,
+              -0.02805872661349567,
+              0.9779265588822593
+            ],
+            [
+              77.51564001386973,
+              77.87772442883214,
+              194.78443279435274,
+              -0.5459952532805554,
+              -0.419604643138375,
+              0.37693164836228454
+            ],
+            [
+              -0.5472891192579302,
+              -1.0011036528623791,
+              -0.5459952532805554,
+              79.73934473650807,
+              0.671435569258619,
+              0.10247662471255638
+            ],
+            [
+              0.15247271323694261,
+              -0.02805872661349567,
+              -0.419604643138375,
+              0.671435569258619,
+              79.86029040808037,
+              -0.6874514994557206
+            ],
+            [
+              1.0960718097990576,
+              0.9779265588822593,
+              0.37693164836228454,
+              0.10247662471255638,
+              -0.6874514994557206,
+              79.9135916303449
+            ]
+          ],
+          "elastic_internal_relaxation_converged": true,
+          "elastic_strain": 0.005,
+          "elastic_reduction": "Voigt-Reuss-Hill isotropic aggregate; not a specified film orientation",
+          "thermal": {
+            "status": "computed_preliminary",
+            "tensor_w_mk": [
+              [
+                64.23574218591928,
+                0.0013125094118385562,
+                -0.002739674731147591
+              ],
+              [
+                0.0013125094118385562,
+                62.5467459347067,
+                0.6223360321487964
+              ],
+              [
+                -0.002739674731147591,
+                0.6223360321487964,
+                62.51862012300992
+              ]
+            ],
+            "minimum_eigenvalue_w_mk": 61.910184569413886,
+            "temperature_k": 300,
+            "mesh": [
+              9,
+              9,
+              9
+            ],
+            "supercell": [
+              2,
+              2,
+              2
+            ],
+            "displacement_angstrom": 0.03,
+            "displacements": 194,
+            "method": "PET-MAD forces + phono3py 3-phonon RTA with isotopes",
+            "phono3py_version": "4.8.2",
+            "convergence_established": false,
+            "thin_film_effects_included": false
+          }
+        }
+      },
+      "gates": [
+        {
+          "name": "relaxation",
+          "status": "pass",
+          "reason": "Converged structure relaxation"
+        },
+        {
+          "name": "dynamic_stability",
+          "status": "pass",
+          "reason": "Minimum sampled phonon frequency >= -1 THz"
+        },
+        {
+          "name": "thermal_conductivity",
+          "status": "pass",
+          "reason": "Thermal conductivity > 20 W/(m K)"
+        },
+        {
+          "name": "static_dielectric",
+          "status": "unknown",
+          "reason": "Static dielectric constant >= 1 and < 10; high-frequency epsilon is not interchangeable"
+        },
+        {
+          "name": "youngs_modulus",
+          "status": "pass",
+          "reason": "Young's modulus >= 20 GPa"
+        },
+        {
+          "name": "shear_modulus",
+          "status": "pass",
+          "reason": "Shear modulus >= 6 GPa"
+        },
+        {
+          "name": "literature_novelty",
+          "status": "unknown",
+          "reason": "No independent dated literature novelty review"
+        },
+        {
+          "name": "synthesis_plausibility",
+          "status": "unknown",
+          "reason": "Official expert-calibrated rubric and reviewer unavailable"
+        }
+      ],
+      "synthesis_steps": [],
+      "relaxed_duplicate_of": null,
+      "eligible": false,
+      "official_comparable": false
+    }
+  }
+]

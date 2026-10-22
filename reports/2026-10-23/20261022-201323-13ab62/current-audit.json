@@ -1,0 +1,510 @@
+{
+  "source_run": "runs/live/20261022-201323-13ab62",
+  "original_records_modified": false,
+  "candidates": [
+    {
+      "id": "r00-c00",
+      "source_run": "runs/live/20261022-201323-13ab62",
+      "audit": {
+        "properties": {
+          "formula": "Si2BN3O",
+          "elements": [
+            "B",
+            "N",
+            "O",
+            "Si"
+          ],
+          "number_of_sites": 7,
+          "input_density_g_cm3": 4.935380370273523,
+          "input_volume_per_atom_angstrom3": 6.0082176,
+          "youngs_gpa": null,
+          "shear_gpa": null,
+          "kappa_w_mk": null,
+          "epsilon_static": null,
+          "minimum_phonon_thz": null,
+          "energy_ev_per_atom": -8.151722499302455,
+          "provenance": "Input geometry and final evaluator geometry are separate. Final geometry is relaxed only when converged. No borrowed reference values.",
+          "final_density_g_cm3": 3.438472049927291,
+          "final_volume_per_atom_angstrom3": 8.62384186138693,
+          "final_geometry_converged": false,
+          "phonon_interpretation": "A near-zero minimum alone does not indicate marginal stability: Gamma acoustic translations approach zero. Inspect q points and modes; finite-mesh screening is not a convergence study."
+        },
+        "gates": [
+          {
+            "name": "relaxation",
+            "value": false,
+            "status": "fail",
+            "reason": "Converged interatomic-potential relaxation; failure within the step budget is inconclusive about phase stability"
+          },
+          {
+            "name": "dynamic_stability",
+            "value": null,
+            "status": "unknown",
+            "reason": "Minimum sampled phonon frequency >= -1 THz; finite-mesh screening only"
+          },
+          {
+            "name": "youngs_modulus",
+            "value": null,
+            "status": "unknown",
+            "reason": "Young modulus >= 20 GPa"
+          },
+          {
+            "name": "shear_modulus",
+            "value": null,
+            "status": "unknown",
+            "reason": "Shear modulus >= 6 GPa"
+          },
+          {
+            "name": "thermal_conductivity",
+            "value": null,
+            "status": "unknown",
+            "reason": "Minimum thermal tensor eigenvalue above configured threshold; preliminary until converged"
+          },
+          {
+            "name": "static_dielectric",
+            "value": null,
+            "status": "unknown",
+            "reason": "Static dielectric response in configured interval"
+          },
+          {
+            "name": "structural_novelty",
+            "status": "unknown",
+            "value": null,
+            "reason": "No match is not a proof of worldwide novelty"
+          },
+          {
+            "name": "thermodynamic_stability",
+            "status": "unknown",
+            "value": null,
+            "reason": "Complete same-model competing-phase hull not yet computed"
+          },
+          {
+            "name": "synthesis_validation",
+            "status": "unknown",
+            "value": null,
+            "reason": "Model route critique is not experimental validation"
+          }
+        ],
+        "failed": [
+          "relaxation"
+        ],
+        "unknown": [
+          "dynamic_stability",
+          "youngs_modulus",
+          "shear_modulus",
+          "thermal_conductivity",
+          "static_dielectric",
+          "structural_novelty",
+          "thermodynamic_stability",
+          "synthesis_validation"
+        ],
+        "fitness": {
+          "vector": [
+            0.0,
+            0,
+            -1
+          ],
+          "dimensions": [
+            "predicted_physics_target_coverage",
+            "uncalibrated_route_support",
+            "negative_failed_checks"
+          ],
+          "selection_only": true,
+          "not_a_success_probability": true
+        },
+        "selection_status": "rejected_for_current_objective",
+        "validated_discovery": false,
+        "test_level": "computational_screening_not_experimental_validation"
+      },
+      "original_property_status": {
+        "youngs_gpa": "withheld_relaxation_unconverged",
+        "shear_gpa": "withheld_relaxation_unconverged",
+        "kappa_w_mk": "disabled_by_configuration",
+        "epsilon_static": "backend_not_configured",
+        "minimum_phonon_thz": "withheld_relaxation_unconverged"
+      }
+    },
+    {
+      "id": "r00-c01",
+      "source_run": "runs/live/20261022-201323-13ab62",
+      "audit": {
+        "properties": {
+          "formula": "AlB2N3O2",
+          "elements": [
+            "Al",
+            "B",
+            "N",
+            "O"
+          ],
+          "number_of_sites": 8,
+          "input_density_g_cm3": 1.5789692322380966,
+          "input_volume_per_atom_angstrom3": 16.119642,
+          "youngs_gpa": 197.81640270110242,
+          "shear_gpa": 73.62026938129766,
+          "kappa_w_mk": null,
+          "epsilon_static": null,
+          "minimum_phonon_thz": 9.256958989075082e-08,
+          "energy_ev_per_atom": -7.670077800750732,
+          "provenance": "Input geometry and final evaluator geometry are separate. Final geometry is relaxed only when converged. No borrowed reference values.",
+          "final_density_g_cm3": 3.348318657782032,
+          "final_volume_per_atom_angstrom3": 7.601552108410426,
+          "final_geometry_converged": true,
+          "phonon_interpretation": "A near-zero minimum alone does not indicate marginal stability: Gamma acoustic translations approach zero. Inspect q points and modes; finite-mesh screening is not a convergence study.",
+          "minimum_elastic_eigenvalue_gpa": 16.094364038807807
+        },
+        "gates": [
+          {
+            "name": "relaxation",
+            "value": true,
+            "status": "pass",
+            "reason": "Converged interatomic-potential relaxation; failure within the step budget is inconclusive about phase stability"
+          },
+          {
+            "name": "dynamic_stability",
+            "value": 9.256958989075082e-08,
+            "status": "pass",
+            "reason": "Minimum sampled phonon frequency >= -1 THz; finite-mesh screening only"
+          },
+          {
+            "name": "youngs_modulus",
+            "value": 197.81640270110242,
+            "status": "pass",
+            "reason": "Young modulus >= 20 GPa"
+          },
+          {
+            "name": "shear_modulus",
+            "value": 73.62026938129766,
+            "status": "pass",
+            "reason": "Shear modulus >= 6 GPa"
+          },
+          {
+            "name": "thermal_conductivity",
+            "value": null,
+            "status": "unknown",
+            "reason": "Minimum thermal tensor eigenvalue above configured threshold; preliminary until converged"
+          },
+          {
+            "name": "static_dielectric",
+            "value": null,
+            "status": "unknown",
+            "reason": "Static dielectric response in configured interval"
+          },
+          {
+            "name": "structural_novelty",
+            "status": "unknown",
+            "value": null,
+            "reason": "No match is not a proof of worldwide novelty"
+          },
+          {
+            "name": "thermodynamic_stability",
+            "status": "unknown",
+            "value": null,
+            "reason": "Complete same-model competing-phase hull not yet computed"
+          },
+          {
+            "name": "synthesis_validation",
+            "status": "unknown",
+            "value": null,
+            "reason": "Model route critique is not experimental validation"
+          },
+          {
+            "name": "mechanical_stability",
+            "value": 16.094364038807807,
+            "status": "pass",
+            "reason": "Positive definite stiffness under the evaluated zero-pressure convention; finite-strain numerical screening"
+          }
+        ],
+        "failed": [],
+        "unknown": [
+          "thermal_conductivity",
+          "static_dielectric",
+          "structural_novelty",
+          "thermodynamic_stability",
+          "synthesis_validation"
+        ],
+        "fitness": {
+          "vector": [
+            0.6666666666666666,
+            0,
+            0
+          ],
+          "dimensions": [
+            "predicted_physics_target_coverage",
+            "uncalibrated_route_support",
+            "negative_failed_checks"
+          ],
+          "selection_only": true,
+          "not_a_success_probability": true
+        },
+        "selection_status": "needs_more_tests",
+        "validated_discovery": false,
+        "test_level": "computational_screening_not_experimental_validation"
+      },
+      "original_property_status": {
+        "youngs_gpa": "predicted",
+        "shear_gpa": "predicted",
+        "kappa_w_mk": "disabled_by_configuration",
+        "epsilon_static": "backend_not_configured",
+        "minimum_phonon_thz": "predicted"
+      },
+      "thermal_workload": {
+        "status": "budget_exceeded",
+        "required_displacements": 18480,
+        "budget": 0,
+        "configured_displacement_budget": 300,
+        "scope": "Workload inspection only; no forces or conductivity computed"
+      }
+    },
+    {
+      "id": "r01-c00",
+      "source_run": "runs/live/20261022-201323-13ab62",
+      "audit": {
+        "properties": {
+          "formula": "Si(BO2)2",
+          "elements": [
+            "B",
+            "O",
+            "Si"
+          ],
+          "number_of_sites": 7,
+          "input_density_g_cm3": 1.0435113184824956,
+          "input_volume_per_atom_angstrom3": 25.848410285714277,
+          "youngs_gpa": null,
+          "shear_gpa": null,
+          "kappa_w_mk": null,
+          "epsilon_static": null,
+          "minimum_phonon_thz": null,
+          "energy_ev_per_atom": -7.5027956281389505,
+          "provenance": "Input geometry and final evaluator geometry are separate. Final geometry is relaxed only when converged. No borrowed reference values.",
+          "final_density_g_cm3": 1.8773621959782083,
+          "final_volume_per_atom_angstrom3": 14.367557179805543,
+          "final_geometry_converged": false,
+          "phonon_interpretation": "A near-zero minimum alone does not indicate marginal stability: Gamma acoustic translations approach zero. Inspect q points and modes; finite-mesh screening is not a convergence study."
+        },
+        "gates": [
+          {
+            "name": "relaxation",
+            "value": false,
+            "status": "fail",
+            "reason": "Converged interatomic-potential relaxation; failure within the step budget is inconclusive about phase stability"
+          },
+          {
+            "name": "dynamic_stability",
+            "value": null,
+            "status": "unknown",
+            "reason": "Minimum sampled phonon frequency >= -1 THz; finite-mesh screening only"
+          },
+          {
+            "name": "youngs_modulus",
+            "value": null,
+            "status": "unknown",
+            "reason": "Young modulus >= 20 GPa"
+          },
+          {
+            "name": "shear_modulus",
+            "value": null,
+            "status": "unknown",
+            "reason": "Shear modulus >= 6 GPa"
+          },
+          {
+            "name": "thermal_conductivity",
+            "value": null,
+            "status": "unknown",
+            "reason": "Minimum thermal tensor eigenvalue above configured threshold; preliminary until converged"
+          },
+          {
+            "name": "static_dielectric",
+            "value": null,
+            "status": "unknown",
+            "reason": "Static dielectric response in configured interval"
+          },
+          {
+            "name": "structural_novelty",
+            "status": "unknown",
+            "value": null,
+            "reason": "No match is not a proof of worldwide novelty"
+          },
+          {
+            "name": "thermodynamic_stability",
+            "status": "unknown",
+            "value": null,
+            "reason": "Complete same-model competing-phase hull not yet computed"
+          },
+          {
+            "name": "synthesis_validation",
+            "status": "unknown",
+            "value": null,
+            "reason": "Model route critique is not experimental validation"
+          }
+        ],
+        "failed": [
+          "relaxation"
+        ],
+        "unknown": [
+          "dynamic_stability",
+          "youngs_modulus",
+          "shear_modulus",
+          "thermal_conductivity",
+          "static_dielectric",
+          "structural_novelty",
+          "thermodynamic_stability",
+          "synthesis_validation"
+        ],
+        "fitness": {
+          "vector": [
+            0.0,
+            0,
+            -1
+          ],
+          "dimensions": [
+            "predicted_physics_target_coverage",
+            "uncalibrated_route_support",
+            "negative_failed_checks"
+          ],
+          "selection_only": true,
+          "not_a_success_probability": true
+        },
+        "selection_status": "rejected_for_current_objective",
+        "validated_discovery": false,
+        "test_level": "computational_screening_not_experimental_validation"
+      },
+      "original_property_status": {
+        "youngs_gpa": "withheld_relaxation_unconverged",
+        "shear_gpa": "withheld_relaxation_unconverged",
+        "kappa_w_mk": "disabled_by_configuration",
+        "epsilon_static": "backend_not_configured",
+        "minimum_phonon_thz": "withheld_relaxation_unconverged"
+      }
+    },
+    {
+      "id": "r01-c01",
+      "source_run": "runs/live/20261022-201323-13ab62",
+      "audit": {
+        "properties": {
+          "formula": "BC2N",
+          "elements": [
+            "B",
+            "C",
+            "N"
+          ],
+          "number_of_sites": 4,
+          "input_density_g_cm3": 1.6815608955744288,
+          "input_volume_per_atom_angstrom3": 12.057136000000002,
+          "youngs_gpa": 791.4849864518702,
+          "shear_gpa": 340.9723108558891,
+          "kappa_w_mk": null,
+          "epsilon_static": null,
+          "minimum_phonon_thz": -3.0265113016672144e-07,
+          "energy_ev_per_atom": -8.760037422180176,
+          "provenance": "Input geometry and final evaluator geometry are separate. Final geometry is relaxed only when converged. No borrowed reference values.",
+          "final_density_g_cm3": 3.2947542014084474,
+          "final_volume_per_atom_angstrom3": 6.153663420948239,
+          "final_geometry_converged": true,
+          "phonon_interpretation": "A near-zero minimum alone does not indicate marginal stability: Gamma acoustic translations approach zero. Inspect q points and modes; finite-mesh screening is not a convergence study.",
+          "minimum_elastic_eigenvalue_gpa": 323.4545634223962
+        },
+        "gates": [
+          {
+            "name": "relaxation",
+            "value": true,
+            "status": "pass",
+            "reason": "Converged interatomic-potential relaxation; failure within the step budget is inconclusive about phase stability"
+          },
+          {
+            "name": "dynamic_stability",
+            "value": -3.0265113016672144e-07,
+            "status": "pass",
+            "reason": "Minimum sampled phonon frequency >= -1 THz; finite-mesh screening only"
+          },
+          {
+            "name": "youngs_modulus",
+            "value": 791.4849864518702,
+            "status": "pass",
+            "reason": "Young modulus >= 20 GPa"
+          },
+          {
+            "name": "shear_modulus",
+            "value": 340.9723108558891,
+            "status": "pass",
+            "reason": "Shear modulus >= 6 GPa"
+          },
+          {
+            "name": "thermal_conductivity",
+            "value": null,
+            "status": "unknown",
+            "reason": "Minimum thermal tensor eigenvalue above configured threshold; preliminary until converged"
+          },
+          {
+            "name": "static_dielectric",
+            "value": null,
+            "status": "unknown",
+            "reason": "Static dielectric response in configured interval"
+          },
+          {
+            "name": "structural_novelty",
+            "status": "unknown",
+            "value": null,
+            "reason": "No match is not a proof of worldwide novelty"
+          },
+          {
+            "name": "thermodynamic_stability",
+            "status": "unknown",
+            "value": null,
+            "reason": "Complete same-model competing-phase hull not yet computed"
+          },
+          {
+            "name": "synthesis_validation",
+            "status": "unknown",
+            "value": null,
+            "reason": "Model route critique is not experimental validation"
+          },
+          {
+            "name": "mechanical_stability",
+            "value": 323.4545634223962,
+            "status": "pass",
+            "reason": "Positive definite stiffness under the evaluated zero-pressure convention; finite-strain numerical screening"
+          }
+        ],
+        "failed": [],
+        "unknown": [
+          "thermal_conductivity",
+          "static_dielectric",
+          "structural_novelty",
+          "thermodynamic_stability",
+          "synthesis_validation"
+        ],
+        "fitness": {
+          "vector": [
+            0.6666666666666666,
+            0,
+            0
+          ],
+          "dimensions": [
+            "predicted_physics_target_coverage",
+            "uncalibrated_route_support",
+            "negative_failed_checks"
+          ],
+          "selection_only": true,
+          "not_a_success_probability": true
+        },
+        "selection_status": "needs_more_tests",
+        "validated_discovery": false,
+        "test_level": "computational_screening_not_experimental_validation"
+      },
+      "original_property_status": {
+        "youngs_gpa": "predicted",
+        "shear_gpa": "predicted",
+        "kappa_w_mk": "disabled_by_configuration",
+        "epsilon_static": "backend_not_configured",
+        "minimum_phonon_thz": "predicted"
+      },
+      "thermal_workload": {
+        "status": "budget_exceeded",
+        "required_displacements": 4632,
+        "budget": 0,
+        "configured_displacement_budget": 300,
+        "scope": "Workload inspection only; no forces or conductivity computed"
+      }
+    }
+  ]
+}

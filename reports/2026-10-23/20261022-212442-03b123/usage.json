@@ -1,0 +1,113 @@
+{
+  "calls": [
+    {
+      "stage": "propose:0",
+      "model": "openai/gpt-6-astra",
+      "status": "complete",
+      "started_at": "2026-10-22T21:25:14.662802+00:00",
+      "finished_at": "2026-10-22T21:26:28.232601+00:00",
+      "tokens_reserved": 56598,
+      "tokens_charged": 3086,
+      "usage": {
+        "input_tokens": 3,
+        "output_tokens": 3083,
+        "total_tokens": 19611,
+        "input_tokens_cache_write": 16525,
+        "input_tokens_cache_read": null,
+        "reasoning_tokens": 426,
+        "total_cost": null
+      }
+    },
+    {
+      "stage": "critic:r00-c00",
+      "model": "openai/gpt-6-astra",
+      "status": "complete",
+      "started_at": "2026-10-22T21:26:52.771123+00:00",
+      "finished_at": "2026-10-22T21:27:36.320178+00:00",
+      "tokens_reserved": 32070,
+      "tokens_charged": 2032,
+      "usage": {
+        "input_tokens": 3,
+        "output_tokens": 2029,
+        "total_tokens": 7471,
+        "input_tokens_cache_write": 5439,
+        "input_tokens_cache_read": null,
+        "reasoning_tokens": 125,
+        "total_cost": null
+      }
+    },
+    {
+      "stage": "critic:r00-c01",
+      "model": "openai/gpt-6-astra",
+      "status": "complete",
+      "started_at": "2026-10-22T21:28:00.321133+00:00",
+      "finished_at": "2026-10-22T21:28:42.872617+00:00",
+      "tokens_reserved": 38878,
+      "tokens_charged": 2107,
+      "usage": {
+        "input_tokens": 3,
+        "output_tokens": 2104,
+        "total_tokens": 9072,
+        "input_tokens_cache_write": 6965,
+        "input_tokens_cache_read": null,
+        "reasoning_tokens": 80,
+        "total_cost": null
+      }
+    },
+    {
+      "stage": "propose:1",
+      "model": "openai/gpt-6-astra",
+      "status": "complete",
+      "started_at": "2026-10-22T21:28:44.315485+00:00",
+      "finished_at": "2026-10-22T21:29:47.465682+00:00",
+      "tokens_reserved": 66338,
+      "tokens_charged": 3294,
+      "usage": {
+        "input_tokens": 3,
+        "output_tokens": 3291,
+        "total_tokens": 22657,
+        "input_tokens_cache_write": 19363,
+        "input_tokens_cache_read": null,
+        "reasoning_tokens": 254,
+        "total_cost": null
+      }
+    },
+    {
+      "stage": "critic:r01-c00",
+      "model": "openai/gpt-6-astra",
+      "status": "complete",
+      "started_at": "2026-10-22T21:29:52.400066+00:00",
+      "finished_at": "2026-10-22T21:30:32.823662+00:00",
+      "tokens_reserved": 28549,
+      "tokens_charged": 1961,
+      "usage": {
+        "input_tokens": 3,
+        "output_tokens": 1958,
+        "total_tokens": 6603,
+        "input_tokens_cache_write": 4642,
+        "input_tokens_cache_read": null,
+        "reasoning_tokens": 52,
+        "total_cost": null
+      }
+    },
+    {
+      "stage": "critic:r01-c01",
+      "model": "openai/gpt-6-astra",
+      "status": "complete",
+      "started_at": "2026-10-22T21:32:41.787292+00:00",
+      "finished_at": "2026-10-22T21:33:19.208462+00:00",
+      "tokens_reserved": 40699,
+      "tokens_charged": 1992,
+      "usage": {
+        "input_tokens": 3,
+        "output_tokens": 1989,
+        "total_tokens": 9440,
+        "input_tokens_cache_write": 7448,
+        "input_tokens_cache_read": null,
+        "reasoning_tokens": 0,
+        "total_cost": null
+      }
+    }
+  ],
+  "budget_stop": null
+}

@@ -1,0 +1,940 @@
+{
+  "scope": "Known-reference recognition under equivalent structure representations; not blind discovery or synthesis success.",
+  "library_records": 907259,
+  "tests": [
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-10",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 10,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-10",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 10,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-10",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 10,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100000",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100000",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100000",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100001",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100001",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100001",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100002",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100002",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100002",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100003",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100003",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100003",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100005",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100005",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100005",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100006",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 10,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100006",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 10,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100006",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 10,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100007",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100007",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100007",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100010",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 4,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100010",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 4,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100010",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 4,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100013",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 9,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100013",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 9,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100013",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 9,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100015",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100015",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100015",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100017",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100017",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "jarvis-2025",
+      "id": "JVASP-100017",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 1,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000000",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 15,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000000",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 15,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000000",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 15,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000001",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 15,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000001",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 15,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000001",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 15,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000002",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000002",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000002",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000003",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000003",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000003",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000004",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000004",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000004",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000005",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000005",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000005",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000006",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000006",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000006",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000007",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000007",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000007",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 3,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000008",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 6,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000008",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 6,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000008",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 6,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000009",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 6,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000009",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 6,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000009",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 6,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000010",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 6,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000010",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 6,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000010",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 6,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000011",
+      "representation": "original",
+      "known_match_recovered": true,
+      "checked": 15,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000011",
+      "representation": "translated",
+      "known_match_recovered": true,
+      "checked": 15,
+      "lookup_complete": true
+    },
+    {
+      "dataset": "oqmd-2021",
+      "id": "1000011",
+      "representation": "supercell",
+      "known_match_recovered": true,
+      "checked": 15,
+      "lookup_complete": true
+    }
+  ],
+  "passed": 72,
+  "total": 72,
+  "simulator_controls": [
+    {
+      "name": "Si",
+      "physics": {
+        "status": "partial",
+        "backend": "PET-MAD/1.0.2",
+        "input_digest": "87acf0ad14d6944496cf84f45bba8efc5846f974e5ad9a40abe38b434d1af7fb",
+        "relaxed": {
+          "lattice": [
+            [
+              3.0248530402450333e-05,
+              2.698953759620876,
+              2.699560743479403
+            ],
+            [
+              2.698333019989507,
+              0.00019998608246410017,
+              2.6993910055372163
+            ],
+            [
+              2.698246328814958,
+              2.698697333633156,
+              0.0002866765869335001
+            ]
+          ],
+          "species": [
+            "Si",
+            "Si"
+          ],
+          "frac_coords": [
+            [
+              0.9999640185422852,
+              8.813257736131883e-05,
+              3.0164718660874535e-05
+            ],
+            [
+              0.2500359811916372,
+              0.24991186737391943,
+              0.24996983546438867
+            ]
+          ]
+        },
+        "converged": true,
+        "minimum_phonon_thz": -2.2496346145894514e-07,
+        "youngs_gpa": 176.89410826057556,
+        "shear_gpa": 70.84832627359098,
+        "kappa_w_mk": null,
+        "epsilon_static": null,
+        "epsilon_infinity": null,
+        "warnings": [
+          "Independent local prescreen; official model revision/settings unavailable.",
+          "Static dielectric evaluator is not configured; thermal transport runs only when explicitly enabled.",
+          "Phonons use finite displacements and a finite q mesh, without polar nonanalytic corrections; not a full convergence study."
+        ],
+        "artifacts": {
+          "packages": {
+            "pet-mad": "1.4.4",
+            "ase": "3.29.0",
+            "phonopy": "4.8.3",
+            "torch": "2.10.0"
+          },
+          "exported_model_sha256": "0882eb79b8bc7792128b1d6f6da9ae25cae9ead720ef849c02adddeb5e939751",
+          "energy_ev_per_atom": -5.608390808105469,
+          "max_force_ev_a": 0.001073372883067738,
+          "relaxation_steps": 2,
+          "phonon_supercell": [
+            2,
+            2,
+            2
+          ],
+          "phonon_mesh": [
+            6,
+            6,
+            6
+          ],
+          "phonon_displacements": 6,
+          "phonon_data": "phonons.npz",
+          "elastic_tensor_gpa": [
+            [
+              196.78967935108412,
+              77.65552564630164,
+              77.51564001386973,
+              -0.5472891192579302,
+              0.15247271323694261,
+              1.0960718097990576
+            ],
+            [
+              77.65552564630164,
+              197.0217001665938,
+              77.87772442883214,
+              -1.0011036528623791,
+              -0.02805872661349567,
+              0.9779265588822593
+            ],
+            [
+              77.51564001386973,
+              77.87772442883214,
+              194.78443279435274,
+              -0.5459952532805554,
+              -0.419604643138375,
+              0.37693164836228454
+            ],
+            [
+              -0.5472891192579302,
+              -1.0011036528623791,
+              -0.5459952532805554,
+              79.73934473650807,
+              0.671435569258619,
+              0.10247662471255638
+            ],
+            [
+              0.15247271323694261,
+              -0.02805872661349567,
+              -0.419604643138375,
+              0.671435569258619,
+              79.86029040808037,
+              -0.6874514994557206
+            ],
+            [
+              1.0960718097990576,
+              0.9779265588822593,
+              0.37693164836228454,
+              0.10247662471255638,
+              -0.6874514994557206,
+              79.9135916303449
+            ]
+          ],
+          "elastic_internal_relaxation_converged": true,
+          "elastic_strain": 0.005,
+          "elastic_reduction": "Voigt-Reuss-Hill isotropic aggregate; not a specified film orientation"
+        }
+      },
+      "gates": [
+        {
+          "name": "relaxation",
+          "status": "pass",
+          "reason": "Converged structure relaxation"
+        },
+        {
+          "name": "dynamic_stability",
+          "status": "pass",
+          "reason": "Minimum sampled phonon frequency >= -1 THz"
+        },
+        {
+          "name": "thermal_conductivity",
+          "status": "unknown",
+          "reason": "Thermal conductivity > 20 W/(m K)"
+        },
+        {
+          "name": "static_dielectric",
+          "status": "unknown",
+          "reason": "Static dielectric constant >= 1 and < 10; high-frequency epsilon is not interchangeable"
+        },
+        {
+          "name": "youngs_modulus",
+          "status": "pass",
+          "reason": "Young's modulus >= 20 GPa"
+        },
+        {
+          "name": "shear_modulus",
+          "status": "pass",
+          "reason": "Shear modulus >= 6 GPa"
+        },
+        {
+          "name": "literature_novelty",
+          "status": "unknown",
+          "reason": "No independent dated literature novelty review"
+        },
+        {
+          "name": "synthesis_plausibility",
+          "status": "unknown",
+          "reason": "Official expert-calibrated rubric and reviewer unavailable"
+        }
+      ],
+      "computed_moduli": true,
+      "interpretation": "Simulator smoke test; does not measure accuracy against DFT or experiment."
+    },
+    {
+      "name": "C",
+      "physics": {
+        "status": "partial",
+        "backend": "PET-MAD/1.0.2",
+        "input_digest": "da1bb4a9dc700e37f607cb33def493e33ebbd3d31bc7d5eba55d1d9c90296903",
+        "relaxed": {
+          "lattice": [
+            [
+              0.00029766213462749055,
+              1.776844980382813,
+              1.777041354507755
+            ],
+            [
+              1.7769427991618618,
+              0.0002770151243483093,
+              1.7770620020798928
+            ],
+            [
+              1.7771273637963938,
+              1.7770501927606084,
+              9.245003470438826e-05
+            ]
+          ],
+          "species": [
+            "C",
+            "C"
+          ],
+          "frac_coords": [
+            [
+              0.9999236971276767,
+              4.990191960726358e-06,
+              5.015374160916601e-05
+            ],
+            [
+              0.25007630202088676,
+              0.24999501026819207,
+              0.24994984584965435
+            ]
+          ]
+        },
+        "converged": true,
+        "minimum_phonon_thz": -4.965285061510008e-07,
+        "youngs_gpa": 1059.0666406909486,
+        "shear_gpa": 474.619393333872,
+        "kappa_w_mk": null,
+        "epsilon_static": null,
+        "epsilon_infinity": null,
+        "warnings": [
+          "Independent local prescreen; official model revision/settings unavailable.",
+          "Static dielectric evaluator is not configured; thermal transport runs only when explicitly enabled.",
+          "Phonons use finite displacements and a finite q mesh, without polar nonanalytic corrections; not a full convergence study."
+        ],
+        "artifacts": {
+          "packages": {
+            "pet-mad": "1.4.4",
+            "ase": "3.29.0",
+            "phonopy": "4.8.3",
+            "torch": "2.10.0"
+          },
+          "exported_model_sha256": "af7c7ff66560d56d6b6628284fa1fc8238616fb41ada1aca8b571399eb27f872",
+          "energy_ev_per_atom": -9.496663093566895,
+          "max_force_ev_a": 0.0014002092434574195,
+          "relaxation_steps": 2,
+          "phonon_supercell": [
+            2,
+            2,
+            2
+          ],
+          "phonon_mesh": [
+            6,
+            6,
+            6
+          ],
+          "phonon_displacements": 6,
+          "phonon_data": "phonons.npz",
+          "elastic_tensor_gpa": [
+            [
+              1037.7830080087738,
+              171.5298389918698,
+              170.90714895957058,
+              -1.0367282233657023,
+              0.011624326006133383,
+              -1.222087854097665
+            ],
+            [
+              171.5298389918698,
+              1035.7687339853467,
+              170.53077820552653,
+              -1.732929246870811,
+              0.08878979407389098,
+              -0.5214597697846312
+            ],
+            [
+              170.90714895957058,
+              170.53077820552653,
+              1034.2918702768106,
+              -0.23586751419277768,
+              0.3973620038719944,
+              -0.2870225565038079
+            ],
+            [
+              -1.0367282233657023,
+              -1.732929246870811,
+              -0.23586751419277768,
+              504.6551442611174,
+              -1.579315080472711,
+              0.05937838368036753
+            ],
+            [
+              0.011624326006133383,
+              0.08878979407389098,
+              0.3973620038719944,
+              -1.579315080472711,
+              504.77688076861523,
+              -0.7572976232586929
+            ],
+            [
+              -1.222087854097665,
+              -0.5214597697846312,
+              -0.2870225565038079,
+              0.05937838368036753,
+              -0.7572976232586929,
+              505.5531086115443
+            ]
+          ],
+          "elastic_internal_relaxation_converged": true,
+          "elastic_strain": 0.005,
+          "elastic_reduction": "Voigt-Reuss-Hill isotropic aggregate; not a specified film orientation"
+        }
+      },
+      "gates": [
+        {
+          "name": "relaxation",
+          "status": "pass",
+          "reason": "Converged structure relaxation"
+        },
+        {
+          "name": "dynamic_stability",
+          "status": "pass",
+          "reason": "Minimum sampled phonon frequency >= -1 THz"
+        },
+        {
+          "name": "thermal_conductivity",
+          "status": "unknown",
+          "reason": "Thermal conductivity > 20 W/(m K)"
+        },
+        {
+          "name": "static_dielectric",
+          "status": "unknown",
+          "reason": "Static dielectric constant >= 1 and < 10; high-frequency epsilon is not interchangeable"
+        },
+        {
+          "name": "youngs_modulus",
+          "status": "pass",
+          "reason": "Young's modulus >= 20 GPa"
+        },
+        {
+          "name": "shear_modulus",
+          "status": "pass",
+          "reason": "Shear modulus >= 6 GPa"
+        },
+        {
+          "name": "literature_novelty",
+          "status": "unknown",
+          "reason": "No independent dated literature novelty review"
+        },
+        {
+          "name": "synthesis_plausibility",
+          "status": "unknown",
+          "reason": "Official expert-calibrated rubric and reviewer unavailable"
+        }
+      ],
+      "computed_moduli": true,
+      "interpretation": "Simulator smoke test; does not measure accuracy against DFT or experiment."
+    }
+  ],
+  "experimental_validation": false,
+  "sota_comparison": false
+}

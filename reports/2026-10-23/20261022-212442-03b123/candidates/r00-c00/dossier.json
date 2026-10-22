@@ -1,0 +1,855 @@
+{
+  "id": "r00-c00",
+  "kind": "computational_hypothesis",
+  "hypothesis": {
+    "name": "Si3AlC3N \u2014 ordered Al\u2013N-pair-substituted cubic framework",
+    "hypothesis": "A periodically ordered, nearest-neighbor Al\u2013N substitution pair in a tetrahedral SiC-derived framework may preserve an insulating electronic structure while retaining connected Si\u2013C heat-transport pathways. This is an unrelaxed structural hypothesis, not a demonstrated compound. Route hypothesis A: template-assisted epitaxial incorporation of paired Al and N during SiC-derived film growth. The supplied SiC study supports epitaxial integration as a platform, but does not demonstrate this composition, paired incorporation, or chemical ordering. Route hypothesis B: sequential precursor delivery during epitaxial growth to favor correlated incorporation rather than a random alloy. This is an extrapolation from the same growth platform; neither the sequencing mechanism nor the required process window is established by the supplied evidence.",
+    "crystal": {
+      "lattice": [
+        [
+          4.38,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          4.38,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          4.38
+        ]
+      ],
+      "species": [
+        "Al",
+        "Si",
+        "Si",
+        "Si",
+        "N",
+        "C",
+        "C",
+        "C"
+      ],
+      "frac_coords": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.0,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.0
+        ],
+        [
+          0.25,
+          0.25,
+          0.25
+        ],
+        [
+          0.25,
+          0.75,
+          0.75
+        ],
+        [
+          0.75,
+          0.25,
+          0.75
+        ],
+        [
+          0.75,
+          0.75,
+          0.25
+        ]
+      ]
+    },
+    "expected_advantage": "Potentially combines compensated electronic bonding with a dense, connected tetrahedral framework and a SiC-related integration platform. Any useful thermal transport, dielectric response, or advantage over existing SiC films remains unverified.",
+    "closest_known_material": "Cubic SiC and AlN are the chemical end-member references. This cell is an ordered mixed carbide\u2013nitride hypothesis, not either supplied binary seed. Related SiC\u2013AlN compositions and orderings require a broader literature and structure-database search.",
+    "falsification_test": "First perform unconstrained first-principles relaxation from this cell and competing Al/N arrangements, including symmetry-broken supercells. Test decomposition against SiC, AlN, and other competing Si\u2013Al\u2013C\u2013N phases, then evaluate phonons throughout the Brillouin zone. Reject the proposed insulating mechanism if converged electronic calculations show partially occupied or connected in-gap states; examine paired and separated substitutions and likely vacancy defects. Only for surviving insulating structures calculate dielectric response, band alignment to relevant chip materials, and anharmonic phonon transport with disorder and interface scattering. A lower-energy reconstructed topology, accessible decomposition, or unstable ordering would invalidate this specific framework. Future growth validation would require chemical-order-sensitive diffraction and microscopy, not composition alone.",
+    "citations": [
+      {
+        "source_id": "6b86863bf194c529",
+        "chunk_id": "6b86863bf194c529:0:0"
+      },
+      {
+        "source_id": "6b86863bf194c529",
+        "chunk_id": "6b86863bf194c529:0:0"
+      }
+    ],
+    "parent_ids": [],
+    "mutation_operator": "explore",
+    "parent_issues_addressed": [],
+    "change_rationale": "Replace a neighboring Si\u2013C pair by Al\u2013N rather than introduce an uncompensated isolated dopant. This changes the seed chemistry and translational chemical order while retaining a physically interpretable starting connectivity. There is no eligible archived parent; supplied computational memory is used only to prioritize missing electronic and transport tests.",
+    "expected_tradeoffs": [
+      "Al\u2013C and Si\u2013N cross-bonds may introduce local strain, unfavorable charge redistribution, or gap states despite global electron counting.",
+      "Chemical ordering may reduce random-alloy scattering, but changed force constants and additional phonon branches can still impair heat transport.",
+      "Phase separation toward SiC and AlN may be preferred over the proposed ordered phase.",
+      "Growth conditions needed for ordering may be incompatible with completed chip stacks; interface traps and leakage could preclude dielectric use."
+    ],
+    "predicted_mechanism": "Paired heterovalent substitution preserves the total bonding-electron count. A fully connected tetrahedral network could support dispersive acoustic modes, while periodic rather than random chemical placement avoids one source of disorder scattering. Neither electron counting nor network stiffness establishes insulation or thermal performance.",
+    "bonding_justification": "Formal Si(IV), Al(III), C(\u2212IV), and N(\u2212III) charges balance for Si3AlC3N. Equivalently, replacing Si\u2013C with Al\u2013N preserves the valence-electron total expected for a saturated tetrahedral network. These formal counts do not ensure local bond satisfaction: test charge density, projected density of states, bond populations, and occupied antibonding character after relaxation."
+  },
+  "evaluated_crystal": {
+    "lattice": [
+      [
+        4.353977239507212,
+        0.00025669136263999445,
+        0.000682465480194149
+      ],
+      [
+        0.0002566404744410228,
+        4.354266472789087,
+        0.000613780756084533
+      ],
+      [
+        0.0006823196759259361,
+        0.0006136863323057909,
+        4.354327667909745
+      ]
+    ],
+    "species": [
+      "Al",
+      "Si",
+      "Si",
+      "Si",
+      "N",
+      "C",
+      "C",
+      "C"
+    ],
+    "frac_coords": [
+      [
+        0.0019171436320642506,
+        0.001936595796437833,
+        0.0020713065874280114
+      ],
+      [
+        0.9978256430480815,
+        0.5016530794554456,
+        0.501708210873334
+      ],
+      [
+        0.5016144248758871,
+        0.9978560662897498,
+        0.5017817937848806
+      ],
+      [
+        0.5018037761185948,
+        0.5019352671719519,
+        0.9975624654488412
+      ],
+      [
+        0.2577350524118657,
+        0.25754983361547706,
+        0.25759573335012925
+      ],
+      [
+        0.256846473797028,
+        0.7411745453563539,
+        0.7411633006064084
+      ],
+      [
+        0.7411498941400348,
+        0.25679861804555165,
+        0.7411978163342625
+      ],
+      [
+        0.7411075875059259,
+        0.7410959946215516,
+        0.25691937487242567
+      ]
+    ]
+  },
+  "hypothesis_citation_checks": [
+    {
+      "valid": true,
+      "full_text": false,
+      "reason": "Exact quote found; entailment still needs review"
+    },
+    {
+      "valid": true,
+      "full_text": false,
+      "reason": "Exact quote found; entailment still needs review"
+    }
+  ],
+  "physics": {
+    "status": "partial",
+    "backend": "PET-MAD/1.0.2",
+    "input_digest": "80f51210eac61ffe878ad7d4ee44ba70129657d8768fda8ea35b3899f07b9d93",
+    "relaxed": {
+      "lattice": [
+        [
+          4.353977239507212,
+          0.00025669136263999445,
+          0.000682465480194149
+        ],
+        [
+          0.0002566404744410228,
+          4.354266472789087,
+          0.000613780756084533
+        ],
+        [
+          0.0006823196759259361,
+          0.0006136863323057909,
+          4.354327667909745
+        ]
+      ],
+      "species": [
+        "Al",
+        "Si",
+        "Si",
+        "Si",
+        "N",
+        "C",
+        "C",
+        "C"
+      ],
+      "frac_coords": [
+        [
+          0.0019171436320642506,
+          0.001936595796437833,
+          0.0020713065874280114
+        ],
+        [
+          0.9978256430480815,
+          0.5016530794554456,
+          0.501708210873334
+        ],
+        [
+          0.5016144248758871,
+          0.9978560662897498,
+          0.5017817937848806
+        ],
+        [
+          0.5018037761185948,
+          0.5019352671719519,
+          0.9975624654488412
+        ],
+        [
+          0.2577350524118657,
+          0.25754983361547706,
+          0.25759573335012925
+        ],
+        [
+          0.256846473797028,
+          0.7411745453563539,
+          0.7411633006064084
+        ],
+        [
+          0.7411498941400348,
+          0.25679861804555165,
+          0.7411978163342625
+        ],
+        [
+          0.7411075875059259,
+          0.7410959946215516,
+          0.25691937487242567
+        ]
+      ]
+    },
+    "converged": true,
+    "minimum_phonon_thz": -3.7995154719331765e-07,
+    "youngs_gpa": 378.9873214806584,
+    "shear_gpa": 154.28647669251205,
+    "kappa_w_mk": null,
+    "epsilon_static": null,
+    "epsilon_infinity": null,
+    "warnings": [
+      "Independent local prescreen; official model revision/settings unavailable.",
+      "Static dielectric evaluator is not configured; thermal transport runs only when explicitly enabled.",
+      "Phonons use finite displacements and a finite q mesh, without polar nonanalytic corrections; not a full convergence study.",
+      "Thermal conductivity withheld: {'status': 'budget_exceeded', 'required_displacements': 18480, 'budget': 300, 'completed_displacements': 0, 'temperature_k': 300, 'mesh': [9, 9, 9], 'reason': 'Required displacements exceed configured budget'}"
+    ],
+    "artifacts": {
+      "packages": {
+        "pet-mad": "1.4.4",
+        "ase": "3.29.0",
+        "phonopy": "4.8.3",
+        "torch": "2.10.0"
+      },
+      "requested_calculations": {
+        "elastic": true,
+        "thermal": true
+      },
+      "exported_model_sha256": "63fa4dbc4131ac43bb05a05be14241d73f71865b2d9def2e9a9570cb94c43f0a",
+      "energy_ev_per_atom": -7.683630466461182,
+      "max_force_ev_a": 0.026690821073674313,
+      "stress_gpa": [
+        [
+          0.01947803937490781,
+          -0.07036818429156264,
+          -0.08798084642185411
+        ],
+        [
+          -0.07036818429156264,
+          0.012135486854537268,
+          -0.07880591866902535
+        ],
+        [
+          -0.08798084642185411,
+          -0.07880591866902535,
+          0.004143987826387316
+        ]
+      ],
+      "pressure_gpa": -0.011919171351944131,
+      "relaxation_steps": 8,
+      "phonon_supercell": [
+        2,
+        2,
+        2
+      ],
+      "phonon_mesh": [
+        6,
+        6,
+        6
+      ],
+      "phonon_displacements": 48,
+      "phonon_diagnostics": {
+        "modes_below_minus_0_1_thz": 0,
+        "gamma_frequencies_thz": [
+          [
+            -3.7995154719331765e-07,
+            3.1132090974890115e-08,
+            1.8782558006903516e-07,
+            9.60822020679382,
+            9.623526648265461,
+            9.784362836958413,
+            10.8210984077137,
+            10.827896937531785,
+            10.946475178519398,
+            16.20830792696949,
+            16.942505823419843,
+            16.959232155884227,
+            18.124996186437073,
+            18.153870691679526,
+            19.578194601395506,
+            22.781488118052273,
+            22.895788799926088,
+            22.923247004849788,
+            23.356003324705938,
+            23.367716680843778,
+            23.75083891352304,
+            24.219464978771935,
+            24.28415761980968,
+            24.301602254322532
+          ]
+        ],
+        "interpretation": "Three Gamma acoustic translations approach zero. Near-zero numerical signs alone are not evidence of marginal stability; convergence and mode inspection are still required."
+      },
+      "phonon_data": "phonons.npz",
+      "elastic_tensor_gpa": [
+        [
+          378.3690919774847,
+          160.2334192619921,
+          160.36186295342316,
+          -5.046403164372372,
+          3.0736343879069317,
+          2.8024390087570437
+        ],
+        [
+          160.2334192619921,
+          375.4895837659396,
+          159.84067223571927,
+          2.392645240309749,
+          -4.950054104625655,
+          2.6957422306107834
+        ],
+        [
+          160.36186295342316,
+          159.84067223571927,
+          376.7807950106299,
+          2.6782711856985424,
+          3.3888986990062695,
+          -5.109925130785548
+        ],
+        [
+          -5.046403164372372,
+          2.392645240309749,
+          2.6782711856985424,
+          195.57303796558608,
+          -0.18463885559535445,
+          0.12640097062904254
+        ],
+        [
+          3.0736343879069317,
+          -4.950054104625655,
+          3.3888986990062695,
+          -0.18463885559535445,
+          195.82695225301163,
+          0.02300395290432411
+        ],
+        [
+          2.8024390087570437,
+          2.6957422306107834,
+          -5.109925130785548,
+          0.12640097062904254,
+          0.02300395290432411,
+          195.69389410856303
+        ]
+      ],
+      "elastic_internal_relaxation_converged": true,
+      "elastic_strain": 0.005,
+      "elastic_reduction": "Voigt-Reuss-Hill isotropic aggregate; not a specified film orientation",
+      "thermal": {
+        "status": "budget_exceeded",
+        "required_displacements": 18480,
+        "budget": 300,
+        "completed_displacements": 0,
+        "temperature_k": 300,
+        "mesh": [
+          9,
+          9,
+          9
+        ],
+        "reason": "Required displacements exceed configured budget"
+      }
+    }
+  },
+  "novelty": {
+    "structure_status": "unresolved",
+    "matches": [],
+    "coverage": [
+      {
+        "provider": "oqmd",
+        "endpoint": "https://www.oqmd.org/optimade/structures",
+        "retrieved_at": "2026-10-22T21:26:43.672728+00:00",
+        "complete": false,
+        "skipped_records": 0,
+        "status": "error",
+        "error_type": "HTTPError",
+        "match_parse_failures": 0,
+        "records_checked": 0
+      },
+      {
+        "provider": "jarvis",
+        "endpoint": "https://jarvis.nist.gov/optimade/jarvisdft/v1/structures/",
+        "retrieved_at": "2026-10-22T21:26:45.227074+00:00",
+        "complete": true,
+        "skipped_records": 0,
+        "status": "ok",
+        "match_parse_failures": 0,
+        "records_checked": 1
+      },
+      {
+        "provider": "materials_project",
+        "retrieved_at": "2026-10-22T21:26:47.202484+00:00",
+        "complete": true,
+        "status": "ok",
+        "match_parse_failures": 0,
+        "records_checked": 2
+      }
+    ],
+    "local_library": {
+      "provider": "local_reference_library",
+      "status": "ok",
+      "matches": [],
+      "same_composition_records": 0,
+      "records_checked": 0,
+      "comparison_errors": 0,
+      "composition_lookup_complete": true,
+      "global_novelty_established": false,
+      "datasets": [
+        "jarvis-2025",
+        "oqmd-2021"
+      ]
+    },
+    "online_lookup": "queried",
+    "literature_novelty": "unresolved",
+    "scope": "Chemical-system structure search; thin-film/process novelty needs separate review"
+  },
+  "uncertainties": [
+    "Thermodynamic hull not computed: consistent-model competing phases are required.",
+    "Literature search is bounded; absence of a result is not global novelty.",
+    "Route review is uncalibrated and requires an experimentalist.",
+    "Static dielectric response requires a validated tensor model or DFT/DFPT.",
+    "Thermal conductivity has not been calculated for this candidate."
+  ],
+  "target_assessment": {
+    "thermal_conductivity": {
+      "target": 20.0,
+      "value": null,
+      "status": "unknown"
+    },
+    "static_dielectric": {
+      "target_max": 10.0,
+      "value": null,
+      "status": "unknown"
+    }
+  },
+  "assessment": {
+    "properties": {
+      "formula": "AlSi3C3N",
+      "elements": [
+        "Al",
+        "C",
+        "N",
+        "Si"
+      ],
+      "number_of_sites": 8,
+      "input_density_g_cm3": 3.18712258751147,
+      "input_volume_per_atom_angstrom3": 10.503459,
+      "youngs_gpa": 378.9873214806584,
+      "shear_gpa": 154.28647669251205,
+      "kappa_w_mk": null,
+      "epsilon_static": null,
+      "minimum_phonon_thz": -3.7995154719331765e-07,
+      "energy_ev_per_atom": -7.683630466461182,
+      "provenance": "Input geometry and final evaluator geometry are separate. Final geometry is relaxed only when converged. No borrowed reference values.",
+      "final_density_g_cm3": 3.2441345300117472,
+      "final_volume_per_atom_angstrom3": 10.318872758269805,
+      "final_geometry_converged": true,
+      "phonon_interpretation": "Three Gamma acoustic translations approach zero. Near-zero numerical signs alone are not evidence of marginal stability; convergence and mode inspection are still required.",
+      "bulk_gpa": 232.38801519992586,
+      "poisson_ratio": 0.22819358379661447,
+      "elastic_derived_provenance": "Isotropic identities from evaluator Voigt\u2013Reuss\u2013Hill Young and shear moduli; not independent tests.",
+      "max_force_ev_a": 0.026690821073674313,
+      "stress_gpa": [
+        [
+          0.01947803937490781,
+          -0.07036818429156264,
+          -0.08798084642185411
+        ],
+        [
+          -0.07036818429156264,
+          0.012135486854537268,
+          -0.07880591866902535
+        ],
+        [
+          -0.08798084642185411,
+          -0.07880591866902535,
+          0.004143987826387316
+        ]
+      ],
+      "pressure_gpa": -0.011919171351944131,
+      "minimum_elastic_eigenvalue_gpa": 192.83199763318225
+    },
+    "gates": [
+      {
+        "name": "relaxation",
+        "value": true,
+        "status": "pass",
+        "reason": "Converged interatomic-potential relaxation; failure within the step budget is inconclusive about phase stability"
+      },
+      {
+        "name": "dynamic_stability",
+        "value": -3.7995154719331765e-07,
+        "status": "pass",
+        "reason": "Minimum sampled phonon frequency >= -1 THz; finite-mesh screening only"
+      },
+      {
+        "name": "youngs_modulus",
+        "value": 378.9873214806584,
+        "status": "pass",
+        "reason": "Young modulus >= 20 GPa"
+      },
+      {
+        "name": "shear_modulus",
+        "value": 154.28647669251205,
+        "status": "pass",
+        "reason": "Shear modulus >= 6 GPa"
+      },
+      {
+        "name": "thermal_conductivity",
+        "value": null,
+        "status": "unknown",
+        "reason": "Minimum thermal tensor eigenvalue above configured threshold; preliminary until converged"
+      },
+      {
+        "name": "static_dielectric",
+        "value": null,
+        "status": "unknown",
+        "reason": "Static dielectric response in configured interval"
+      },
+      {
+        "name": "structural_novelty",
+        "status": "unknown",
+        "value": null,
+        "reason": "No match is not a proof of worldwide novelty"
+      },
+      {
+        "name": "thermodynamic_stability",
+        "status": "unknown",
+        "value": null,
+        "reason": "Complete same-model competing-phase hull not yet computed"
+      },
+      {
+        "name": "synthesis_validation",
+        "status": "unknown",
+        "value": null,
+        "reason": "Model route critique is not experimental validation"
+      },
+      {
+        "name": "mechanical_stability",
+        "value": 192.83199763318225,
+        "status": "pass",
+        "reason": "Positive definite stiffness under the evaluated zero-pressure convention; finite-strain numerical screening"
+      }
+    ],
+    "failed": [],
+    "unknown": [
+      "thermal_conductivity",
+      "static_dielectric",
+      "structural_novelty",
+      "thermodynamic_stability",
+      "synthesis_validation"
+    ],
+    "fitness": {
+      "vector": [
+        0.6666666666666666,
+        0,
+        0
+      ],
+      "dimensions": [
+        "predicted_physics_target_coverage",
+        "uncalibrated_route_support",
+        "negative_failed_checks"
+      ],
+      "selection_only": true,
+      "not_a_success_probability": true
+    },
+    "selection_status": "needs_more_tests",
+    "validated_discovery": false,
+    "test_level": "computational_screening_not_experimental_validation",
+    "composition_audit": {
+      "formula": "AlSi3C3N",
+      "cell_composition": {
+        "Al": 1,
+        "Si": 3,
+        "N": 1,
+        "C": 3
+      },
+      "label_discrepancies": [],
+      "nominal_oxidation_states": null,
+      "nominal_charge_per_cell": null,
+      "charge_status": "not_applicable",
+      "interpretation": "Formal charge counting tests the proposed ionic/closed-shell rationale, not the existence of covalent, mixed-valent or metallic phases. Nonzero residual requires a justified bonding/electronic-structure calculation.",
+      "electronic_validation": "not_computed"
+    },
+    "proposal_preflight": {
+      "status": "ready_for_screening",
+      "issues": [],
+      "scope": "Proposal consistency only; this does not prove phase stability or validate alternative bonding."
+    },
+    "property_status": {
+      "youngs_gpa": "predicted",
+      "shear_gpa": "predicted",
+      "kappa_w_mk": "budget_exceeded",
+      "epsilon_static": "backend_not_configured",
+      "minimum_phonon_thz": "predicted"
+    }
+  },
+  "critic": {
+    "recommendation": "test_further",
+    "findings": [
+      {
+        "domain": "physics",
+        "severity": "informational",
+        "issue": "The evaluator supports local mechanical viability, not a demonstrated material: potential-based relaxation converged, with final density 3.2441345300117472 g/cm3, predicted Young modulus 378.9873214806584 GPa, shear modulus 154.28647669251205 GPa, and minimum elastic eigenvalue 192.83199763318225 GPa. The minimum sampled phonon frequency, -3.7995154719331765e-07 THz, is consistent with near-zero Gamma translations and is not evidence of softness. The remaining weakness is limited validation across models, wavevectors, and alternative distortions; no supplied result establishes an instability.",
+        "evidence_fields": [
+          "relaxation",
+          "final_geometry_converged",
+          "final_density_g_cm3",
+          "youngs_gpa",
+          "shear_gpa",
+          "minimum_elastic_eigenvalue_gpa",
+          "minimum_phonon_thz",
+          "phonon_interpretation",
+          "dynamic_stability"
+        ],
+        "citations": [],
+        "recommended_test": "Independently relax symmetry-broken supercells using converged first-principles calculations, then inspect phonon eigenvectors and convergence throughout the Brillouin zone. Distinguish translational numerical residuals from genuine unstable finite-wavevector modes.",
+        "valid_evidence_fields": [
+          "relaxation",
+          "final_geometry_converged",
+          "final_density_g_cm3",
+          "youngs_gpa",
+          "shear_gpa",
+          "minimum_elastic_eigenvalue_gpa",
+          "minimum_phonon_thz",
+          "phonon_interpretation",
+          "dynamic_stability"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "physics",
+        "severity": "uncertain",
+        "issue": "The ordered framework may lose to phase separation or another chemical ordering even if it remains mechanically stable. Its model energy of -7.683630466461182 eV/atom cannot establish thermodynamic stability without consistently computed competing phases. Al-C and Si-N cross-bonds in the proposed starting network are possible sources of unfavorable local bonding, not demonstrated energetic penalties. Rearranging substitutions or adopting SiC-rich/AlN-rich regions could reduce such penalties if they are confirmed.",
+        "evidence_fields": [
+          "energy_ev_per_atom",
+          "thermodynamic_stability",
+          "composition_audit.cell_composition",
+          "mechanical_stability"
+        ],
+        "citations": [],
+        "recommended_test": "Compare paired, separated, and clustered Al/N arrangements at fixed composition against 3 SiC + AlN and a broader same-method Si-Al-C-N competing-phase hull. Quantify ordering energies and, if differences are small, finite-temperature free-energy contributions.",
+        "valid_evidence_fields": [
+          "energy_ev_per_atom",
+          "thermodynamic_stability",
+          "composition_audit.cell_composition",
+          "mechanical_stability"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "physics",
+        "severity": "uncertain",
+        "issue": "Global electron counting does not demonstrate insulation. The proposed formal charges balance, but the evaluator did not compute nominal charges or electronic structure; its charge status is not a failed neutrality test. Local charge redistribution, cross-bond states, or vacancy compensation could defeat the proposed closed-shell mechanism. Static dielectric response is also unknown and cannot be inferred from stiffness. Lower substitution concentration or a different pair arrangement might reduce problematic local environments, but could also introduce isolated defect states.",
+        "evidence_fields": [
+          "composition_audit.cell_composition",
+          "composition_audit.nominal_charge_per_cell",
+          "composition_audit.charge_status",
+          "composition_audit.electronic_validation",
+          "epsilon_static",
+          "static_dielectric"
+        ],
+        "citations": [],
+        "recommended_test": "Calculate converged band structures, projected densities of states, and charge densities for competing arrangements and plausible vacancies. Check any apparent small gap with a suitable higher-level electronic method; calculate electronic and ionic dielectric response only for surviving insulating structures.",
+        "valid_evidence_fields": [
+          "composition_audit.cell_composition",
+          "composition_audit.nominal_charge_per_cell",
+          "composition_audit.charge_status",
+          "composition_audit.electronic_validation",
+          "epsilon_static",
+          "static_dielectric"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "physics",
+        "severity": "uncertain",
+        "issue": "Useful heat transport remains untested: thermal conductivity is null, not low or high. Connected Si-C bonds and large elastic moduli do not determine phonon lifetimes. The proposed composition replaces one quarter of each parent sublattice, so this is not a dilute substitution limit. Perfect periodic order avoids random-alloy disorder but changes the vibrational spectrum and anharmonic interactions; imperfect ordering could add scattering. Dilution may preserve more SiC-like environments, while clustering may exchange distributed disorder for interface resistance. Neither improvement is established.",
+        "evidence_fields": [
+          "composition_audit.cell_composition",
+          "number_of_sites",
+          "kappa_w_mk",
+          "thermal_conductivity",
+          "youngs_gpa",
+          "shear_gpa"
+        ],
+        "citations": [
+          {
+            "source_id": "6b86863bf194c529",
+            "chunk_id": "6b86863bf194c529:0:0"
+          }
+        ],
+        "recommended_test": "For electronically and structurally viable candidates, compare converged anharmonic thermal-conductivity tensors for ordered, disordered, and lower-substitution structures against SiC using consistent methods and temperature. Include disorder and boundary effects appropriate to the intended films.",
+        "valid_evidence_fields": [
+          "composition_audit.cell_composition",
+          "number_of_sites",
+          "kappa_w_mk",
+          "thermal_conductivity",
+          "youngs_gpa",
+          "shear_gpa"
+        ],
+        "citation_checks": [
+          {
+            "valid": true,
+            "full_text": false,
+            "reason": "Exact quote found; entailment still needs review"
+          }
+        ],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "synthesis",
+        "severity": "uncertain",
+        "issue": "The growth routes remain hypotheses. The supplied SiC evidence supports an epitaxial integration platform, not paired Al/N incorporation or long-range order in AlSi3C3N. Uncorrelated incorporation, segregation, and defects could destroy the ideal periodic structure on which the proposed mechanism relies. Sequential delivery may influence incorporation but is not evidence that the intended nearest-neighbor order is kinetically accessible.",
+        "evidence_fields": [
+          "synthesis_validation",
+          "composition_audit.formula"
+        ],
+        "citations": [
+          {
+            "source_id": "6b86863bf194c529",
+            "chunk_id": "6b86863bf194c529:0:0"
+          }
+        ],
+        "recommended_test": "After energetic screening, compare simultaneous and sequential incorporation in a controlled growth series. Use order-sensitive diffraction and chemically resolved microscopy to distinguish the proposed ordering from a random alloy or phase-separated film; composition alone is insufficient.",
+        "valid_evidence_fields": [
+          "synthesis_validation",
+          "composition_audit.formula"
+        ],
+        "citation_checks": [
+          {
+            "valid": true,
+            "full_text": false,
+            "reason": "Exact quote found; entailment still needs review"
+          }
+        ],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "novelty",
+        "severity": "uncertain",
+        "issue": "Structural novelty remains unresolved. An unknown novelty gate cannot support a discovery claim, and changing chemical order does not by itself establish originality relative to SiC-AlN alloy or ordered-phase literature.",
+        "evidence_fields": [
+          "structural_novelty"
+        ],
+        "citations": [],
+        "recommended_test": "Complete structure matching and a targeted literature review of SiC-AlN solid solutions, ordered carbide-nitride structures, and paired incorporation routes. Assess composition, ordering, and growth-process novelty separately.",
+        "valid_evidence_fields": [
+          "structural_novelty"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      }
+    ],
+    "why_try_a_different_material": "There is no demonstrated mechanical failure requiring abandonment. The reason to explore alternatives is the unverified combination of phase stability, insulation, thermal transport, and accessible chemical order. Lower Al/N concentration, alternative ordering, or deliberately separated SiC/AlN regions offer controlled comparisons that may reduce unfavorable local bonding or ordering demands. They are hypotheses to test, not established improvements.",
+    "suggested_changes": [
+      "First vary Al/N arrangement at fixed composition to isolate the effect of pairing and cross-bond topology.",
+      "Screen charge-compensated lower-concentration substitutions in larger SiC-derived cells, alongside disordered configurations.",
+      "Use SiC and deliberately structured SiC/AlN regions as controls rather than assuming the quaternary phase offers an advantage.",
+      "Keep the original candidate until consistent energetic and electronic comparisons provide a physical reason to prefer an alternative."
+    ],
+    "tradeoffs": [
+      "Dilution preserves more parent-like environments but may sacrifice the intended compositional effect and produce isolated electronic defects.",
+      "Chemical order removes one source of disorder scattering but may require a narrow growth window and does not guarantee long phonon lifetimes.",
+      "Clustering or layering may favor end-member bonding while introducing thermal boundary resistance, strain, and interface states.",
+      "Epitaxial constraint may help retain a metastable arrangement but can introduce strain and defects; constrained-film viability is distinct from bulk stability."
+    ],
+    "next_discriminating_test": "Perform a same-method first-principles energetic and electronic comparison of the proposed order, separated-pair and clustered arrangements, symmetry-broken supercells, and the 3 SiC + AlN decomposition reference. Determine whether the framework retains its topology and an insulating electronic structure, and whether pairing is energetically favored. A reconstructed topology or metallic solution would directly challenge the proposed mechanism; a favorable result would justify broader hull, phonon, dielectric, and transport calculations, not establish synthesis or device performance.",
+    "calibrated": false,
+    "can_override_physics": false
+  },
+  "composition_audit": {
+    "formula": "AlSi3C3N",
+    "cell_composition": {
+      "Al": 1,
+      "Si": 3,
+      "N": 1,
+      "C": 3
+    },
+    "label_discrepancies": [],
+    "nominal_oxidation_states": null,
+    "nominal_charge_per_cell": null,
+    "charge_status": "not_applicable",
+    "interpretation": "Formal charge counting tests the proposed ionic/closed-shell rationale, not the existence of covalent, mixed-valent or metallic phases. Nonzero residual requires a justified bonding/electronic-structure calculation.",
+    "electronic_validation": "not_computed"
+  },
+  "synthesis_status": "paused_by_configuration",
+  "failed_physics": [],
+  "discovery_established": false,
+  "experimental_validation": false,
+  "official_comparable": false,
+  "routes": {
+    "routes": []
+  },
+  "route_assessments": [],
+  "publication_notice": "Saved model reasoning and checks are unverified. Citation excerpts and underlying paper text are omitted; consult sources.json for provenance."
+}

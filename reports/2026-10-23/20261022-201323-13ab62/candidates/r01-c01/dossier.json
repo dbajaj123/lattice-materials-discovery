@@ -1,0 +1,697 @@
+{
+  "id": "r01-c01",
+  "kind": "computational_hypothesis",
+  "hypothesis": {
+    "name": "BC2N",
+    "hypothesis": "An ordered diamond-derived BC2N polymorph, with B and N occupying distinct substitutional sites in a 3D sp3 carbon-like network, could be a metastable dielectric candidate that sits chemically between diamond and cubic BN without reproducing either seed exactly. The working hypothesis is that preserving a fully tetrahedral, short-bond 3D network while introducing complementary B/N substitution can open an insulating electronic structure and retain comparatively strong phonon transport, provided site ordering avoids graphitic reconstruction.",
+    "crystal": {
+      "lattice": [
+        [
+          3.64,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          3.64,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          3.64
+        ]
+      ],
+      "species": [
+        "B",
+        "C",
+        "C",
+        "N"
+      ],
+      "frac_coords": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.5,
+          0.0
+        ],
+        [
+          0.5,
+          0.0,
+          0.5
+        ],
+        [
+          0.25,
+          0.25,
+          0.25
+        ]
+      ]
+    },
+    "expected_advantage": "If an ordered sp3 BC2N network is locally stable, it could combine the wide-gap tendency of B-N polarity with the stiff, light-element covalent framework associated with strong heat transport in diamond-like materials, while remaining compositionally distinct from the seed binaries.",
+    "closest_known_material": "Diamond-derived ternary boron carbon nitride networks; closest endmembers are C diamond and cubic BN",
+    "falsification_test": "Perform variable-cell relaxation from several symmetry-broken orderings plus phonons and electronic structure. The hypothesis fails if the structure relaxes toward layered/sp2 bonding, shows strong imaginary phonons, or remains electronically gapless after ordering is optimized.",
+    "citations": [
+      {
+        "source_id": "6b86863bf194c529",
+        "chunk_id": "6b86863bf194c529:0:0"
+      },
+      {
+        "source_id": "f9658db283f49f54",
+        "chunk_id": "f9658db283f49f54:0:0"
+      }
+    ],
+    "parent_ids": [],
+    "mutation_operator": "explore",
+    "parent_issues_addressed": [
+      "Avoids mixed-anion oxide/nitride disorder entirely.",
+      "Uses only light elements in a single anion-free covalent sublattice to favor phonon transport.",
+      "Targets an ordered sp3 network rather than a chemically frustrated quaternary arrangement."
+    ],
+    "change_rationale": "Recent failures involved chemically complex oxynitrides with relaxation or charge-balance concerns. This exploration shifts to a simpler light-element ternary where the dielectric and thermal-transport objectives are both tied to one motif: an ordered 3D sp3 network. BC2N is not claimed as new or synthesized here; the specific ordered cell is only a hypothesis for a metastable polymorph distinct from the given seed binaries.",
+    "expected_tradeoffs": [
+      "Thermodynamic stability against segregation into diamond-like C, BN-rich, or graphitic BCN phases is uncertain.",
+      "Ordering may be difficult; configurational disorder could reduce both band-gap opening and phonon transport.",
+      "The proposed cubic-like ordering may symmetry-lower significantly on relaxation, so the starting cell is only a plausible template, not evidence of a realizable phase."
+    ],
+    "predicted_mechanism": "Complementary B and N substitution in a diamond-like sp3 network can reduce electron deficiency/excess relative to random single-species doping, favoring a closed-shell covalent network. Strong heat transport would, if present, arise from the continuous light-atom tetrahedral backbone; degradation would come from mass disorder and bond-polarity scattering compared with pure diamond."
+  },
+  "evaluated_crystal": {
+    "lattice": [
+      [
+        3.3392314144175947,
+        0.3918259028292156,
+        0.39825661957450115
+      ],
+      [
+        0.27543736554550974,
+        3.063409346606528,
+        -1.3261456176992275
+      ],
+      [
+        0.2674745980388612,
+        -1.3173079564160168,
+        3.068505771011511
+      ]
+    ],
+    "species": [
+      "B",
+      "C",
+      "C",
+      "N"
+    ],
+    "frac_coords": [
+      [
+        0.9291415215494505,
+        0.0041448317036147575,
+        0.003801791483845444
+      ],
+      [
+        0.5526483639037943,
+        0.37496938737524727,
+        0.010523363581293245
+      ],
+      [
+        0.5530579542527047,
+        0.009965557605767682,
+        0.37477601030087576
+      ],
+      [
+        0.2151521405098286,
+        0.36092013861496336,
+        0.36089893242390453
+      ]
+    ]
+  },
+  "hypothesis_citation_checks": [
+    {
+      "valid": true,
+      "full_text": false,
+      "reason": "Exact quote found; entailment still needs review"
+    },
+    {
+      "valid": true,
+      "full_text": false,
+      "reason": "Exact quote found; entailment still needs review"
+    }
+  ],
+  "physics": {
+    "status": "partial",
+    "backend": "PET-MAD/1.0.2",
+    "input_digest": "9ec659b5387f4e8a4e04afe24a2098de2682d2c9c01298de95bf2bccc9bd6cf9",
+    "relaxed": {
+      "lattice": [
+        [
+          3.3392314144175947,
+          0.3918259028292156,
+          0.39825661957450115
+        ],
+        [
+          0.27543736554550974,
+          3.063409346606528,
+          -1.3261456176992275
+        ],
+        [
+          0.2674745980388612,
+          -1.3173079564160168,
+          3.068505771011511
+        ]
+      ],
+      "species": [
+        "B",
+        "C",
+        "C",
+        "N"
+      ],
+      "frac_coords": [
+        [
+          0.9291415215494505,
+          0.0041448317036147575,
+          0.003801791483845444
+        ],
+        [
+          0.5526483639037943,
+          0.37496938737524727,
+          0.010523363581293245
+        ],
+        [
+          0.5530579542527047,
+          0.009965557605767682,
+          0.37477601030087576
+        ],
+        [
+          0.2151521405098286,
+          0.36092013861496336,
+          0.36089893242390453
+        ]
+      ]
+    },
+    "converged": true,
+    "minimum_phonon_thz": -3.0265113016672144e-07,
+    "youngs_gpa": 791.4849864518702,
+    "shear_gpa": 340.9723108558891,
+    "kappa_w_mk": null,
+    "epsilon_static": null,
+    "epsilon_infinity": null,
+    "warnings": [
+      "Independent local prescreen; official model revision/settings unavailable.",
+      "Static dielectric evaluator is not configured; thermal transport runs only when explicitly enabled.",
+      "Phonons use finite displacements and a finite q mesh, without polar nonanalytic corrections; not a full convergence study."
+    ],
+    "artifacts": {
+      "packages": {
+        "pet-mad": "1.4.4",
+        "ase": "3.29.0",
+        "phonopy": "4.8.3",
+        "torch": "2.10.0"
+      },
+      "exported_model_sha256": "fd67ae1b67c7d63dd66e95b5fbe9935907fe2a41e72d3530d4a03bd10211db9e",
+      "energy_ev_per_atom": -8.760037422180176,
+      "max_force_ev_a": 0.03098802278446508,
+      "relaxation_steps": 43,
+      "phonon_supercell": [
+        2,
+        2,
+        2
+      ],
+      "phonon_mesh": [
+        6,
+        6,
+        6
+      ],
+      "phonon_displacements": 24,
+      "phonon_data": "phonons.npz",
+      "elastic_tensor_gpa": [
+        [
+          778.6428767881661,
+          165.580738439465,
+          165.66698058927315,
+          -21.934397441907684,
+          9.068466828761562,
+          8.144039754850226
+        ],
+        [
+          165.580738439465,
+          843.813128756867,
+          193.825868775963,
+          61.385404022393956,
+          13.033332532945863,
+          9.954404271401954
+        ],
+        [
+          165.66698058927315,
+          193.825868775963,
+          843.4415850862545,
+          61.73647455495191,
+          12.271036062206658,
+          14.387128054415651
+        ],
+        [
+          -21.934397441907684,
+          61.385404022393956,
+          61.73647455495191,
+          401.36806298851445,
+          22.18452983105107,
+          23.89647696455701
+        ],
+        [
+          9.068466828761562,
+          13.033332532945863,
+          12.271036062206658,
+          22.18452983105107,
+          333.34525837617866,
+          12.08717667660175
+        ],
+        [
+          8.144039754850226,
+          9.954404271401954,
+          14.387128054415651,
+          23.89647696455701,
+          12.08717667660175,
+          338.9120345229501
+        ]
+      ],
+      "elastic_internal_relaxation_converged": true,
+      "elastic_strain": 0.005,
+      "elastic_reduction": "Voigt-Reuss-Hill isotropic aggregate; not a specified film orientation"
+    }
+  },
+  "novelty": {
+    "structure_status": "unresolved",
+    "matches": [],
+    "coverage": [
+      {
+        "provider": "oqmd",
+        "endpoint": "https://www.oqmd.org/optimade/structures",
+        "retrieved_at": "2026-10-22T20:17:41.917652+00:00",
+        "complete": false,
+        "skipped_records": 0,
+        "status": "error",
+        "error_type": "HTTPError",
+        "records_checked": 0
+      },
+      {
+        "provider": "jarvis",
+        "endpoint": "https://jarvis.nist.gov/optimade/jarvisdft/v1/structures/",
+        "retrieved_at": "2026-10-22T20:17:42.315601+00:00",
+        "complete": false,
+        "skipped_records": 0,
+        "status": "ok",
+        "records_checked": 21
+      },
+      {
+        "provider": "materials_project",
+        "retrieved_at": "2026-10-22T20:17:47.881017+00:00",
+        "complete": true,
+        "status": "ok",
+        "records_checked": 25
+      }
+    ],
+    "local_library": {
+      "provider": "local_reference_library",
+      "status": "ok",
+      "matches": [],
+      "same_composition_records": 8,
+      "records_checked": 8,
+      "comparison_errors": 0,
+      "composition_lookup_complete": true,
+      "global_novelty_established": false,
+      "datasets": [
+        "jarvis-2025",
+        "oqmd-2021"
+      ]
+    },
+    "online_lookup": "queried",
+    "literature_novelty": "unresolved",
+    "scope": "Chemical-system structure search; thin-film/process novelty needs separate review"
+  },
+  "uncertainties": [
+    "Thermodynamic hull not computed: consistent-model competing phases are required.",
+    "Literature search is bounded; absence of a result is not global novelty.",
+    "Route review is uncalibrated and requires an experimentalist.",
+    "Static dielectric response requires a validated tensor model or DFT/DFPT.",
+    "Thermal conductivity has not been calculated for this candidate."
+  ],
+  "target_assessment": {
+    "thermal_conductivity": {
+      "target": 20.0,
+      "value": null,
+      "status": "unknown"
+    },
+    "static_dielectric": {
+      "target_max": 10.0,
+      "value": null,
+      "status": "unknown"
+    }
+  },
+  "assessment": {
+    "properties": {
+      "formula": "BC2N",
+      "elements": [
+        "B",
+        "C",
+        "N"
+      ],
+      "number_of_sites": 4,
+      "input_density_g_cm3": 1.6815608955744288,
+      "input_volume_per_atom_angstrom3": 12.057136000000002,
+      "youngs_gpa": 791.4849864518702,
+      "shear_gpa": 340.9723108558891,
+      "kappa_w_mk": null,
+      "epsilon_static": null,
+      "minimum_phonon_thz": -3.0265113016672144e-07,
+      "energy_ev_per_atom": -8.760037422180176,
+      "provenance": "Geometry from submitted structure; predicted properties only from evaluator output. No borrowed reference values.",
+      "minimum_elastic_eigenvalue_gpa": 323.4545634223962
+    },
+    "gates": [
+      {
+        "name": "relaxation",
+        "value": true,
+        "status": "pass",
+        "reason": "Converged interatomic-potential relaxation"
+      },
+      {
+        "name": "dynamic_stability",
+        "value": -3.0265113016672144e-07,
+        "status": "pass",
+        "reason": "Minimum sampled phonon frequency >= -1 THz; finite-mesh screening only"
+      },
+      {
+        "name": "youngs_modulus",
+        "value": 791.4849864518702,
+        "status": "pass",
+        "reason": "Young modulus >= 20 GPa"
+      },
+      {
+        "name": "shear_modulus",
+        "value": 340.9723108558891,
+        "status": "pass",
+        "reason": "Shear modulus >= 6 GPa"
+      },
+      {
+        "name": "thermal_conductivity",
+        "value": null,
+        "status": "unknown",
+        "reason": "Minimum thermal tensor eigenvalue above configured threshold; preliminary until converged"
+      },
+      {
+        "name": "static_dielectric",
+        "value": null,
+        "status": "unknown",
+        "reason": "Static dielectric response in configured interval"
+      },
+      {
+        "name": "structural_novelty",
+        "status": "unknown",
+        "value": null,
+        "reason": "No match is not a proof of worldwide novelty"
+      },
+      {
+        "name": "thermodynamic_stability",
+        "status": "unknown",
+        "value": null,
+        "reason": "Complete same-model competing-phase hull not yet computed"
+      },
+      {
+        "name": "synthesis_validation",
+        "status": "unknown",
+        "value": null,
+        "reason": "Model route critique is not experimental validation"
+      },
+      {
+        "name": "mechanical_stability",
+        "value": 323.4545634223962,
+        "status": "pass",
+        "reason": "Positive definite stiffness under the evaluated zero-pressure convention; finite-strain numerical screening"
+      }
+    ],
+    "failed": [],
+    "unknown": [
+      "thermal_conductivity",
+      "static_dielectric",
+      "structural_novelty",
+      "thermodynamic_stability",
+      "synthesis_validation"
+    ],
+    "fitness": {
+      "vector": [
+        0.6666666666666666,
+        0,
+        0
+      ],
+      "dimensions": [
+        "predicted_physics_target_coverage",
+        "uncalibrated_route_support",
+        "negative_failed_checks"
+      ],
+      "selection_only": true,
+      "not_a_success_probability": true
+    },
+    "selection_status": "needs_more_tests",
+    "validated_discovery": false,
+    "test_level": "computational_screening_not_experimental_validation",
+    "composition_audit": {
+      "formula": "BC2N",
+      "cell_composition": {
+        "B": 1,
+        "C": 2,
+        "N": 1
+      },
+      "label_discrepancies": [],
+      "nominal_oxidation_states": null,
+      "nominal_charge_per_cell": null,
+      "charge_status": "not_applicable",
+      "interpretation": "Formal charge counting tests the proposed ionic/closed-shell rationale, not the existence of covalent, mixed-valent or metallic phases. Nonzero residual requires a justified bonding/electronic-structure calculation.",
+      "electronic_validation": "not_computed"
+    },
+    "property_status": {
+      "youngs_gpa": "predicted",
+      "shear_gpa": "predicted",
+      "kappa_w_mk": "not_calculated_or_incomplete",
+      "epsilon_static": "backend_not_configured",
+      "minimum_phonon_thz": "predicted"
+    }
+  },
+  "critic": {
+    "recommendation": "test_further",
+    "findings": [
+      {
+        "domain": "evidence",
+        "severity": "blocking",
+        "issue": "The claimed dielectric/insulating advantage is not evidenced by any computed electronic quantity in the assessment. Static dielectric response is unavailable and electronic validation was not computed, so the central target remains untested rather than supported.",
+        "evidence_fields": [
+          "epsilon_static",
+          "static_dielectric",
+          "composition_audit.electronic_validation",
+          "provenance"
+        ],
+        "citations": [],
+        "recommended_test": "Compute a converged electronic band structure and density of states for the relaxed lowest-energy ordering, followed by a dielectric calculation if the phase is insulating.",
+        "valid_evidence_fields": [
+          "epsilon_static",
+          "static_dielectric",
+          "composition_audit.electronic_validation",
+          "provenance"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "physics",
+        "severity": "uncertain",
+        "issue": "The thermal-transport advantage is speculative. No thermal conductivity was calculated, so any claim of strong phonon transport must remain hypothetical. High elastic stiffness alone does not establish high kappa, especially in a ternary with bond-polarity and possible ordering/disorder scattering.",
+        "evidence_fields": [
+          "kappa_w_mk",
+          "thermal_conductivity",
+          "youngs_gpa",
+          "shear_gpa"
+        ],
+        "citations": [
+          {
+            "source_id": "6b86863bf194c529",
+            "chunk_id": "6b86863bf194c529:0:0"
+          }
+        ],
+        "recommended_test": "Calculate third-order phonon-limited lattice thermal conductivity for the ordered cell, then compare against representative B/C/N disorder models or symmetry-broken orderings to quantify alloy and polarity scattering penalties.",
+        "valid_evidence_fields": [
+          "kappa_w_mk",
+          "thermal_conductivity",
+          "youngs_gpa",
+          "shear_gpa"
+        ],
+        "citation_checks": [
+          {
+            "valid": true,
+            "full_text": false,
+            "reason": "Exact quote found; entailment still needs review"
+          }
+        ],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "physics",
+        "severity": "uncertain",
+        "issue": "Dynamic stability evidence is only a finite-mesh screening result with an almost zero minimum phonon frequency. This is compatible with local stability, but it is too marginal to rule out soft modes under tighter convergence, larger supercells, or lower-symmetry distortions.",
+        "evidence_fields": [
+          "minimum_phonon_thz",
+          "dynamic_stability",
+          "relaxation"
+        ],
+        "citations": [],
+        "recommended_test": "Recompute phonons with tighter force thresholds, a denser q-mesh, and at least one lower-symmetry supercell relaxation to check whether hidden unstable distortions or graphitic tendencies appear.",
+        "valid_evidence_fields": [
+          "minimum_phonon_thz",
+          "dynamic_stability",
+          "relaxation"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "synthesis",
+        "severity": "uncertain",
+        "issue": "Metastability against decomposition or reconstruction is unresolved. The candidate may prefer segregation toward C-rich and BN-rich bonding motifs rather than a homogeneous ordered ternary network, which is a specific risk for BCN chemistries.",
+        "evidence_fields": [
+          "thermodynamic_stability",
+          "energy_ev_per_atom",
+          "composition_audit.interpretation"
+        ],
+        "citations": [
+          {
+            "source_id": "831f309853ac32f4",
+            "chunk_id": "831f309853ac32f4:0:2200"
+          },
+          {
+            "source_id": "a80c7c89ae60e357",
+            "chunk_id": "a80c7c89ae60e357:9:0"
+          }
+        ],
+        "recommended_test": "Construct a same-method convex hull including diamond, cubic/hexagonal BN, and known/plausible BCN polymorphs; then relax multiple ordered and partially segregated BC2N configurations to determine whether the proposed topology is even metastable.",
+        "valid_evidence_fields": [
+          "thermodynamic_stability",
+          "energy_ev_per_atom",
+          "composition_audit.interpretation"
+        ],
+        "citation_checks": [
+          {
+            "valid": true,
+            "full_text": true,
+            "reason": "Exact quote found; entailment still needs review"
+          },
+          {
+            "valid": false,
+            "full_text": true,
+            "reason": "Quoted text is absent from source chunk"
+          }
+        ],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "novelty",
+        "severity": "informational",
+        "issue": "Novelty is unresolved rather than established. The composition already has prior literature mention and the structure search coverage is incomplete, so this should not be framed as a new material discovery on current evidence.",
+        "evidence_fields": [
+          "structural_novelty",
+          "thermodynamic_stability"
+        ],
+        "citations": [
+          {
+            "source_id": "a80c7c89ae60e357",
+            "chunk_id": "a80c7c89ae60e357:9:0"
+          }
+        ],
+        "recommended_test": "Perform a broader literature and database comparison focused on 3D sp3 BC2N polymorphs and report distinctions as polymorph/order-specific, not composition-level novelty.",
+        "valid_evidence_fields": [
+          "structural_novelty",
+          "thermodynamic_stability"
+        ],
+        "citation_checks": [
+          {
+            "valid": true,
+            "full_text": true,
+            "reason": "Exact quote found; entailment still needs review"
+          }
+        ],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "physics",
+        "severity": "uncertain",
+        "issue": "The proposed cubic template is unusually open for a diamond-derived light-element sp3 network, with low input density and relatively large volume per atom. Even if mechanically stable in screening, such openness can correlate with reduced thermodynamic competitiveness and greater susceptibility to symmetry lowering relative to denser tetrahedral polymorphs.",
+        "evidence_fields": [
+          "input_density_g_cm3",
+          "input_volume_per_atom_angstrom3",
+          "mechanical_stability",
+          "minimum_elastic_eigenvalue_gpa"
+        ],
+        "citations": [
+          {
+            "source_id": "2510e046a97efa99",
+            "chunk_id": "2510e046a97efa99:0:0"
+          }
+        ],
+        "recommended_test": "Search denser BC2N orderings at the same composition using evolutionary or enumeration methods, then compare enthalpy, phonons, and electronic gaps to see whether the present open template is a local curiosity rather than the best 3D sp3 candidate.",
+        "valid_evidence_fields": [
+          "input_density_g_cm3",
+          "input_volume_per_atom_angstrom3",
+          "mechanical_stability",
+          "minimum_elastic_eigenvalue_gpa"
+        ],
+        "citation_checks": [
+          {
+            "valid": false,
+            "full_text": false,
+            "reason": "Quoted text is absent from source chunk"
+          }
+        ],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      }
+    ],
+    "why_try_a_different_material": "This BC2N hypothesis is attractive because it targets a light-element 3D covalent network, but its main selling points are still mostly unverified. The dielectric function and electronic insulation are not computed, thermal conductivity is not computed, and thermodynamic stability against segregation is unresolved. In BCN chemistry, stronger C\u2013C and B\u2013N preferences create a concrete risk that the ordered mixed network is less favorable than partial phase separation or alternative polymorphs. A different composition or topology could help if it better aligns with preferred bond chemistry: for example, a structure that either reduces the number of unfavorable B\u2013C/C\u2013N contacts, increases density/packing of the tetrahedral network, or uses a topology already known to support robust sp3 ordering under pressure. The reason to change material is therefore not that this candidate has failed, but that the current weaknesses are structural-chemistry specific and may be alleviated by a denser ordering or a composition with less driving force for bond segregation.",
+    "suggested_changes": [
+      "Enumerate multiple BC2N orderings beyond the current 4-site cubic template, especially lower-symmetry and denser sp3 networks that change B/N nearest-neighbor patterns.",
+      "Test partially segregated superstructures that maximize C\u2013C and B\u2013N connectivity while preserving 3D connectivity, to directly probe the segregation tendency within an sp3 framework.",
+      "Compare cubic-like, orthorhombic, and wurtzite-derived BC2N polymorphs rather than relying on one diamond-derived starting cell.",
+      "If dielectric behavior is the priority, deprioritize candidates until a real band-gap calculation confirms insulation; do not use closed-shell reasoning as a substitute.",
+      "If thermal transport is the priority, favor orderings/compositions with fewer chemically distinct bond types and lower expected alloy scattering, even at some cost in compositional novelty."
+    ],
+    "tradeoffs": [
+      "Increasing segregation-like ordering may improve local bond preferences and stability, but it can move the material closer to C/BN domain formation and away from a homogeneous single phase.",
+      "Denser sp3 polymorphs may be more stable and mechanically stronger, but they may symmetry-lower away from the simple cubic template and become harder to realize experimentally.",
+      "Maximizing chemical order can help both gap opening and phonon transport relative to random disorder, but ordered stoichiometric synthesis is typically more difficult.",
+      "Switching to alternative BCN polymorphs may improve metastability, but novelty claims become weaker because BC2N polymorphs already have literature precedent.",
+      "A material optimized for insulation may not be the one optimized for highest thermal conductivity, because stronger polarity and compositional contrast can increase phonon scattering."
+    ],
+    "next_discriminating_test": "Run a same-method comparative study on a small set of BC2N polymorphs/orderings: (1) full variable-cell relaxation from several symmetry-broken 3D sp3 starting configurations, (2) converged phonons in the lowest-energy few structures, (3) electronic band structures and dielectric response, and (4) a convex-hull analysis against diamond, cBN/hBN, and competing BCN phases. The single most discriminating outcome is whether any ordered 3D BC2N phase is both insulating and at least metastable against segregation; if not, the composition should be deprioritized in favor of a different topology or chemistry.",
+    "calibrated": false,
+    "can_override_physics": false
+  },
+  "composition_audit": {
+    "formula": "BC2N",
+    "cell_composition": {
+      "B": 1,
+      "C": 2,
+      "N": 1
+    },
+    "label_discrepancies": [],
+    "nominal_oxidation_states": null,
+    "nominal_charge_per_cell": null,
+    "charge_status": "not_applicable",
+    "interpretation": "Formal charge counting tests the proposed ionic/closed-shell rationale, not the existence of covalent, mixed-valent or metallic phases. Nonzero residual requires a justified bonding/electronic-structure calculation.",
+    "electronic_validation": "not_computed"
+  },
+  "synthesis_status": "paused_by_configuration",
+  "failed_physics": [],
+  "discovery_established": false,
+  "experimental_validation": false,
+  "official_comparable": false,
+  "routes": {
+    "routes": []
+  },
+  "route_assessments": [],
+  "publication_notice": "Saved model reasoning and checks are unverified. Citation excerpts and underlying paper text are omitted; consult sources.json for provenance."
+}

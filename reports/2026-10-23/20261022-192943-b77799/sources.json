@@ -1,0 +1,154 @@
+[
+  {
+    "id": "92b57371a8900461",
+    "title": "",
+    "url": "https://doi.org/10.1117/12.2237251.5164183637001",
+    "kind": "metadata",
+    "sha256": "7e46e3f6c875fe4c4b86963fe3953e17b59ca40b5f14c3006f2b6b888d738915",
+    "retrieved_at": "2026-10-22T19:29:45.110200+00:00"
+  },
+  {
+    "id": "21f74c7bd666a8da",
+    "title": "Chemical Vapour Deposition of sp2 Hybridised Boron Nitride",
+    "url": "https://doi.org/10.3384/diss.diva-112580",
+    "kind": "metadata",
+    "sha256": "15d63deb8b4d3c43448289c338e3b446c9f855242f2df6caa956550e7e850787",
+    "retrieved_at": "2026-10-22T19:29:45.111673+00:00"
+  },
+  {
+    "id": "41627fd19855a68e",
+    "title": "Polycrystalline Diamond, Boron Nitride and Carbon Nitride Thin Film Cold Cathodes",
+    "url": "https://doi.org/10.1557/proc-416-425",
+    "kind": "abstract",
+    "sha256": "255e598fed5d4329247b32861b106b648c3827ac9c234a138af84426b691caa8",
+    "retrieved_at": "2026-10-22T19:29:45.113259+00:00"
+  },
+  {
+    "id": "99adb71c962f7590",
+    "title": "Chemical Vapor Deposition Growth of Uniform Multilayer Hexagonal Boron Nitride Driven by Structural Transformation of a Metal Thin Film",
+    "url": "https://doi.org/10.1021/acsaelm.0c00601.s001",
+    "kind": "metadata",
+    "sha256": "cddba6d929fee51619f885ff804822ff4157701a77901d99dc815759186cf7e4",
+    "retrieved_at": "2026-10-22T19:29:45.114297+00:00"
+  },
+  {
+    "id": "57007c8a0700d205",
+    "title": "Use of in situ ellipsometry to observe phase transitions during boron nitride thin film deposition",
+    "url": "https://doi.org/10.1016/0257-8972(95)02619-3",
+    "kind": "metadata",
+    "sha256": "39332c33f79cb8e29aa4dcb62c21804624f7aabd11815c432281dac0618e8b23",
+    "retrieved_at": "2026-10-22T19:29:45.115214+00:00"
+  },
+  {
+    "id": "13d593388faf2285",
+    "title": "Silicon Nitride Coatings on Titanium for Cardiovascular Applications: Interface Engineering, Hemocompatibility, and Translational Challenges.",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13567647/fullTextXML",
+    "kind": "full_text_open_access",
+    "sha256": "2595ba04fa6244c15b089d2b2933ebfc06797a3d4b3c2d203701e57240f81677",
+    "retrieved_at": "2026-10-22T19:29:47.774346+00:00"
+  },
+  {
+    "id": "8dd148314fc4b134",
+    "title": "Sputtering: A Versatile Technology to Deposit Multifunctional Protective Coatings.",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13514983/fullTextXML",
+    "kind": "full_text_open_access",
+    "sha256": "3dd86929e2d1102655003ba865b7aeaab5e1527ae3d027b17b86c1654184aaeb",
+    "retrieved_at": "2026-10-22T19:29:48.493605+00:00"
+  },
+  {
+    "id": "cb7575cd7c3d094d",
+    "title": "Evolution of size-selected Pt cluster catalysts on prototypical oxide supports.",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13196843/fullTextXML",
+    "kind": "full_text_open_access",
+    "sha256": "f2948afc096359d7ba70fb3c66ed12b99a6e6d34ab887a6b482e9a075314017b",
+    "retrieved_at": "2026-10-22T19:29:48.853790+00:00"
+  },
+  {
+    "id": "da7eff09e3084c0c",
+    "title": "Plasma-Assisted and Green Routes to Silicon and Carbon Quantum Dots: A Critical Comparison of Synthesis\u2013Structure\u2013Property Relationships",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13666692/fullTextXML",
+    "kind": "full_text_open_access",
+    "sha256": "5012643d8ba6f387db29fb977dd953b4494c05f1edcc8b700ecb95005eefef39",
+    "retrieved_at": "2026-10-22T19:29:49.362265+00:00"
+  },
+  {
+    "id": "f24c8fc0ebf4a9d9",
+    "title": "High Thermal Conductivity of Submicrometer Aluminum Nitride Thin Films Sputter-Deposited at Low Temperature",
+    "url": "https://doi.org/10.1021/acsnano.3c05485.s001",
+    "kind": "metadata",
+    "sha256": "9d5ea4d7c92abd9752f0e062d61b6b9c2ddcf4cc595ea3846f88be71e4f53283",
+    "retrieved_at": "2026-10-22T19:29:49.723759+00:00"
+  },
+  {
+    "id": "e87e9f6f5f44d7a8",
+    "title": "Area-Selective Low-Pressure Thermal Atomic Layer Deposition of Aluminum Nitride",
+    "url": "https://doi.org/10.1021/acs.jpcc.3c03063.s001",
+    "kind": "metadata",
+    "sha256": "da73a3eacac8c4f212d8fb7a0e7556fa280f2e2000b27bc5159cabbf9c0e7d1f",
+    "retrieved_at": "2026-10-22T19:29:49.725652+00:00"
+  },
+  {
+    "id": "655364a6b299fc5e",
+    "title": "Thermal conductivity and mechanical strength of low-temperature-sintered aluminum nitride ceramics containing aluminum nitride whiskers",
+    "url": "https://doi.org/10.2109/jcersj2.20102",
+    "kind": "metadata",
+    "sha256": "586404bdce6ce3df780e142607c1a4e34ee344f9e43c8ae82a400e9dee5fd489",
+    "retrieved_at": "2026-10-22T19:29:49.726784+00:00"
+  },
+  {
+    "id": "fc080739c4c550f6",
+    "title": "Dielectric and thermal conductivity characterization of aluminum nitride- based microwave absorbing ceramics for vacuum electronics",
+    "url": "https://doi.org/10.1109/ivec.2018.8391525",
+    "kind": "metadata",
+    "sha256": "7c445de331d10f4688bd51af6ecd4be5cc2d55b206e857866e9a3700d5912c48",
+    "retrieved_at": "2026-10-22T19:29:49.727826+00:00"
+  },
+  {
+    "id": "6bcb444c21f8fd88",
+    "title": "Thermoplastic polypropylene/aluminum nitride nanocomposites with enhanced thermal conductivity and low dielectric loss",
+    "url": "https://doi.org/10.1109/tdei.2016.7736836",
+    "kind": "metadata",
+    "sha256": "f75ba09f6a513bd6ff283eeb72291aca55ee9c8f2adedebb971b7926a53984f7",
+    "retrieved_at": "2026-10-22T19:29:49.728892+00:00"
+  },
+  {
+    "id": "54d392e3e4d58cc1",
+    "title": "Novel Method for Realistically Simulating the Deposition of Thin Films from the Gas Phase and its Application to Study the Growth of Thin Gold Film on Crystalline Silicon",
+    "url": "https://doi.org/10.1021/acs.jctc.5c00319.s001",
+    "kind": "metadata",
+    "sha256": "333c9456ce4b97a24d9b36f9dfd59338d30fe87ad56059d84b97caf352292987",
+    "retrieved_at": "2026-10-22T19:30:50.237795+00:00"
+  },
+  {
+    "id": "9dcfbcec84ad9e47",
+    "title": "Preparation of C60 single crystalline thin film by ionized cluster beam deposition and ion implantation into single crystalline C60 thin film",
+    "url": "https://doi.org/10.1016/b978-0-444-82410-3.50024-2",
+    "kind": "metadata",
+    "sha256": "cf38f2da9aedbc4a82625c7b1ab0f63fea276a131796db4ba1863d08812c58f6",
+    "retrieved_at": "2026-10-22T19:30:50.239853+00:00"
+  },
+  {
+    "id": "8555fb956980152e",
+    "title": "From Amorphous to Crystalline Thin-Film FeF3 Conversion Electrodes by Sputtering Deposition",
+    "url": "https://doi.org/10.1021/acsaem.3c01593.s001",
+    "kind": "metadata",
+    "sha256": "1f24a7f00881f0b1b92825fed3d0a3918fad616a818eb6805a784f9ed64c0790",
+    "retrieved_at": "2026-10-22T19:30:50.241697+00:00"
+  },
+  {
+    "id": "928099e2aff2ca33",
+    "title": "Thin film coating of polystyrene through vapor phase monomer deposition",
+    "url": "https://doi.org/10.58837/chula.the.1998.1198",
+    "kind": "abstract",
+    "sha256": "2e36f2a7140fe267bcbbef8162649e8f7d79c9964c74c3a1e225b86078088b32",
+    "retrieved_at": "2026-10-22T19:30:50.242991+00:00"
+  },
+  {
+    "id": "d7b53efff2bb4195",
+    "title": "Thin film coating of poly (methyl methacrylate) through vapor phase monomer deposition",
+    "url": "https://doi.org/10.58837/chula.the.1998.1197",
+    "kind": "abstract",
+    "sha256": "cd69040430b3d97016f0dbf61c8ec4d4ca325e88c94970f9664bf4364005f989",
+    "retrieved_at": "2026-10-22T19:30:50.244493+00:00"
+  }
+]

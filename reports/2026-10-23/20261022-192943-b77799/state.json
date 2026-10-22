@@ -1,0 +1,10 @@
+{
+  "status": "budget_exhausted",
+  "completed_candidates": [
+    "r00-c00"
+  ],
+  "rounds_completed": 0,
+  "errors": [
+    "Model call/token reservation budget exhausted; cached stages remain resumable"
+  ]
+}

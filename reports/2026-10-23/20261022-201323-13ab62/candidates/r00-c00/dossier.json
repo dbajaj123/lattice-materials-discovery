@@ -1,0 +1,706 @@
+{
+  "id": "r00-c00",
+  "kind": "computational_hypothesis",
+  "hypothesis": {
+    "name": "Si2BN3O",
+    "hypothesis": "A tetrahedrally connected oxynitride-like framework derived from a wurtzite-like Si/BN network, where limited O substitution on N-coordinated sites creates stronger Si-O bonds while retaining a predominantly covalent 3D network. This could yield an insulating crystal with better integration prospects than dense pure BN/C analogs and potentially useful phonon transport if disorder remains limited. The structure is a hypothesis only; no stability calculation or synthesis report is provided here.",
+    "crystal": {
+      "lattice": [
+        [
+          3.08,
+          0.0,
+          0.0
+        ],
+        [
+          -1.54,
+          2.667,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          5.12
+        ]
+      ],
+      "species": [
+        "Si",
+        "Si",
+        "B",
+        "N",
+        "N",
+        "N",
+        "O"
+      ],
+      "frac_coords": [
+        [
+          0.3333,
+          0.6667,
+          0.0
+        ],
+        [
+          0.3333,
+          0.6667,
+          0.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.875
+        ],
+        [
+          0.0,
+          0.0,
+          0.625
+        ]
+      ]
+    },
+    "expected_advantage": "Expected to combine a wide-gap, largely tetrahedral/covalent backbone with stronger heteropolar bonding than SiC alone, while avoiding the very soft layered bonding of graphitic BN. Limited oxygen incorporation may help dielectric behavior and oxidation tolerance relevant to chip processing.",
+    "closest_known_material": "SiC zincblende and BN zincblende, with chemical analogy to Si-O-N tetrahedral frameworks rather than an exact known seed.",
+    "falsification_test": "Reject if relaxed zero-pressure optimization collapses to phase separation into SiO2-like and BN/Si3N4-like motifs, or if phonons show substantial imaginary branches throughout the Brillouin zone. Also reject if electronic structure is metallic after relaxation.",
+    "citations": [
+      {
+        "source_id": "6b86863bf194c529",
+        "chunk_id": "0:0"
+      },
+      {
+        "source_id": "f9658db283f49f54",
+        "chunk_id": "0:0"
+      }
+    ],
+    "parent_ids": [],
+    "mutation_operator": "explore",
+    "parent_issues_addressed": [
+      "Need a dielectric candidate rather than a metallic elemental or unstable binary analogue.",
+      "Need a 3D covalent network that may preserve useful heat transport for chip integration."
+    ],
+    "change_rationale": "This explores a mixed-anion 3D framework within the allowed elements, combining motifs associated with strong heat-carrying covalent networks (SiC/BN-like tetrahedral connectivity) and oxide/nitride dielectric chemistry. Oxygen content is kept low to reduce excessive phonon-disorder risk while increasing bond ionicity and likely insulating character.",
+    "expected_tradeoffs": [
+      "Mixed anion disorder may strongly scatter phonons and reduce heat transport.",
+      "O incorporation could favor amorphization or phase segregation during growth.",
+      "Internal strain from B/Si/O/N size and valence mismatch may destabilize the ideal ordered cell.",
+      "Dielectric improvement may come at the cost of more difficult epitaxy than binary SiC or BN."
+    ],
+    "predicted_mechanism": "A predominantly sp3-connected framework should support stiff bond-stretching phonons, while heteropolar Si-N/Si-O and B-N linkages reduce carrier density and favor insulating behavior. If oxygen remains ordered and dilute, the 3D bond network may still transmit heat better than layered or porous alternatives."
+  },
+  "evaluated_crystal": {
+    "lattice": [
+      [
+        3.005826393224644,
+        -0.9386770674831417,
+        -0.032052208964218676
+      ],
+      [
+        -2.1681480618879108,
+        3.609753618093591,
+        -0.001384696449254519
+      ],
+      [
+        0.019172383992224734,
+        0.038485799782909544,
+        6.847545981771794
+      ]
+    ],
+    "species": [
+      "Si",
+      "Si",
+      "B",
+      "N",
+      "N",
+      "N",
+      "O"
+    ],
+    "frac_coords": [
+      [
+        0.48752300083554173,
+        0.693545343490467,
+        0.9848101982085224
+      ],
+      [
+        0.1093960348548725,
+        0.6881715955308599,
+        0.6126981113567503
+      ],
+      [
+        0.29643130085279196,
+        0.18802610303830114,
+        0.2920108539819039
+      ],
+      [
+        0.00462411105829757,
+        0.1934026090874832,
+        0.13339113374881512
+      ],
+      [
+        0.8942905647787304,
+        0.6901573555248832,
+        0.3832020907124441
+      ],
+      [
+        0.9809766194064418,
+        0.6927329673170473,
+        0.8589488901318241
+      ],
+      [
+        0.8933587153255735,
+        0.18736415936103065,
+        0.6099372015917979
+      ]
+    ]
+  },
+  "hypothesis_citation_checks": [
+    {
+      "valid": false,
+      "full_text": false,
+      "reason": "Unknown source/chunk identity"
+    },
+    {
+      "valid": false,
+      "full_text": false,
+      "reason": "Unknown source/chunk identity"
+    }
+  ],
+  "physics": {
+    "status": "partial",
+    "backend": "PET-MAD/1.0.2",
+    "input_digest": "c9129415cba8cea09a63c6b6f65a250b2f5ce6e52afb8efb2afdc96fb4e90ec2",
+    "relaxed": {
+      "lattice": [
+        [
+          3.005826393224644,
+          -0.9386770674831417,
+          -0.032052208964218676
+        ],
+        [
+          -2.1681480618879108,
+          3.609753618093591,
+          -0.001384696449254519
+        ],
+        [
+          0.019172383992224734,
+          0.038485799782909544,
+          6.847545981771794
+        ]
+      ],
+      "species": [
+        "Si",
+        "Si",
+        "B",
+        "N",
+        "N",
+        "N",
+        "O"
+      ],
+      "frac_coords": [
+        [
+          0.48752300083554173,
+          0.693545343490467,
+          0.9848101982085224
+        ],
+        [
+          0.1093960348548725,
+          0.6881715955308599,
+          0.6126981113567503
+        ],
+        [
+          0.29643130085279196,
+          0.18802610303830114,
+          0.2920108539819039
+        ],
+        [
+          0.00462411105829757,
+          0.1934026090874832,
+          0.13339113374881512
+        ],
+        [
+          0.8942905647787304,
+          0.6901573555248832,
+          0.3832020907124441
+        ],
+        [
+          0.9809766194064418,
+          0.6927329673170473,
+          0.8589488901318241
+        ],
+        [
+          0.8933587153255735,
+          0.18736415936103065,
+          0.6099372015917979
+        ]
+      ]
+    },
+    "converged": false,
+    "minimum_phonon_thz": null,
+    "youngs_gpa": null,
+    "shear_gpa": null,
+    "kappa_w_mk": null,
+    "epsilon_static": null,
+    "epsilon_infinity": null,
+    "warnings": [
+      "Independent local prescreen; official model revision/settings unavailable.",
+      "Static dielectric evaluator is not configured; thermal transport runs only when explicitly enabled.",
+      "Phonons use finite displacements and a finite q mesh, without polar nonanalytic corrections; not a full convergence study.",
+      "Relaxation did not converge; remaining calculations skipped"
+    ],
+    "artifacts": {
+      "packages": {
+        "pet-mad": "1.4.4",
+        "ase": "3.29.0",
+        "phonopy": "4.8.3",
+        "torch": "2.10.0"
+      },
+      "exported_model_sha256": "aa290588fdcb8722d26e0b3d4d61a47fa041903b9abefaf9f4bc45c5b89e512a",
+      "energy_ev_per_atom": -8.151722499302455,
+      "max_force_ev_a": 1.3805868463391409,
+      "relaxation_steps": 80,
+      "phonon_supercell": [
+        2,
+        2,
+        2
+      ],
+      "phonon_mesh": [
+        6,
+        6,
+        6
+      ]
+    }
+  },
+  "novelty": {
+    "structure_status": "unresolved",
+    "matches": [],
+    "coverage": [
+      {
+        "provider": "oqmd",
+        "endpoint": "https://www.oqmd.org/optimade/structures",
+        "retrieved_at": "2026-10-22T20:14:42.150064+00:00",
+        "complete": false,
+        "skipped_records": 0,
+        "status": "error",
+        "error_type": "HTTPError",
+        "records_checked": 0
+      },
+      {
+        "provider": "jarvis",
+        "endpoint": "https://jarvis.nist.gov/optimade/jarvisdft/v1/structures/",
+        "retrieved_at": "2026-10-22T20:14:42.599750+00:00",
+        "complete": false,
+        "skipped_records": 0,
+        "status": "empty_unverified",
+        "records_checked": 0
+      },
+      {
+        "provider": "materials_project",
+        "retrieved_at": "2026-10-22T20:14:44.778280+00:00",
+        "complete": true,
+        "status": "ok",
+        "records_checked": 1
+      }
+    ],
+    "local_library": {
+      "provider": "local_reference_library",
+      "status": "ok",
+      "matches": [],
+      "same_composition_records": 0,
+      "records_checked": 0,
+      "comparison_errors": 0,
+      "composition_lookup_complete": true,
+      "global_novelty_established": false,
+      "datasets": [
+        "jarvis-2025",
+        "oqmd-2021"
+      ]
+    },
+    "online_lookup": "queried",
+    "literature_novelty": "unresolved",
+    "scope": "Chemical-system structure search; thin-film/process novelty needs separate review"
+  },
+  "uncertainties": [
+    "Thermodynamic hull not computed: consistent-model competing phases are required.",
+    "Literature search is bounded; absence of a result is not global novelty.",
+    "Route review is uncalibrated and requires an experimentalist.",
+    "Static dielectric response requires a validated tensor model or DFT/DFPT.",
+    "Thermal conductivity has not been calculated for this candidate."
+  ],
+  "target_assessment": {
+    "thermal_conductivity": {
+      "target": 20.0,
+      "value": null,
+      "status": "unknown"
+    },
+    "static_dielectric": {
+      "target_max": 10.0,
+      "value": null,
+      "status": "unknown"
+    }
+  },
+  "assessment": {
+    "properties": {
+      "formula": "Si2BN3O",
+      "elements": [
+        "B",
+        "N",
+        "O",
+        "Si"
+      ],
+      "number_of_sites": 7,
+      "input_density_g_cm3": 4.935380370273523,
+      "input_volume_per_atom_angstrom3": 6.0082176,
+      "youngs_gpa": null,
+      "shear_gpa": null,
+      "kappa_w_mk": null,
+      "epsilon_static": null,
+      "minimum_phonon_thz": null,
+      "energy_ev_per_atom": -8.151722499302455,
+      "provenance": "Geometry from submitted structure; predicted properties only from evaluator output. No borrowed reference values."
+    },
+    "gates": [
+      {
+        "name": "relaxation",
+        "value": false,
+        "status": "fail",
+        "reason": "Converged interatomic-potential relaxation"
+      },
+      {
+        "name": "dynamic_stability",
+        "value": null,
+        "status": "unknown",
+        "reason": "Minimum sampled phonon frequency >= -1 THz; finite-mesh screening only"
+      },
+      {
+        "name": "youngs_modulus",
+        "value": null,
+        "status": "unknown",
+        "reason": "Young modulus >= 20 GPa"
+      },
+      {
+        "name": "shear_modulus",
+        "value": null,
+        "status": "unknown",
+        "reason": "Shear modulus >= 6 GPa"
+      },
+      {
+        "name": "thermal_conductivity",
+        "value": null,
+        "status": "unknown",
+        "reason": "Minimum thermal tensor eigenvalue above configured threshold; preliminary until converged"
+      },
+      {
+        "name": "static_dielectric",
+        "value": null,
+        "status": "unknown",
+        "reason": "Static dielectric response in configured interval"
+      },
+      {
+        "name": "structural_novelty",
+        "status": "unknown",
+        "value": null,
+        "reason": "No match is not a proof of worldwide novelty"
+      },
+      {
+        "name": "thermodynamic_stability",
+        "status": "unknown",
+        "value": null,
+        "reason": "Complete same-model competing-phase hull not yet computed"
+      },
+      {
+        "name": "synthesis_validation",
+        "status": "unknown",
+        "value": null,
+        "reason": "Model route critique is not experimental validation"
+      }
+    ],
+    "failed": [
+      "relaxation"
+    ],
+    "unknown": [
+      "dynamic_stability",
+      "youngs_modulus",
+      "shear_modulus",
+      "thermal_conductivity",
+      "static_dielectric",
+      "structural_novelty",
+      "thermodynamic_stability",
+      "synthesis_validation"
+    ],
+    "fitness": {
+      "vector": [
+        0.0,
+        0,
+        -1
+      ],
+      "dimensions": [
+        "predicted_physics_target_coverage",
+        "uncalibrated_route_support",
+        "negative_failed_checks"
+      ],
+      "selection_only": true,
+      "not_a_success_probability": true
+    },
+    "selection_status": "rejected_for_current_objective",
+    "validated_discovery": false,
+    "test_level": "computational_screening_not_experimental_validation",
+    "composition_audit": {
+      "formula": "Si2BN3O",
+      "cell_composition": {
+        "Si": 2,
+        "B": 1,
+        "N": 3,
+        "O": 1
+      },
+      "label_discrepancies": [],
+      "nominal_oxidation_states": {
+        "Si": 4,
+        "B": 3,
+        "N": -3,
+        "O": -2
+      },
+      "nominal_charge_per_cell": 0,
+      "charge_status": "nominally_balanced",
+      "interpretation": "Formal charge counting tests the proposed ionic/closed-shell rationale, not the existence of covalent, mixed-valent or metallic phases. Nonzero residual requires a justified bonding/electronic-structure calculation.",
+      "electronic_validation": "not_computed"
+    },
+    "property_status": {
+      "youngs_gpa": "not_calculated_or_incomplete",
+      "shear_gpa": "not_calculated_or_incomplete",
+      "kappa_w_mk": "not_calculated_or_incomplete",
+      "epsilon_static": "backend_not_configured",
+      "minimum_phonon_thz": "not_calculated_or_incomplete"
+    }
+  },
+  "critic": {
+    "recommendation": "reject",
+    "findings": [
+      {
+        "domain": "physics",
+        "severity": "blocking",
+        "issue": "The candidate already fails the supplied structural gate: the submitted geometry did not survive zero-pressure interatomic-potential relaxation. That directly undermines the claimed advantage of a stable tetrahedrally connected 3D framework, because the only explicit computed structural check indicates the starting motif is not a retained local minimum under the screening model. This is measured/model-computed evidence; any explanation such as strain, bond-topology frustration, or mixed-anion incompatibility remains speculative.",
+        "evidence_fields": [
+          "relaxation",
+          "provenance",
+          "energy_ev_per_atom"
+        ],
+        "citations": [],
+        "recommended_test": "Run fully unconstrained first-principles relaxation from the submitted cell and from several symmetry-broken orderings, then compare whether the framework reconstructs, phase-separates into oxide/nitride-like motifs, or retains the intended connectivity.",
+        "valid_evidence_fields": [
+          "relaxation",
+          "provenance",
+          "energy_ev_per_atom"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "physics",
+        "severity": "blocking",
+        "issue": "The thermal-transport rationale is not supported by any computed property for this candidate. Thermal conductivity, elastic constants, and phonons are all missing or incomplete, while the hypothesis itself acknowledges mixed-anion disorder may strongly scatter phonons. Therefore the proposed benefit of useful phonon transport is speculative, not demonstrated. The supplied 3C-SiC citation only supports that a different, high-quality binary crystal can have high thermal conductivity; it does not transfer to an unrelaxed mixed-anion quaternary.",
+        "evidence_fields": [
+          "kappa_w_mk",
+          "thermal_conductivity",
+          "youngs_gpa",
+          "shear_gpa",
+          "minimum_phonon_thz",
+          "dynamic_stability"
+        ],
+        "citations": [
+          {
+            "source_id": "6b86863bf194c529",
+            "chunk_id": "0:0"
+          }
+        ],
+        "recommended_test": "After DFT relaxation, compute phonon dispersion and third-order/Green-Kubo thermal transport for the ordered ground-state candidate; compare against alternative lower-disorder compositions to see whether oxygen and B/Si mixing catastrophically reduce phonon lifetimes.",
+        "valid_evidence_fields": [
+          "kappa_w_mk",
+          "thermal_conductivity",
+          "youngs_gpa",
+          "shear_gpa",
+          "minimum_phonon_thz",
+          "dynamic_stability"
+        ],
+        "citation_checks": [
+          {
+            "valid": false,
+            "full_text": false,
+            "reason": "Unknown source/chunk identity"
+          }
+        ],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "physics",
+        "severity": "uncertain",
+        "issue": "Insulating behavior is asserted but not validated. Formal charge balance is only a bookkeeping check and the assessment explicitly says electronic validation was not computed. The falsification criterion mentions rejecting metallic electronic structure after relaxation, but no such calculation is provided. Thus wide-gap or even insulating character remains unresolved.",
+        "evidence_fields": [
+          "composition_audit.nominal_oxidation_states",
+          "composition_audit.nominal_charge_per_cell",
+          "composition_audit.charge_status",
+          "composition_audit.interpretation",
+          "composition_audit.electronic_validation"
+        ],
+        "citations": [],
+        "recommended_test": "Compute the relaxed electronic density of states and band structure with an insulating-sensitive method, and verify whether a gap persists after structural relaxation and possible symmetry lowering.",
+        "valid_evidence_fields": [
+          "composition_audit.nominal_oxidation_states",
+          "composition_audit.nominal_charge_per_cell",
+          "composition_audit.charge_status",
+          "composition_audit.interpretation",
+          "composition_audit.electronic_validation"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "physics",
+        "severity": "uncertain",
+        "issue": "The proposed ordered wurtzite-derived topology may be physically fragile because even the closest analogy provided for wurtzite BN emphasizes that stacking order of a parent graphitic material is crucial for accessing metastable wurtzite BN. Here there is no comparable precursor argument, no stability calculation, and no synthesis evidence. This does not disprove the structure, but it weakens confidence that a wurtzite-like mixed-anion quaternary will be accessible or retained.",
+        "evidence_fields": [
+          "thermodynamic_stability",
+          "synthesis_validation",
+          "provenance"
+        ],
+        "citations": [
+          {
+            "source_id": "f9658db283f49f54",
+            "chunk_id": "0:0"
+          }
+        ],
+        "recommended_test": "Search alternative topologies beyond the imposed wurtzite-like seed using evolutionary/random structure prediction at fixed composition, then compare energies and dynamic stability to determine whether the proposed motif is exceptional or artificially imposed.",
+        "valid_evidence_fields": [
+          "thermodynamic_stability",
+          "synthesis_validation",
+          "provenance"
+        ],
+        "citation_checks": [
+          {
+            "valid": false,
+            "full_text": false,
+            "reason": "Unknown source/chunk identity"
+          }
+        ],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "evidence",
+        "severity": "blocking",
+        "issue": "Key target properties are absent or backend-unavailable: Young's modulus, shear modulus, thermal conductivity, dielectric response, and minimum phonon frequency are not established. Because the objective is a dielectric heat-spreading material, the current record does not substantiate the central performance claims. The current energy per atom alone is not enough because no same-model competing-phase hull is supplied.",
+        "evidence_fields": [
+          "youngs_gpa",
+          "shear_gpa",
+          "kappa_w_mk",
+          "epsilon_static",
+          "minimum_phonon_thz",
+          "thermodynamic_stability",
+          "energy_ev_per_atom",
+          "property_status"
+        ],
+        "citations": [],
+        "recommended_test": "Complete a consistent same-method property workflow on the relaxed lowest-energy structure: elastic tensor, Born charges/dielectric tensor, phonons, and convex-hull stability against Si-O-N and B-N competing phases.",
+        "valid_evidence_fields": [
+          "youngs_gpa",
+          "shear_gpa",
+          "kappa_w_mk",
+          "epsilon_static",
+          "minimum_phonon_thz",
+          "thermodynamic_stability",
+          "energy_ev_per_atom"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "novelty",
+        "severity": "uncertain",
+        "issue": "Novelty is unresolved, not established. Database coverage was incomplete or errored for some sources, and the assessment explicitly states that no match is not proof of worldwide novelty. Novelty therefore cannot be used as positive support for this hypothesis.",
+        "evidence_fields": [
+          "structural_novelty",
+          "novelty"
+        ],
+        "citations": [],
+        "recommended_test": "Repeat structure/composition novelty checks after obtaining the relaxed structure, including tolerance-based matching against broader databases and known Si-B-N-O compounds.",
+        "valid_evidence_fields": [
+          "structural_novelty"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "synthesis",
+        "severity": "uncertain",
+        "issue": "There is no synthesis validation or route review, while the hypothesis itself flags likely growth problems: oxygen may favor amorphization or phase segregation, and B/Si/O/N mismatch may destabilize the ordered cell. Those route concerns are speculative but currently unmitigated by any experimental precedent in the supplied record.",
+        "evidence_fields": [
+          "synthesis_validation",
+          "change_rationale"
+        ],
+        "citations": [],
+        "recommended_test": "Attempt thin-film combinatorial deposition across the Si-B-N-O composition space with controlled oxygen activity, then use XRD plus local spectroscopy to determine whether a crystalline single phase exists near this stoichiometry or whether amorphous/segregated products dominate.",
+        "valid_evidence_fields": [
+          "synthesis_validation"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      }
+    ],
+    "why_try_a_different_material": "A different material is worth trying because this candidate fails the only explicit structural gate and lacks computed support for the very properties motivating it. The current concept asks one structure to satisfy several competing demands at once: retain a tetrahedral 3D network, accommodate mixed B/Si cations and O/N anions without reconstruction, remain insulating, and still preserve strong phonon transport despite disorder. Changing composition or structure could directly address these weaknesses by reducing chemical/topological frustration and disorder. For example, moving to a less mixed-anion or less mixed-cation network, or to a structure family already known to host ordered oxynitride tetrahedra, may improve relaxational stability and make transport predictions more credible.",
+    "suggested_changes": [
+      "Reduce configurational complexity: test nearby binaries/ternaries or lower-disorder Si-B-N, Si-N-O, or B-N-O variants before returning to the full quaternary.",
+      "Search structure types native to oxynitrides rather than forcing a wurtzite-derived template; compare against tetrahedral framework families known to accommodate O/N ordering.",
+      "Enumerate multiple O/N orderings and B/Si site arrangements to identify whether instability is intrinsic to composition or specific to the submitted ordering.",
+      "If dielectric response is the priority, consider compositions with less anion disorder even at the expense of some bond ionicity gain.",
+      "If thermal transport is the priority, bias toward chemically simpler, more periodic covalent networks with fewer mass/force-constant fluctuations."
+    ],
+    "tradeoffs": [
+      "Lower disorder may improve phonon transport and structural stability but could reduce the hoped-for dielectric/oxidation benefits from oxygen incorporation.",
+      "Exploring oxynitride-native structures may improve realizability, but they may have lower symmetry or poorer epitaxial compatibility with common substrates.",
+      "Simpler binaries/ternaries are easier to validate and may have better transport, but they may not meet all integration or dielectric targets simultaneously.",
+      "Increasing oxygen to favor insulation can also increase risk of amorphization or phase segregation; decreasing oxygen may preserve crystallinity but weaken the proposed processing advantages."
+    ],
+    "next_discriminating_test": "Perform a DFT-level variable-cell relaxation and phonon calculation on an ordered set of Si2BN3O configurations plus decomposition competitors. The most discriminating outcome is whether any relaxed configuration remains a distinct insulating single phase with no substantial imaginary phonon branches, rather than reconstructing toward separated Si-O-rich and BN/Si-N-rich motifs.",
+    "calibrated": false,
+    "can_override_physics": false
+  },
+  "composition_audit": {
+    "formula": "Si2BN3O",
+    "cell_composition": {
+      "Si": 2,
+      "B": 1,
+      "N": 3,
+      "O": 1
+    },
+    "label_discrepancies": [],
+    "nominal_oxidation_states": {
+      "Si": 4,
+      "B": 3,
+      "N": -3,
+      "O": -2
+    },
+    "nominal_charge_per_cell": 0,
+    "charge_status": "nominally_balanced",
+    "interpretation": "Formal charge counting tests the proposed ionic/closed-shell rationale, not the existence of covalent, mixed-valent or metallic phases. Nonzero residual requires a justified bonding/electronic-structure calculation.",
+    "electronic_validation": "not_computed"
+  },
+  "synthesis_status": "paused_by_configuration",
+  "failed_physics": [
+    "relaxation"
+  ],
+  "discovery_established": false,
+  "experimental_validation": false,
+  "official_comparable": false,
+  "routes": {
+    "routes": []
+  },
+  "route_assessments": [],
+  "publication_notice": "Saved model reasoning and checks are unverified. Citation excerpts and underlying paper text are omitted; consult sources.json for provenance."
+}

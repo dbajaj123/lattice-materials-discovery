@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_SiBN2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   2.54869791
+_cell_length_b   4.80645223
+_cell_length_c   5.43567671
+_cell_angle_alpha   91.43179991
+_cell_angle_beta   92.03808497
+_cell_angle_gamma   90.07043456
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SiBN2
+_chemical_formula_sum   'Si1 B1 N2'
+_cell_volume   66.52504848
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  B  B0  1  0.99742495  0.83641332  0.09308128  1
+  Si  Si1  1  0.50694001  0.34730141  0.20971441  1
+  N  N2  1  0.49700265  0.68213963  0.08976517  1
+  N  N3  1  0.99863248  0.13414567  0.10743928  1

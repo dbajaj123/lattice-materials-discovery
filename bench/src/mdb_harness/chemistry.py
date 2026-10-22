@@ -13,12 +13,20 @@ def composition_audit(hypothesis):
     applicable=bool(set(counts)&{'N','O'}) and set(counts)<=set(charges)
     residual=sum(charges[e]*n for e,n in counts.items()) if applicable else None
     discrepancies=[]
-    for token in re.findall(r'(?<![A-Za-z])(?:[A-Z][a-z]?\d*){2,}(?![A-Za-z])',hypothesis.name):
+    labels=list(re.finditer(r'(?<![A-Za-z])(?:[A-Z][a-z]?\d*){2,}(?![A-Za-z])',hypothesis.name))
+    parsed=[]
+    for match in labels:
         try:
-            claimed=Composition(token)
-            if claimed.reduced_composition!=composition.reduced_composition:
-                discrepancies.append({'label_formula':token,'actual_formula':composition.reduced_formula})
+            parsed.append((match,Composition(match.group()).reduced_composition))
         except ValueError:pass
+    has_actual=any(claimed==composition.reduced_composition for _,claimed in parsed)
+    for match,claimed in parsed:
+        if claimed==composition.reduced_composition:continue
+        # A correctly named candidate may explicitly describe a different parent prototype.
+        # Without a correct formula elsewhere, a mismatched "X-derived" label is still flagged.
+        prototype=re.match(r'(?:[-–—]|\s)+(?:derived|based|type)\b',hypothesis.name[match.end():],re.I)
+        if has_actual and prototype:continue
+        discrepancies.append({'label_formula':match.group(),'actual_formula':composition.reduced_formula})
     return {'formula':composition.reduced_formula,'cell_composition':dict(counts),'label_discrepancies':discrepancies,
             'nominal_oxidation_states':{e:charges[e] for e in counts} if applicable else None,
             'nominal_charge_per_cell':residual,

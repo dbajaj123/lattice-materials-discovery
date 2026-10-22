@@ -1,0 +1,51 @@
+{
+  "name": "chip-dielectrics",
+  "objective": "Find a new crystalline dielectric candidate for chip integration, with useful heat transport and several evidence-supported synthesis-route hypotheses.",
+  "model": "openai/gpt-5.4",
+  "review_model": null,
+  "critic_enabled": true,
+  "synthesis_enabled": false,
+  "search_strategy": "evolution",
+  "population_size": 12,
+  "reference_seed_limit": 12,
+  "allowed_elements": [
+    "B",
+    "C",
+    "N",
+    "Si",
+    "Al",
+    "O"
+  ],
+  "rounds": 2,
+  "candidates_per_round": 2,
+  "routes_per_candidate": 3,
+  "max_model_calls": 24,
+  "max_total_tokens": 120000,
+  "max_output_tokens": 6000,
+  "backend": "petmad",
+  "simulation_timeout_seconds": 300,
+  "elastic": true,
+  "thermal": false,
+  "max_wafer_temperature_c": 400.0,
+  "kappa_min_w_mk": 20.0,
+  "epsilon_static_max": 10.0,
+  "network_enabled": true,
+  "papers_per_query": 5,
+  "max_open_papers": 4,
+  "database_page_limit": 25,
+  "database_max_pages": 2,
+  "literature_queries": [
+    "boron nitride phonon stability",
+    "silicon nitride crystal stability",
+    "boron silicon nitride electronic structure",
+    "aluminum nitride dielectric phonon",
+    "silicon carbide thermal conductivity",
+    "diamond lattice thermal conductivity",
+    "boron carbon nitride crystal structure",
+    "nitride metastability phase diagrams"
+  ],
+  "optimade_endpoints": {
+    "oqmd": "https://www.oqmd.org/optimade/structures",
+    "jarvis": "https://jarvis.nist.gov/optimade/jarvisdft/v1/structures/"
+  }
+}

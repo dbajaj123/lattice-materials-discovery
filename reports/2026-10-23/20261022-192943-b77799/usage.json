@@ -1,0 +1,113 @@
+{
+  "calls": [
+    {
+      "stage": "propose:0",
+      "model": "openai/gpt-5.4",
+      "status": "complete",
+      "started_at": "2026-10-22T19:29:50.997466+00:00",
+      "finished_at": "2026-10-22T19:30:19.390395+00:00",
+      "tokens_reserved": 43499,
+      "tokens_charged": 8912,
+      "usage": {
+        "input_tokens": 7482,
+        "output_tokens": 1430,
+        "total_tokens": 8912,
+        "input_tokens_cache_write": null,
+        "input_tokens_cache_read": null,
+        "reasoning_tokens": 0,
+        "total_cost": null
+      }
+    },
+    {
+      "stage": "routes:r00-c00",
+      "model": "openai/gpt-5.4",
+      "status": "complete",
+      "started_at": "2026-10-22T19:30:51.060151+00:00",
+      "finished_at": "2026-10-22T19:32:10.623262+00:00",
+      "tokens_reserved": 48929,
+      "tokens_charged": 14851,
+      "usage": {
+        "input_tokens": 9196,
+        "output_tokens": 5655,
+        "total_tokens": 14851,
+        "input_tokens_cache_write": null,
+        "input_tokens_cache_read": null,
+        "reasoning_tokens": 0,
+        "total_cost": null
+      }
+    },
+    {
+      "stage": "review:r00-c00:0",
+      "model": "openai/gpt-5.4",
+      "status": "complete",
+      "started_at": "2026-10-22T19:32:10.636919+00:00",
+      "finished_at": "2026-10-22T19:32:55.647382+00:00",
+      "tokens_reserved": 51803,
+      "tokens_charged": 12712,
+      "usage": {
+        "input_tokens": 9415,
+        "output_tokens": 3297,
+        "total_tokens": 12712,
+        "input_tokens_cache_write": null,
+        "input_tokens_cache_read": null,
+        "reasoning_tokens": 0,
+        "total_cost": null
+      }
+    },
+    {
+      "stage": "review:r00-c00:1",
+      "model": "openai/gpt-5.4",
+      "status": "complete",
+      "started_at": "2026-10-22T19:32:55.659191+00:00",
+      "finished_at": "2026-10-22T19:33:33.284385+00:00",
+      "tokens_reserved": 49539,
+      "tokens_charged": 11756,
+      "usage": {
+        "input_tokens": 8893,
+        "output_tokens": 2863,
+        "total_tokens": 11756,
+        "input_tokens_cache_write": null,
+        "input_tokens_cache_read": null,
+        "reasoning_tokens": 0,
+        "total_cost": null
+      }
+    },
+    {
+      "stage": "review:r00-c00:2",
+      "model": "openai/gpt-5.4",
+      "status": "complete",
+      "started_at": "2026-10-22T19:33:33.294367+00:00",
+      "finished_at": "2026-10-22T19:34:19.849432+00:00",
+      "tokens_reserved": 51320,
+      "tokens_charged": 12788,
+      "usage": {
+        "input_tokens": 9271,
+        "output_tokens": 3517,
+        "total_tokens": 12788,
+        "input_tokens_cache_write": null,
+        "input_tokens_cache_read": null,
+        "reasoning_tokens": 0,
+        "total_cost": null
+      }
+    },
+    {
+      "stage": "routes:r00-c01",
+      "model": "openai/gpt-5.4",
+      "status": "complete",
+      "started_at": "2026-10-22T19:34:32.102792+00:00",
+      "finished_at": "2026-10-22T19:35:47.604308+00:00",
+      "tokens_reserved": 47850,
+      "tokens_charged": 14175,
+      "usage": {
+        "input_tokens": 8670,
+        "output_tokens": 5505,
+        "total_tokens": 14175,
+        "input_tokens_cache_write": null,
+        "input_tokens_cache_read": null,
+        "reasoning_tokens": 0,
+        "total_cost": null
+      }
+    }
+  ],
+  "budget_stop": null
+}

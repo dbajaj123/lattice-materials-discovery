@@ -1,0 +1,777 @@
+{
+  "id": "r00-c01",
+  "kind": "computational_hypothesis",
+  "hypothesis": {
+    "name": "AlB2N3O2",
+    "hypothesis": "An ordered Al-B-N-O framework based on corner-sharing tetrahedra in which Al preferentially binds O/N and B preferentially binds N/O, producing a fully heteropolar insulating network. Relative to simple AlN-like or BN-like binaries, the mixed B-O/N and Al-O/N chemistry may offer a dielectric network with stronger oxidation resistance and process compatibility, though this remains a structural hypothesis without validation.",
+    "crystal": {
+      "lattice": [
+        [
+          4.92,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          5.06,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          5.18
+        ]
+      ],
+      "species": [
+        "Al",
+        "B",
+        "B",
+        "N",
+        "N",
+        "N",
+        "O",
+        "O"
+      ],
+      "frac_coords": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.5,
+          0.0
+        ],
+        [
+          0.5,
+          0.0,
+          0.5
+        ],
+        [
+          0.25,
+          0.25,
+          0.25
+        ],
+        [
+          0.75,
+          0.75,
+          0.25
+        ],
+        [
+          0.25,
+          0.75,
+          0.75
+        ],
+        [
+          0.75,
+          0.25,
+          0.75
+        ],
+        [
+          0.0,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    "expected_advantage": "Expected to be more insulating and oxidation-tolerant than Al-B binaries, with a dense 3D light-element framework that could be more thermally robust than porous or layered candidates. The all-light-element composition is favorable for strong bonds, though no quantitative property claim is made.",
+    "closest_known_material": "AlN zincblende and BN zincblende; chemically also close to aluminum borate/oxynitride concepts rather than any exact seed here.",
+    "falsification_test": "Reject if structural relaxation drives formation of separate BOx and AlN/Al2O3-like sublattices, if Born-effective-charge-driven instability produces large polar distortions with unstable phonons, or if gap calculations after relaxation indicate semimetallic behavior.",
+    "citations": [
+      {
+        "source_id": "45918c98a2124f1c",
+        "chunk_id": "0:0"
+      },
+      {
+        "source_id": "be905c0fce2bdb3d",
+        "chunk_id": "0:0"
+      }
+    ],
+    "parent_ids": [],
+    "mutation_operator": "explore",
+    "parent_issues_addressed": [
+      "Avoids known unstable metallic elemental/alloy-like light-element structures by enforcing heteropolar bonding.",
+      "Targets a denser 3D dielectric framework instead of layered or porous motifs that may limit cross-plane heat transport."
+    ],
+    "change_rationale": "This candidate uses charge-balanced heteropolar mixing: Al3+ and B3+ can be accommodated in tetrahedral coordination with O2-/N3- anions in an ordered network. The idea is chemically justified by the strong affinity of Al and B for O and N and by the desire to create a fully bonded 3D dielectric rather than a layered phase.",
+    "expected_tradeoffs": [
+      "Competing oxide, nitride, and borate phases may make single-phase ordering difficult.",
+      "Greater ionicity may increase polar scattering and lower thermal conductivity relative to highly covalent binaries.",
+      "Al-O rich local environments may reduce lattice stiffness compared with BN-like networks.",
+      "The proposed ordering may be only metastable and sensitive to growth conditions."
+    ],
+    "predicted_mechanism": "Insulating behavior is expected from electron-precise heteropolar bonding among Al/B cations and O/N anions. A dense corner-sharing tetrahedral network can, in principle, support heat transport better than weakly bonded layered structures, while oxygen incorporation may improve chemical robustness for integration."
+  },
+  "evaluated_crystal": {
+    "lattice": [
+      [
+        4.531730972172188,
+        0.0628306679608518,
+        -0.05930729170378991
+      ],
+      [
+        0.048295286062566695,
+        3.6652621884643217,
+        -0.07137801989384625
+      ],
+      [
+        -0.04533439972226031,
+        -0.07296611225482746,
+        3.6638557643026486
+      ]
+    ],
+    "species": [
+      "Al",
+      "B",
+      "B",
+      "N",
+      "N",
+      "N",
+      "O",
+      "O"
+    ],
+    "frac_coords": [
+      [
+        0.9736903284906945,
+        0.9680418674969439,
+        0.03232553598035217
+      ],
+      [
+        0.49353148721183315,
+        0.4946783327741492,
+        0.0014109410430396653
+      ],
+      [
+        0.4934257928146503,
+        0.9983702117456089,
+        0.5051153980215133
+      ],
+      [
+        0.2904344019994281,
+        0.2615959376882356,
+        0.25556518978759657
+      ],
+      [
+        0.6563428083410151,
+        0.7646745360267843,
+        0.23510346426282144
+      ],
+      [
+        0.29064271813126635,
+        0.7446587011307871,
+        0.7385139254572679
+      ],
+      [
+        0.6737044305177408,
+        0.23475243479478197,
+        0.7645125200794226
+      ],
+      [
+        0.12822805443140753,
+        0.5332280056759632,
+        0.46745297867952906
+      ]
+    ]
+  },
+  "hypothesis_citation_checks": [
+    {
+      "valid": false,
+      "full_text": false,
+      "reason": "Unknown source/chunk identity"
+    },
+    {
+      "valid": false,
+      "full_text": false,
+      "reason": "Unknown source/chunk identity"
+    }
+  ],
+  "physics": {
+    "status": "partial",
+    "backend": "PET-MAD/1.0.2",
+    "input_digest": "51daa6ee02c4932f11c4059190338867cdbff47b4ac66d7d2200229da023dd92",
+    "relaxed": {
+      "lattice": [
+        [
+          4.531730972172188,
+          0.0628306679608518,
+          -0.05930729170378991
+        ],
+        [
+          0.048295286062566695,
+          3.6652621884643217,
+          -0.07137801989384625
+        ],
+        [
+          -0.04533439972226031,
+          -0.07296611225482746,
+          3.6638557643026486
+        ]
+      ],
+      "species": [
+        "Al",
+        "B",
+        "B",
+        "N",
+        "N",
+        "N",
+        "O",
+        "O"
+      ],
+      "frac_coords": [
+        [
+          0.9736903284906945,
+          0.9680418674969439,
+          0.03232553598035217
+        ],
+        [
+          0.49353148721183315,
+          0.4946783327741492,
+          0.0014109410430396653
+        ],
+        [
+          0.4934257928146503,
+          0.9983702117456089,
+          0.5051153980215133
+        ],
+        [
+          0.2904344019994281,
+          0.2615959376882356,
+          0.25556518978759657
+        ],
+        [
+          0.6563428083410151,
+          0.7646745360267843,
+          0.23510346426282144
+        ],
+        [
+          0.29064271813126635,
+          0.7446587011307871,
+          0.7385139254572679
+        ],
+        [
+          0.6737044305177408,
+          0.23475243479478197,
+          0.7645125200794226
+        ],
+        [
+          0.12822805443140753,
+          0.5332280056759632,
+          0.46745297867952906
+        ]
+      ]
+    },
+    "converged": true,
+    "minimum_phonon_thz": 9.256958989075082e-08,
+    "youngs_gpa": 197.81640270110242,
+    "shear_gpa": 73.62026938129766,
+    "kappa_w_mk": null,
+    "epsilon_static": null,
+    "epsilon_infinity": null,
+    "warnings": [
+      "Independent local prescreen; official model revision/settings unavailable.",
+      "Static dielectric evaluator is not configured; thermal transport runs only when explicitly enabled.",
+      "Phonons use finite displacements and a finite q mesh, without polar nonanalytic corrections; not a full convergence study."
+    ],
+    "artifacts": {
+      "packages": {
+        "pet-mad": "1.4.4",
+        "ase": "3.29.0",
+        "phonopy": "4.8.3",
+        "torch": "2.10.0"
+      },
+      "exported_model_sha256": "f5926c4f836fc9b66a1293cba1d6c6ed5bb6ce6d0d6158e9972dd257fed7d574",
+      "energy_ev_per_atom": -7.670077800750732,
+      "max_force_ev_a": 0.02840140175428429,
+      "relaxation_steps": 37,
+      "phonon_supercell": [
+        2,
+        2,
+        2
+      ],
+      "phonon_mesh": [
+        6,
+        6,
+        6
+      ],
+      "phonon_displacements": 48,
+      "phonon_data": "phonons.npz",
+      "elastic_tensor_gpa": [
+        [
+          395.99967474827434,
+          144.36741899261685,
+          144.79651835895112,
+          -1.2935646343810392,
+          -5.926997830712063,
+          3.7267567110449455
+        ],
+        [
+          144.36741899261685,
+          411.528722958057,
+          188.11616395710797,
+          70.91591557483369,
+          -10.445767511723712,
+          33.11558637973813
+        ],
+        [
+          144.79651835895112,
+          188.11616395710797,
+          411.9297812222628,
+          71.31062710096131,
+          -27.01412427439739,
+          20.975525231820157
+        ],
+        [
+          -1.2935646343810392,
+          70.91591557483369,
+          71.31062710096131,
+          234.0323887537817,
+          38.73982312724219,
+          -45.926595250586125
+        ],
+        [
+          -5.926997830712063,
+          -10.445767511723712,
+          -27.01412427439739,
+          38.73982312724219,
+          31.613030091812632,
+          -11.780778290204562
+        ],
+        [
+          3.7267567110449455,
+          33.11558637973813,
+          20.975525231820157,
+          -45.926595250586125,
+          -11.780778290204562,
+          34.52149241064064
+        ]
+      ],
+      "elastic_internal_relaxation_converged": true,
+      "elastic_strain": 0.005,
+      "elastic_reduction": "Voigt-Reuss-Hill isotropic aggregate; not a specified film orientation"
+    }
+  },
+  "novelty": {
+    "structure_status": "unresolved",
+    "matches": [],
+    "coverage": [
+      {
+        "provider": "oqmd",
+        "endpoint": "https://www.oqmd.org/optimade/structures",
+        "retrieved_at": "2026-10-22T20:15:37.416809+00:00",
+        "complete": false,
+        "skipped_records": 0,
+        "status": "error",
+        "error_type": "HTTPError",
+        "records_checked": 0
+      },
+      {
+        "provider": "jarvis",
+        "endpoint": "https://jarvis.nist.gov/optimade/jarvisdft/v1/structures/",
+        "retrieved_at": "2026-10-22T20:15:37.808503+00:00",
+        "complete": false,
+        "skipped_records": 0,
+        "status": "empty_unverified",
+        "records_checked": 0
+      },
+      {
+        "provider": "materials_project",
+        "retrieved_at": "2026-10-22T20:15:39.861734+00:00",
+        "complete": true,
+        "status": "ok",
+        "records_checked": 0
+      }
+    ],
+    "local_library": {
+      "provider": "local_reference_library",
+      "status": "ok",
+      "matches": [],
+      "same_composition_records": 0,
+      "records_checked": 0,
+      "comparison_errors": 0,
+      "composition_lookup_complete": true,
+      "global_novelty_established": false,
+      "datasets": [
+        "jarvis-2025",
+        "oqmd-2021"
+      ]
+    },
+    "online_lookup": "queried",
+    "literature_novelty": "unresolved",
+    "scope": "Chemical-system structure search; thin-film/process novelty needs separate review"
+  },
+  "uncertainties": [
+    "Thermodynamic hull not computed: consistent-model competing phases are required.",
+    "Literature search is bounded; absence of a result is not global novelty.",
+    "Route review is uncalibrated and requires an experimentalist.",
+    "Static dielectric response requires a validated tensor model or DFT/DFPT.",
+    "Thermal conductivity has not been calculated for this candidate."
+  ],
+  "target_assessment": {
+    "thermal_conductivity": {
+      "target": 20.0,
+      "value": null,
+      "status": "unknown"
+    },
+    "static_dielectric": {
+      "target_max": 10.0,
+      "value": null,
+      "status": "unknown"
+    }
+  },
+  "assessment": {
+    "properties": {
+      "formula": "AlB2N3O2",
+      "elements": [
+        "Al",
+        "B",
+        "N",
+        "O"
+      ],
+      "number_of_sites": 8,
+      "input_density_g_cm3": 1.5789692322380966,
+      "input_volume_per_atom_angstrom3": 16.119642,
+      "youngs_gpa": 197.81640270110242,
+      "shear_gpa": 73.62026938129766,
+      "kappa_w_mk": null,
+      "epsilon_static": null,
+      "minimum_phonon_thz": 9.256958989075082e-08,
+      "energy_ev_per_atom": -7.670077800750732,
+      "provenance": "Geometry from submitted structure; predicted properties only from evaluator output. No borrowed reference values.",
+      "minimum_elastic_eigenvalue_gpa": 16.094364038807807
+    },
+    "gates": [
+      {
+        "name": "relaxation",
+        "value": true,
+        "status": "pass",
+        "reason": "Converged interatomic-potential relaxation"
+      },
+      {
+        "name": "dynamic_stability",
+        "value": 9.256958989075082e-08,
+        "status": "pass",
+        "reason": "Minimum sampled phonon frequency >= -1 THz; finite-mesh screening only"
+      },
+      {
+        "name": "youngs_modulus",
+        "value": 197.81640270110242,
+        "status": "pass",
+        "reason": "Young modulus >= 20 GPa"
+      },
+      {
+        "name": "shear_modulus",
+        "value": 73.62026938129766,
+        "status": "pass",
+        "reason": "Shear modulus >= 6 GPa"
+      },
+      {
+        "name": "thermal_conductivity",
+        "value": null,
+        "status": "unknown",
+        "reason": "Minimum thermal tensor eigenvalue above configured threshold; preliminary until converged"
+      },
+      {
+        "name": "static_dielectric",
+        "value": null,
+        "status": "unknown",
+        "reason": "Static dielectric response in configured interval"
+      },
+      {
+        "name": "structural_novelty",
+        "status": "unknown",
+        "value": null,
+        "reason": "No match is not a proof of worldwide novelty"
+      },
+      {
+        "name": "thermodynamic_stability",
+        "status": "unknown",
+        "value": null,
+        "reason": "Complete same-model competing-phase hull not yet computed"
+      },
+      {
+        "name": "synthesis_validation",
+        "status": "unknown",
+        "value": null,
+        "reason": "Model route critique is not experimental validation"
+      },
+      {
+        "name": "mechanical_stability",
+        "value": 16.094364038807807,
+        "status": "pass",
+        "reason": "Positive definite stiffness under the evaluated zero-pressure convention; finite-strain numerical screening"
+      }
+    ],
+    "failed": [],
+    "unknown": [
+      "thermal_conductivity",
+      "static_dielectric",
+      "structural_novelty",
+      "thermodynamic_stability",
+      "synthesis_validation"
+    ],
+    "fitness": {
+      "vector": [
+        0.6666666666666666,
+        0,
+        0
+      ],
+      "dimensions": [
+        "predicted_physics_target_coverage",
+        "uncalibrated_route_support",
+        "negative_failed_checks"
+      ],
+      "selection_only": true,
+      "not_a_success_probability": true
+    },
+    "selection_status": "needs_more_tests",
+    "validated_discovery": false,
+    "test_level": "computational_screening_not_experimental_validation",
+    "composition_audit": {
+      "formula": "AlB2N3O2",
+      "cell_composition": {
+        "Al": 1,
+        "B": 2,
+        "N": 3,
+        "O": 2
+      },
+      "label_discrepancies": [],
+      "nominal_oxidation_states": {
+        "Al": 3,
+        "B": 3,
+        "N": -3,
+        "O": -2
+      },
+      "nominal_charge_per_cell": -4,
+      "charge_status": "requires_bonding_justification",
+      "interpretation": "Formal charge counting tests the proposed ionic/closed-shell rationale, not the existence of covalent, mixed-valent or metallic phases. Nonzero residual requires a justified bonding/electronic-structure calculation.",
+      "electronic_validation": "not_computed"
+    },
+    "property_status": {
+      "youngs_gpa": "predicted",
+      "shear_gpa": "predicted",
+      "kappa_w_mk": "not_calculated_or_incomplete",
+      "epsilon_static": "backend_not_configured",
+      "minimum_phonon_thz": "predicted"
+    }
+  },
+  "critic": {
+    "recommendation": "test_further",
+    "findings": [
+      {
+        "domain": "physics",
+        "severity": "blocking",
+        "issue": "The proposed insulating heteropolar rationale is not internally supported by the composition audit: formal charge counting gives a nonzero residual (-4 per cell), so the closed-shell ionic picture is not yet justified. Any claim of an electron-precise insulating network is therefore speculative until electronic structure is computed on the relaxed structure.",
+        "evidence_fields": [
+          "composition_audit.nominal_oxidation_states",
+          "composition_audit.nominal_charge_per_cell",
+          "composition_audit.charge_status",
+          "composition_audit.interpretation",
+          "composition_audit.electronic_validation"
+        ],
+        "citations": [],
+        "recommended_test": "Run a charge-self-consistent electronic-structure calculation on the relaxed cell, including band structure, density of states, and real-space charge analysis (e.g., Bader/LOBSTER-style bonding metrics), to determine whether the compound is actually insulating and how charge neutrality is achieved.",
+        "valid_evidence_fields": [
+          "composition_audit.nominal_oxidation_states",
+          "composition_audit.nominal_charge_per_cell",
+          "composition_audit.charge_status",
+          "composition_audit.interpretation",
+          "composition_audit.electronic_validation"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "physics",
+        "severity": "uncertain",
+        "issue": "The dynamical-stability screen is marginal rather than reassuring. The minimum phonon frequency is 9.256958989075082e-08 THz, effectively at zero within numerical noise, while the gate itself notes only a finite-mesh screening. This leaves open the possibility of a very soft mode, hidden instability, or symmetry-lowering distortion.",
+        "evidence_fields": [
+          "minimum_phonon_thz",
+          "dynamic_stability"
+        ],
+        "citations": [],
+        "recommended_test": "Recompute phonons with a denser q-mesh and tighter force convergence on the fully relaxed structure, then follow the eigenvector of the softest mode to test whether a lower-symmetry distortion lowers the energy.",
+        "valid_evidence_fields": [
+          "minimum_phonon_thz",
+          "dynamic_stability"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "physics",
+        "severity": "uncertain",
+        "issue": "Mechanical stability is only weakly positive in one direction/mode: the minimum elastic eigenvalue is 16.094364038807807 GPa. Although positive, this is much smaller than the reported Young's and shear moduli and may indicate a soft shear/strain channel, making the ordered framework vulnerable to distortion, ferroelasticity, or defect-assisted collapse under processing stress.",
+        "evidence_fields": [
+          "minimum_elastic_eigenvalue_gpa",
+          "youngs_gpa",
+          "shear_gpa",
+          "mechanical_stability"
+        ],
+        "citations": [],
+        "recommended_test": "Compute the full elastic tensor under tighter settings and perform finite-strain energy scans along the softest elastic eigenmode to see whether anharmonic instability or easy symmetry-lowering strain exists.",
+        "valid_evidence_fields": [
+          "minimum_elastic_eigenvalue_gpa",
+          "youngs_gpa",
+          "shear_gpa",
+          "mechanical_stability"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "physics",
+        "severity": "uncertain",
+        "issue": "The density is unusually low for a candidate described as a dense 3D light-element framework. The reported input density is 1.5789692322380966 g/cm3 with volume per atom 16.119642 A^3, which weakens the argument that this structure is inherently dense or likely to outperform simpler compact ceramics in stiffness, oxidation barrier quality, or heat transport.",
+        "evidence_fields": [
+          "input_density_g_cm3",
+          "input_volume_per_atom_angstrom3"
+        ],
+        "citations": [],
+        "recommended_test": "Benchmark the relaxed packing, bond lengths, and porosity/open-framework character against plausible competing Al-N-O and B-N-O orderings at the same composition to determine whether a denser polymorph exists.",
+        "valid_evidence_fields": [
+          "input_density_g_cm3",
+          "input_volume_per_atom_angstrom3"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "evidence",
+        "severity": "blocking",
+        "issue": "Key target properties remain unverified. Thermal conductivity is unknown, static dielectric response is unknown, and electronic validation was not computed. As a result, the expected advantages of being more insulating, oxidation-tolerant, and thermally robust are not yet demonstrated by the supplied assessment.",
+        "evidence_fields": [
+          "kappa_w_mk",
+          "epsilon_static",
+          "thermal_conductivity",
+          "static_dielectric",
+          "composition_audit.electronic_validation",
+          "provenance"
+        ],
+        "citations": [],
+        "recommended_test": "Prioritize a property-complete calculation stack on the relaxed structure: electronic gap, dielectric tensor, Born effective charges, and lattice thermal conductivity or at least phonon group-velocity/scattering proxies.",
+        "valid_evidence_fields": [
+          "kappa_w_mk",
+          "epsilon_static",
+          "thermal_conductivity",
+          "static_dielectric",
+          "composition_audit.electronic_validation",
+          "provenance"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "synthesis",
+        "severity": "blocking",
+        "issue": "Phase competition risk is explicitly acknowledged but not resolved. Thermodynamic stability is unknown, synthesis validation is unknown, and the falsification test already anticipates decomposition into BOx and AlN/Al2O3-like sublattices. This makes single-phase ordered synthesis a major open risk.",
+        "evidence_fields": [
+          "thermodynamic_stability",
+          "synthesis_validation"
+        ],
+        "citations": [],
+        "recommended_test": "Construct the same-model convex hull in the Al-B-N-O chemical space and test decomposition energies against relevant binaries/ternaries; if near-stable, follow with defect/disorder calculations to evaluate whether cation-anion ordering survives realistic synthesis temperatures.",
+        "valid_evidence_fields": [
+          "thermodynamic_stability",
+          "synthesis_validation"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "novelty",
+        "severity": "uncertain",
+        "issue": "Novelty is unresolved rather than established. Structural novelty is unknown, literature novelty is unresolved, and one major online source returned an error while another had no verified records checked. Therefore absence of matches cannot be used as evidence that this is a new structure.",
+        "evidence_fields": [
+          "structural_novelty"
+        ],
+        "citations": [],
+        "recommended_test": "Repeat database and literature comparison with complete coverage and explicit structural fingerprints after relaxation; separately assess compositional novelty and polymorph novelty.",
+        "valid_evidence_fields": [
+          "structural_novelty"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "evidence",
+        "severity": "informational",
+        "issue": "The supplied external citations do not validate this phase or its properties. One citation concerns Al-doped SiC superconductivity, and the other concerns boron carbide thin-film LCVD; neither is evidence for Al-B-N-O phase stability, dielectric behavior, or synthesis feasibility of the proposed ordered framework.",
+        "evidence_fields": [],
+        "citations": [
+          {
+            "source_id": "45918c98a2124f1c",
+            "chunk_id": "0:0"
+          },
+          {
+            "source_id": "be905c0fce2bdb3d",
+            "chunk_id": "0:0"
+          }
+        ],
+        "recommended_test": "Replace non-probative citations with either direct calculations on this structure or literature specifically addressing Al-B-N-O oxynitride/borate/nitride phase stability and local coordination chemistry.",
+        "valid_evidence_fields": [],
+        "citation_checks": [
+          {
+            "valid": false,
+            "full_text": false,
+            "reason": "Unknown source/chunk identity"
+          },
+          {
+            "valid": false,
+            "full_text": false,
+            "reason": "Unknown source/chunk identity"
+          }
+        ],
+        "grounding": "unsupported_opinion"
+      }
+    ],
+    "why_try_a_different_material": "A different composition or structure may be preferable because this candidate's central selling point\u2014a fully heteropolar insulating tetrahedral network\u2014is not yet supported by charge balance or electronic-structure evidence. The near-zero minimum phonon frequency and modest minimum elastic eigenvalue also suggest the current ordered arrangement may sit close to an instability. Chemically, the mixed Al/B with both N and O creates many competing bonding preferences, which may favor decomposition, disorder, or segregation into Al-O-rich and B-N/O-rich motifs rather than the proposed single ordered phase. Moving to a composition with cleaner valence balance, fewer competing local coordinations, or a structure that better matches known stable tetrahedral chemistries could reduce these risks and make the insulating/oxidation-resistant rationale more defensible.",
+    "suggested_changes": [
+      "Enforce a composition with clearer formal electron counting so the insulating mechanism does not rely on unresolved charge compensation.",
+      "Explore nearby stoichiometries in the Al-B-N-O space that reduce O/N mixed occupancy frustration and competing sublattice formation.",
+      "Test lower-symmetry ordered variants derived from the current cell, since the nearly zero phonon mode may indicate the submitted high-symmetry arrangement is not the true minimum.",
+      "Compare with structures that place Al in more O-rich coordination and B in more N-rich coordination, or vice versa, instead of forcing one mixed framework, to see whether chemically preferred partitioning improves stability.",
+      "Evaluate partially disordered or configurationally averaged oxynitride models, because real synthesis may favor disorder over the exact ordered pattern proposed here."
+    ],
+    "tradeoffs": [
+      "Improving formal charge balance or stability may require compositions that are less novel or less compositionally simple.",
+      "Allowing stronger chemical partitioning into Al-O-rich and B-N-rich motifs could improve stability but may reduce the hoped-for single-phase homogeneous dielectric network.",
+      "Lower-symmetry or disordered variants may be more stable yet harder to characterize and less attractive for property predictability.",
+      "Increasing oxygen content may improve oxidation tolerance and processing compatibility but can soften the lattice and potentially reduce thermal conductivity.",
+      "Pursuing denser polymorphs may improve stiffness and robustness but can make synthesis kinetically harder or favor competing known oxide/nitride phases."
+    ],
+    "next_discriminating_test": "Perform a fully relaxed first-principles study that combines: (1) accurate electronic structure to determine whether the relaxed phase is genuinely insulating despite the nonzero formal charge count; (2) dense-mesh phonons and Born effective charges to check for polar or soft-mode instability; and (3) same-level convex-hull analysis against Al-N, Al-O, B-N, B-O, and mixed Al-B-N-O competitors. This single package best discriminates between a viable metastable dielectric and a structure that merely relaxes locally before decomposing or symmetry-lowering.",
+    "calibrated": false,
+    "can_override_physics": false
+  },
+  "composition_audit": {
+    "formula": "AlB2N3O2",
+    "cell_composition": {
+      "Al": 1,
+      "B": 2,
+      "N": 3,
+      "O": 2
+    },
+    "label_discrepancies": [],
+    "nominal_oxidation_states": {
+      "Al": 3,
+      "B": 3,
+      "N": -3,
+      "O": -2
+    },
+    "nominal_charge_per_cell": -4,
+    "charge_status": "requires_bonding_justification",
+    "interpretation": "Formal charge counting tests the proposed ionic/closed-shell rationale, not the existence of covalent, mixed-valent or metallic phases. Nonzero residual requires a justified bonding/electronic-structure calculation.",
+    "electronic_validation": "not_computed"
+  },
+  "synthesis_status": "paused_by_configuration",
+  "failed_physics": [],
+  "discovery_established": false,
+  "experimental_validation": false,
+  "official_comparable": false,
+  "routes": {
+    "routes": []
+  },
+  "route_assessments": [],
+  "publication_notice": "Saved model reasoning and checks are unverified. Citation excerpts and underlying paper text are omitted; consult sources.json for provenance."
+}

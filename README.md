@@ -30,7 +30,7 @@ Open **http://127.0.0.1:8768/**. The **API key** button configures the model pro
 
 ## Import the reference libraries
 
-Downloaded archives, databases and personal run artifacts are **not included in this repository**. From `bench/`:
+Selected [published run reports](reports/README.md) include the Astra campaign, earlier discovery runs, structures, numerical results and validation. Full working run directories, downloaded archives and databases are not included. From `bench/`:
 
 ```bash
 ../.bench-venv/bin/python scripts/import_open_data.py --kind materials --download
@@ -49,7 +49,7 @@ The importer verifies publisher checksums and stores snapshot provenance. Allow 
 ../.bench-venv/bin/mdb validate --output runs/validation --simulate --cases 12
 ```
 
-Local verification at publication: **49 unit/integration tests**, **72/72 known-reference recognition checks**, and real silicon/diamond simulator controls. These are software and execution checks, not an accuracy calibration, blind discovery benchmark or SOTA result. Browser checks that require local historical runs are separate from the unit suite.
+Current local verification: **67 unit/integration tests**, **72/72 known-reference recognition checks**, and real silicon/diamond simulator controls. These are software and execution checks, not an accuracy calibration, blind discovery benchmark or SOTA result. Browser checks that require local historical runs are separate from the unit suite.
 
 A [GitHub Actions template](docs/CI.md) is included; hosted CI is not enabled yet.
 

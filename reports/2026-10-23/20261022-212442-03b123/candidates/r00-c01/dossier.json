@@ -1,0 +1,853 @@
+{
+  "id": "r00-c01",
+  "kind": "computational_hypothesis",
+  "hypothesis": {
+    "name": "BC6N \u2014 ordered B\u2013N-pair-substituted diamond framework",
+    "hypothesis": "A carbon-rich tetrahedral framework containing a periodically repeated neighboring B\u2013N pair may compensate donor/acceptor tendencies without eliminating the connected C\u2013C backbone. The proposed ordering is an unrelaxed hypothesis and is distinct in composition from the supplied BC2N computational memory. Route hypothesis A: nitrogen-assisted laser chemical vapor deposition of a B\u2013C\u2013N film followed by assessment of whether a suitable tetrahedral template can select this ordering. The supplied experiment demonstrates B\u2013C film deposition, not nitrogen incorporation or this tetrahedral phase. Route hypothesis B: deposit a composition-controlled B\u2013C precursor by that demonstrated platform, then investigate nitrogen incorporation and reconstructive crystallization as a separate feasibility question. Only precursor deposition has direct support here; nitrogen uptake, conversion, and retention of the proposed crystal lack supplied synthesis evidence.",
+    "crystal": {
+      "lattice": [
+        [
+          3.6,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          3.6,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          3.6
+        ]
+      ],
+      "species": [
+        "B",
+        "C",
+        "C",
+        "C",
+        "N",
+        "C",
+        "C",
+        "C"
+      ],
+      "frac_coords": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.0,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.0
+        ],
+        [
+          0.25,
+          0.25,
+          0.25
+        ],
+        [
+          0.25,
+          0.75,
+          0.75
+        ],
+        [
+          0.75,
+          0.25,
+          0.75
+        ],
+        [
+          0.75,
+          0.75,
+          0.25
+        ]
+      ]
+    },
+    "expected_advantage": "The carbon-rich backbone offers a plausible route to useful lattice heat transport, while B\u2013N pairing could avoid the free-carrier behavior associated with uncompensated doping. Insulating behavior, acceptable dielectric loss, and improvement over existing dielectrics are hypotheses rather than established advantages.",
+    "closest_known_material": "Diamond, cubic BN, and tetrahedral B\u2013C\u2013N materials are the relevant structural and chemical references. This is neither pure diamond nor the supplied BN seed, but the exact BC6N ordering has not been checked against published structures or benchmark archives.",
+    "falsification_test": "Compare fully relaxed neighboring and separated B/N orderings with carbon-rich competing structures and phase-separated carbon plus BN. Test whether relaxation preserves tetrahedral connectivity and whether phonons reveal instabilities toward layered or reconstructed motifs. Calculate spin-resolved band structure, localized defect levels, and charge/bond populations; reject the compensated-dielectric explanation if B\u2013C or N\u2013C environments create conducting states. Calculate dielectric response and defect energetics only after electronic screening, followed by anharmonic thermal transport including chemical-order defects. Before any synthesis is resumed, assess precursor-to-framework reaction energetics and nitrogen retention. Future experimental discrimination must establish tetrahedral bonding and chemical order rather than merely detect B, C, and N.",
+    "citations": [
+      {
+        "source_id": "be905c0fce2bdb3d",
+        "chunk_id": "be905c0fce2bdb3d:0:0"
+      },
+      {
+        "source_id": "be905c0fce2bdb3d",
+        "chunk_id": "be905c0fce2bdb3d:0:0"
+      }
+    ],
+    "parent_ids": [],
+    "mutation_operator": "explore",
+    "parent_issues_addressed": [],
+    "change_rationale": "Introduce a compensated B/N pair into a carbon-rich network instead of repeating the earlier BC2N composition or using isolated acceptor doping. Carbon-rich connectivity is the physical motivation, not evidence of superior conductivity. No earlier calculation is transferred to this candidate.",
+    "expected_tradeoffs": [
+      "Compensation of the total electron count does not rule out localized donor/acceptor levels, magnetic states, or carrier-generating defects.",
+      "B\u2013C and N\u2013C bonds may promote reconstruction or separation into carbon and BN.",
+      "Periodic substitution can still increase anharmonicity and phonon scattering; real films may be chemically disordered.",
+      "The demonstrated boron-carbide deposition chemistry favors a different structural family, so accessing this tetrahedral ordering is a major unresolved barrier.",
+      "Chip-compatible crystallization, adhesion, oxidation resistance, and interface thermal resistance remain untested."
+    ],
+    "predicted_mechanism": "Replacing a neighboring carbon pair by B\u2013N preserves the total valence-electron count of the tetrahedral framework. Pairing may reduce uncompensated carrier formation, while the remaining C\u2013C network could carry heat through extended acoustic modes. Local bonding and structural competition can defeat either mechanism.",
+    "bonding_justification": "BC6N has the same total valence-electron count as the corresponding all-carbon tetrahedral cell. A formal B(III)/N(\u2212III)/C(0) count is globally neutral but is not a literal ionic description of the B\u2013C and N\u2013C bonds. Establish the bonding picture using charge-self-consistent electronic structure, spin polarization tests, localized orbital or bond-population analysis, and inspection of gap states."
+  },
+  "evaluated_crystal": {
+    "lattice": [
+      [
+        3.5877209471671714,
+        -0.0009989580789340118,
+        -0.0012632364434489284
+      ],
+      [
+        -0.0009989511528039454,
+        3.587718108895189,
+        -0.0011973967416958366
+      ],
+      [
+        -0.0012632428609492686,
+        -0.0011974075442917362,
+        3.588198785912294
+      ]
+    ],
+    "species": [
+      "B",
+      "C",
+      "C",
+      "C",
+      "N",
+      "C",
+      "C",
+      "C"
+    ],
+    "frac_coords": [
+      [
+        0.9980147282375722,
+        0.9981716756614328,
+        0.9980716491711275
+      ],
+      [
+        0.9983496342866656,
+        0.503117735640693,
+        0.503127454439042
+      ],
+      [
+        0.5032470430581449,
+        0.9980992126096068,
+        0.5032116772141284
+      ],
+      [
+        0.5030512309829057,
+        0.5030573010943842,
+        0.9983736047690437
+      ],
+      [
+        0.2518379001561349,
+        0.2517501494677314,
+        0.2517050758876996
+      ],
+      [
+        0.2530439104048772,
+        0.7463306879066827,
+        0.7461777918809515
+      ],
+      [
+        0.7462562015870373,
+        0.2532014582374234,
+        0.7462035608365012
+      ],
+      [
+        0.746199360404446,
+        0.7462717637451592,
+        0.2531291762270162
+      ]
+    ]
+  },
+  "hypothesis_citation_checks": [
+    {
+      "valid": true,
+      "full_text": false,
+      "reason": "Exact quote found; entailment still needs review"
+    },
+    {
+      "valid": true,
+      "full_text": false,
+      "reason": "Exact quote found; entailment still needs review"
+    }
+  ],
+  "physics": {
+    "status": "partial",
+    "backend": "PET-MAD/1.0.2",
+    "input_digest": "4f2e53c56089d7f0157ec37453691e505ac6a775cc858fc59f850ec3d25fb06a",
+    "relaxed": {
+      "lattice": [
+        [
+          3.5877209471671714,
+          -0.0009989580789340118,
+          -0.0012632364434489284
+        ],
+        [
+          -0.0009989511528039454,
+          3.587718108895189,
+          -0.0011973967416958366
+        ],
+        [
+          -0.0012632428609492686,
+          -0.0011974075442917362,
+          3.588198785912294
+        ]
+      ],
+      "species": [
+        "B",
+        "C",
+        "C",
+        "C",
+        "N",
+        "C",
+        "C",
+        "C"
+      ],
+      "frac_coords": [
+        [
+          0.9980147282375722,
+          0.9981716756614328,
+          0.9980716491711275
+        ],
+        [
+          0.9983496342866656,
+          0.503117735640693,
+          0.503127454439042
+        ],
+        [
+          0.5032470430581449,
+          0.9980992126096068,
+          0.5032116772141284
+        ],
+        [
+          0.5030512309829057,
+          0.5030573010943842,
+          0.9983736047690437
+        ],
+        [
+          0.2518379001561349,
+          0.2517501494677314,
+          0.2517050758876996
+        ],
+        [
+          0.2530439104048772,
+          0.7463306879066827,
+          0.7461777918809515
+        ],
+        [
+          0.7462562015870373,
+          0.2532014582374234,
+          0.7462035608365012
+        ],
+        [
+          0.746199360404446,
+          0.7462717637451592,
+          0.2531291762270162
+        ]
+      ]
+    },
+    "converged": true,
+    "minimum_phonon_thz": -1.4555356485454228e-07,
+    "youngs_gpa": 881.7773353696122,
+    "shear_gpa": 402.87906727770223,
+    "kappa_w_mk": null,
+    "epsilon_static": null,
+    "epsilon_infinity": null,
+    "warnings": [
+      "Independent local prescreen; official model revision/settings unavailable.",
+      "Static dielectric evaluator is not configured; thermal transport runs only when explicitly enabled.",
+      "Phonons use finite displacements and a finite q mesh, without polar nonanalytic corrections; not a full convergence study.",
+      "Thermal conductivity withheld: {'status': 'budget_exceeded', 'required_displacements': 9372, 'budget': 300, 'completed_displacements': 0, 'temperature_k': 300, 'mesh': [9, 9, 9], 'reason': 'Required displacements exceed configured budget'}"
+    ],
+    "artifacts": {
+      "packages": {
+        "pet-mad": "1.4.4",
+        "ase": "3.29.0",
+        "phonopy": "4.8.3",
+        "torch": "2.10.0"
+      },
+      "requested_calculations": {
+        "elastic": true,
+        "thermal": true
+      },
+      "exported_model_sha256": "8bade21ac4a07b7b569e8669d664fe8da63c1c684b983c5dd94184897ecbc097",
+      "energy_ev_per_atom": -9.0492582321167,
+      "max_force_ev_a": 0.021740074104610093,
+      "stress_gpa": [
+        [
+          0.03214209466295773,
+          -0.01707303318489762,
+          -0.01218504655673213
+        ],
+        [
+          -0.01707303318489762,
+          0.03338991811213704,
+          -0.005404083570974423
+        ],
+        [
+          -0.01218504655673213,
+          -0.005404083570974423,
+          0.00024124313513115397
+        ]
+      ],
+      "pressure_gpa": -0.021924418636741976,
+      "relaxation_steps": 7,
+      "phonon_supercell": [
+        2,
+        2,
+        2
+      ],
+      "phonon_mesh": [
+        6,
+        6,
+        6
+      ],
+      "phonon_displacements": 48,
+      "phonon_diagnostics": {
+        "modes_below_minus_0_1_thz": 0,
+        "gamma_frequencies_thz": [
+          [
+            -1.4555356485454228e-07,
+            1.0924757983642651e-07,
+            5.133836277126104e-07,
+            20.040379967962636,
+            20.301518945813573,
+            20.34067427581706,
+            21.255143928016427,
+            21.465917887180527,
+            21.498069738263247,
+            23.372564768096115,
+            23.422975670819127,
+            26.89864172397126,
+            30.10932853384739,
+            30.116457248405585,
+            30.19749714144935,
+            31.175133625706618,
+            32.06883816079896,
+            32.11735634953881,
+            32.84343205498971,
+            32.86834825430653,
+            33.56098522085554,
+            34.23733580891825,
+            34.2652004894236,
+            35.45210457028496
+          ]
+        ],
+        "interpretation": "Three Gamma acoustic translations approach zero. Near-zero numerical signs alone are not evidence of marginal stability; convergence and mode inspection are still required."
+      },
+      "phonon_data": "phonons.npz",
+      "elastic_tensor_gpa": [
+        [
+          829.0636209480407,
+          129.41642708000413,
+          128.8189579990805,
+          -5.834608822992073,
+          13.221207823947598,
+          13.683533293504997
+        ],
+        [
+          129.41642708000413,
+          828.8969783892696,
+          129.41906444320819,
+          12.15831285770101,
+          -5.178080231150388,
+          13.14556814977078
+        ],
+        [
+          128.8189579990805,
+          129.41906444320819,
+          828.6861087044063,
+          12.785267592798867,
+          13.32108699737385,
+          -5.7693338724020915
+        ],
+        [
+          -5.834608822992073,
+          12.15831285770101,
+          12.785267592798867,
+          443.39593405790214,
+          6.059868000082575,
+          6.527428692138245
+        ],
+        [
+          13.221207823947598,
+          -5.178080231150388,
+          13.32108699737385,
+          6.059868000082575,
+          442.8171018462393,
+          6.7231742920123825
+        ],
+        [
+          13.683533293504997,
+          13.14556814977078,
+          -5.7693338724020915,
+          6.527428692138245,
+          6.7231742920123825,
+          443.33894910697563
+        ]
+      ],
+      "elastic_internal_relaxation_converged": true,
+      "elastic_strain": 0.005,
+      "elastic_reduction": "Voigt-Reuss-Hill isotropic aggregate; not a specified film orientation",
+      "thermal": {
+        "status": "budget_exceeded",
+        "required_displacements": 9372,
+        "budget": 300,
+        "completed_displacements": 0,
+        "temperature_k": 300,
+        "mesh": [
+          9,
+          9,
+          9
+        ],
+        "reason": "Required displacements exceed configured budget"
+      }
+    }
+  },
+  "novelty": {
+    "structure_status": "unresolved",
+    "matches": [],
+    "coverage": [
+      {
+        "provider": "oqmd",
+        "endpoint": "https://www.oqmd.org/optimade/structures",
+        "retrieved_at": "2026-10-22T21:27:56.105115+00:00",
+        "complete": false,
+        "skipped_records": 0,
+        "status": "error",
+        "error_type": "HTTPError",
+        "match_parse_failures": 0,
+        "records_checked": 0
+      },
+      {
+        "provider": "jarvis",
+        "endpoint": "https://jarvis.nist.gov/optimade/jarvisdft/v1/structures/",
+        "retrieved_at": "2026-10-22T20:17:42.315601+00:00",
+        "complete": false,
+        "skipped_records": 0,
+        "status": "ok",
+        "match_parse_failures": 0,
+        "records_checked": 21
+      },
+      {
+        "provider": "materials_project",
+        "retrieved_at": "2026-10-22T20:17:47.881017+00:00",
+        "complete": true,
+        "status": "ok",
+        "match_parse_failures": 0,
+        "records_checked": 25
+      }
+    ],
+    "local_library": {
+      "provider": "local_reference_library",
+      "status": "ok",
+      "matches": [],
+      "same_composition_records": 0,
+      "records_checked": 0,
+      "comparison_errors": 0,
+      "composition_lookup_complete": true,
+      "global_novelty_established": false,
+      "datasets": [
+        "jarvis-2025",
+        "oqmd-2021"
+      ]
+    },
+    "online_lookup": "queried",
+    "literature_novelty": "unresolved",
+    "scope": "Chemical-system structure search; thin-film/process novelty needs separate review"
+  },
+  "uncertainties": [
+    "Thermodynamic hull not computed: consistent-model competing phases are required.",
+    "Literature search is bounded; absence of a result is not global novelty.",
+    "Route review is uncalibrated and requires an experimentalist.",
+    "Static dielectric response requires a validated tensor model or DFT/DFPT.",
+    "Thermal conductivity has not been calculated for this candidate."
+  ],
+  "target_assessment": {
+    "thermal_conductivity": {
+      "target": 20.0,
+      "value": null,
+      "status": "unknown"
+    },
+    "static_dielectric": {
+      "target_max": 10.0,
+      "value": null,
+      "status": "unknown"
+    }
+  },
+  "assessment": {
+    "properties": {
+      "formula": "BC6N",
+      "elements": [
+        "B",
+        "C",
+        "N"
+      ],
+      "number_of_sites": 8,
+      "input_density_g_cm3": 3.4481348598508337,
+      "input_volume_per_atom_angstrom3": 5.832000000000001,
+      "youngs_gpa": 881.7773353696122,
+      "shear_gpa": 402.87906727770223,
+      "kappa_w_mk": null,
+      "epsilon_static": null,
+      "minimum_phonon_thz": -1.4555356485454228e-07,
+      "energy_ev_per_atom": -9.0492582321167,
+      "provenance": "Input geometry and final evaluator geometry are separate. Final geometry is relaxed only when converged. No borrowed reference values.",
+      "final_density_g_cm3": 3.4832000463142885,
+      "final_volume_per_atom_angstrom3": 5.773289571447021,
+      "final_geometry_converged": true,
+      "phonon_interpretation": "Three Gamma acoustic translations approach zero. Near-zero numerical signs alone are not evidence of marginal stability; convergence and mode inspection are still required.",
+      "bulk_gpa": 362.28535719195656,
+      "poisson_ratio": 0.09434493746209971,
+      "elastic_derived_provenance": "Isotropic identities from evaluator Voigt\u2013Reuss\u2013Hill Young and shear moduli; not independent tests.",
+      "max_force_ev_a": 0.021740074104610093,
+      "stress_gpa": [
+        [
+          0.03214209466295773,
+          -0.01707303318489762,
+          -0.01218504655673213
+        ],
+        [
+          -0.01707303318489762,
+          0.03338991811213704,
+          -0.005404083570974423
+        ],
+        [
+          -0.01218504655673213,
+          -0.005404083570974423,
+          0.00024124313513115397
+        ]
+      ],
+      "pressure_gpa": -0.021924418636741976,
+      "minimum_elastic_eigenvalue_gpa": 434.981427740874
+    },
+    "gates": [
+      {
+        "name": "relaxation",
+        "value": true,
+        "status": "pass",
+        "reason": "Converged interatomic-potential relaxation; failure within the step budget is inconclusive about phase stability"
+      },
+      {
+        "name": "dynamic_stability",
+        "value": -1.4555356485454228e-07,
+        "status": "pass",
+        "reason": "Minimum sampled phonon frequency >= -1 THz; finite-mesh screening only"
+      },
+      {
+        "name": "youngs_modulus",
+        "value": 881.7773353696122,
+        "status": "pass",
+        "reason": "Young modulus >= 20 GPa"
+      },
+      {
+        "name": "shear_modulus",
+        "value": 402.87906727770223,
+        "status": "pass",
+        "reason": "Shear modulus >= 6 GPa"
+      },
+      {
+        "name": "thermal_conductivity",
+        "value": null,
+        "status": "unknown",
+        "reason": "Minimum thermal tensor eigenvalue above configured threshold; preliminary until converged"
+      },
+      {
+        "name": "static_dielectric",
+        "value": null,
+        "status": "unknown",
+        "reason": "Static dielectric response in configured interval"
+      },
+      {
+        "name": "structural_novelty",
+        "status": "unknown",
+        "value": null,
+        "reason": "No match is not a proof of worldwide novelty"
+      },
+      {
+        "name": "thermodynamic_stability",
+        "status": "unknown",
+        "value": null,
+        "reason": "Complete same-model competing-phase hull not yet computed"
+      },
+      {
+        "name": "synthesis_validation",
+        "status": "unknown",
+        "value": null,
+        "reason": "Model route critique is not experimental validation"
+      },
+      {
+        "name": "mechanical_stability",
+        "value": 434.981427740874,
+        "status": "pass",
+        "reason": "Positive definite stiffness under the evaluated zero-pressure convention; finite-strain numerical screening"
+      }
+    ],
+    "failed": [],
+    "unknown": [
+      "thermal_conductivity",
+      "static_dielectric",
+      "structural_novelty",
+      "thermodynamic_stability",
+      "synthesis_validation"
+    ],
+    "fitness": {
+      "vector": [
+        0.6666666666666666,
+        0,
+        0
+      ],
+      "dimensions": [
+        "predicted_physics_target_coverage",
+        "uncalibrated_route_support",
+        "negative_failed_checks"
+      ],
+      "selection_only": true,
+      "not_a_success_probability": true
+    },
+    "selection_status": "needs_more_tests",
+    "validated_discovery": false,
+    "test_level": "computational_screening_not_experimental_validation",
+    "composition_audit": {
+      "formula": "BC6N",
+      "cell_composition": {
+        "B": 1,
+        "C": 6,
+        "N": 1
+      },
+      "label_discrepancies": [],
+      "nominal_oxidation_states": null,
+      "nominal_charge_per_cell": null,
+      "charge_status": "not_applicable",
+      "interpretation": "Formal charge counting tests the proposed ionic/closed-shell rationale, not the existence of covalent, mixed-valent or metallic phases. Nonzero residual requires a justified bonding/electronic-structure calculation.",
+      "electronic_validation": "not_computed"
+    },
+    "proposal_preflight": {
+      "status": "ready_for_screening",
+      "issues": [],
+      "scope": "Proposal consistency only; this does not prove phase stability or validate alternative bonding."
+    },
+    "property_status": {
+      "youngs_gpa": "predicted",
+      "shear_gpa": "predicted",
+      "kappa_w_mk": "budget_exceeded",
+      "epsilon_static": "backend_not_configured",
+      "minimum_phonon_thz": "predicted"
+    }
+  },
+  "critic": {
+    "recommendation": "test_further",
+    "findings": [
+      {
+        "domain": "physics",
+        "severity": "informational",
+        "issue": "The evaluated structure passes the supplied local mechanical and finite-mesh dynamical screens; there is no demonstrated mechanical failure to repair. The converged interatomic-potential geometry has final density 3.4832000463142885 g/cm\u00b3, predicted Young modulus 881.7773353696122 GPa, shear modulus 402.87906727770223 GPa, and minimum elastic eigenvalue 434.981427740874 GPa. These are model-computed, not measured. The minimum phonon frequency of -1.4555356485454228e-07 THz is consistent with near-zero acoustic translations, not evidence of softness. These screens do not establish stability at unsampled wavevectors or validate the potential for competing bonding environments.",
+        "evidence_fields": [
+          "final_geometry_converged",
+          "final_density_g_cm3",
+          "relaxation",
+          "youngs_gpa",
+          "shear_gpa",
+          "minimum_elastic_eigenvalue_gpa",
+          "mechanical_stability",
+          "minimum_phonon_thz",
+          "phonon_interpretation",
+          "dynamic_stability"
+        ],
+        "citations": [],
+        "recommended_test": "Independently relax the candidate with converged electronic-structure calculations, inspect the resulting connectivity, and converge full phonon dispersions with supercell size and wavevector sampling. Inspect eigenvectors of any reproducible imaginary branches.",
+        "valid_evidence_fields": [
+          "final_geometry_converged",
+          "final_density_g_cm3",
+          "relaxation",
+          "youngs_gpa",
+          "shear_gpa",
+          "minimum_elastic_eigenvalue_gpa",
+          "mechanical_stability",
+          "minimum_phonon_thz",
+          "phonon_interpretation",
+          "dynamic_stability"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "physics",
+        "severity": "uncertain",
+        "issue": "Thermodynamic competition is unresolved. The absolute model energy of -9.0492582321167 eV/atom does not determine stability against carbon plus BN or other B\u2013C\u2013N phases. Neighboring B/N substitution retains B\u2013C and N\u2013C contacts, whose energetic cost relative to segregation is uncomputed. Supplied literature discusses segregation in two-dimensional BCN sheets; that motivates a competing-phase test but does not establish the behavior of tetrahedral BC6N. Alternative ordering or lower substitution concentration could reduce unfavorable contacts, but neither improvement is demonstrated.",
+        "evidence_fields": [
+          "energy_ev_per_atom",
+          "thermodynamic_stability",
+          "composition_audit.cell_composition"
+        ],
+        "citations": [
+          {
+            "source_id": "831f309853ac32f4",
+            "chunk_id": "831f309853ac32f4:0:2200"
+          }
+        ],
+        "recommended_test": "Calculate same-method energies for neighboring and separated B/N orderings, reconstructed structures, and relevant competing phases. Evaluate BC6N against the balanced 6 C + BN reference and a broader competing-phase hull at the intended pressure; assess temperature effects if energy differences warrant them.",
+        "valid_evidence_fields": [
+          "energy_ev_per_atom",
+          "thermodynamic_stability",
+          "composition_audit.cell_composition"
+        ],
+        "citation_checks": [
+          {
+            "valid": true,
+            "full_text": true,
+            "reason": "Exact quote found; entailment still needs review"
+          }
+        ],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "physics",
+        "severity": "uncertain",
+        "issue": "Electron-count compensation is a rationale, not electronic validation. The supplied B1C6N1 composition is isoelectronic with eight carbon atoms, but this does not establish an insulating gap, absence of localized states, or benign defects. Electronic validation is explicitly not computed, and the audit supplies no nominal charge result. B/N separation and local coordination could change gap states even at fixed composition. Diluting paired substitutions might reduce their concentration, but could also weaken pairing or leave uncompensated defects.",
+        "evidence_fields": [
+          "composition_audit.cell_composition",
+          "composition_audit.electronic_validation",
+          "composition_audit.nominal_charge_per_cell",
+          "composition_audit.charge_status",
+          "epsilon_static"
+        ],
+        "citations": [],
+        "recommended_test": "Compare spin-polarized band structures, projected densities of states, and localized-state character for neighboring and separated pairs. Check gap robustness with a suitable higher-level electronic treatment, then calculate relevant vacancy and antisite formation energies and charge-transition levels.",
+        "valid_evidence_fields": [
+          "composition_audit.cell_composition",
+          "composition_audit.electronic_validation",
+          "composition_audit.nominal_charge_per_cell",
+          "composition_audit.charge_status",
+          "epsilon_static"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "physics",
+        "severity": "uncertain",
+        "issue": "The central heat-transport and dielectric advantages remain untested: kappa_w_mk and epsilon_static are null. Large elastic moduli do not establish long phonon lifetimes, thermal conductivity, dielectric response, or dielectric loss. Bond heterogeneity and real-film chemical disorder could reduce heat transport, but no scattering calculation establishes their magnitude. Perfect periodic substitution is not itself random-alloy disorder. A more carbon-rich framework or improved chemical order could help transport, but that is a hypothesis requiring comparison.",
+        "evidence_fields": [
+          "kappa_w_mk",
+          "epsilon_static",
+          "thermal_conductivity",
+          "static_dielectric",
+          "youngs_gpa",
+          "shear_gpa"
+        ],
+        "citations": [],
+        "recommended_test": "After confirming insulating behavior, compute converged dielectric tensors and anharmonic thermal-conductivity tensors. Compare the ideal ordered crystal with explicit order defects and more dilute paired substitutions. Treat operating-frequency dielectric loss as a separate calculation or measurement, not as a consequence of static permittivity.",
+        "valid_evidence_fields": [
+          "kappa_w_mk",
+          "epsilon_static",
+          "thermal_conductivity",
+          "static_dielectric",
+          "youngs_gpa",
+          "shear_gpa"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "synthesis",
+        "severity": "uncertain",
+        "issue": "The supplied experiment supports boron-carbide film deposition, not nitrogen uptake, tetrahedral BC6N crystallization, or retention of the proposed B/N order. Both proposed routes therefore lack evidence for their decisive conversion step. Changing to a tetrahedral template might favor the desired coordination, but does not by itself establish nitrogen incorporation or ordering. No synthesized candidate is established by this record.",
+        "evidence_fields": [
+          "synthesis_validation"
+        ],
+        "citations": [
+          {
+            "source_id": "be905c0fce2bdb3d",
+            "chunk_id": "be905c0fce2bdb3d:0:0"
+          }
+        ],
+        "recommended_test": "First assess precursor-to-framework reaction energetics and nitrogen retention under plausible processing conditions. If justified, compare templated and untemplated films using quantitative composition, diffraction, and local bonding probes. Elemental detection alone must not count as confirmation of tetrahedral coordination or B/N order.",
+        "valid_evidence_fields": [
+          "synthesis_validation"
+        ],
+        "citation_checks": [
+          {
+            "valid": true,
+            "full_text": false,
+            "reason": "Exact quote found; entailment still needs review"
+          }
+        ],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      },
+      {
+        "domain": "novelty",
+        "severity": "uncertain",
+        "issue": "Structural novelty is unresolved. A different composition from the supplied BC2N memory does not establish a new ordering or a new material. The structural-novelty gate is unknown; no-match results cannot establish worldwide novelty, particularly with incomplete search coverage.",
+        "evidence_fields": [
+          "formula",
+          "structural_novelty"
+        ],
+        "citations": [],
+        "recommended_test": "Complete composition- and structure-aware database and literature searches, including equivalent cells, diamond-derived B/N orderings, and tetrahedral BCN reports. Review process novelty separately from crystal-structure novelty.",
+        "valid_evidence_fields": [
+          "formula",
+          "structural_novelty"
+        ],
+        "citation_checks": [],
+        "grounding": "traceable_inputs_not_verified_entailment"
+      }
+    ],
+    "why_try_a_different_material": "There is no demonstrated mechanical reason to abandon this candidate. The reason to explore alternatives is that its additional B\u2013C/N\u2013C environments and required chemical order introduce unresolved electronic, thermodynamic, and processing risks without an established thermal or dielectric benefit. More dilute paired substitutions, alternative B/N orderings, and diamond or cubic-BN controls can identify whether the ternary chemistry contributes useful functionality or merely additional failure pathways.",
+    "suggested_changes": [
+      "Compare neighboring, separated, and clustered B/N arrangements at fixed BC6N composition to isolate ordering effects from composition effects.",
+      "Test more dilute, stoichiometrically paired B/N substitutions in larger carbon frameworks; do not assume compensation guarantees insulation.",
+      "Include carbon-plus-BN segregation and reconstructed motifs as explicit competitors rather than constraining every trial to remain tetrahedral.",
+      "Benchmark against diamond and cubic BN with the same computational methods and target conditions.",
+      "Treat tetrahedral-template selection and nitrogen retention as separate synthesis hypotheses requiring validation."
+    ],
+    "tradeoffs": [
+      "Diluting substitutions may reduce heterobond and disorder contributions, but can reduce any intended electronic tuning and make pair placement harder to verify.",
+      "Clustering B/N could reduce some heterobond contacts, but may promote segregation and introduce interfaces that impede heat flow.",
+      "Stronger ordering control may suppress disorder scattering, but requires more selective processing and does not guarantee favorable intrinsic anharmonicity.",
+      "Conditions that help access a tetrahedral phase may compromise substrate compatibility, nitrogen retention, or defect control.",
+      "A simpler reference material avoids some ternary-ordering uncertainties, but its application-specific advantages still require comparable transport, dielectric, and interface evidence."
+    ],
+    "next_discriminating_test": "Perform a matched, converged spin-polarized electronic-structure comparison of neighboring-pair BC6N, separated-pair BC6N, and the balanced 6 C + BN reference, allowing unconstrained structural relaxation. Report relative energies, coordination changes, and band/defect-state character. This directly tests whether pairing both favors the proposed framework and supports insulation. Metallic states would falsify the compensated-dielectric explanation for that ordering; a substantial segregation driving force would shift the question to kinetic accessibility and retention rather than prove that synthesis is impossible.",
+    "calibrated": false,
+    "can_override_physics": false
+  },
+  "composition_audit": {
+    "formula": "BC6N",
+    "cell_composition": {
+      "B": 1,
+      "C": 6,
+      "N": 1
+    },
+    "label_discrepancies": [],
+    "nominal_oxidation_states": null,
+    "nominal_charge_per_cell": null,
+    "charge_status": "not_applicable",
+    "interpretation": "Formal charge counting tests the proposed ionic/closed-shell rationale, not the existence of covalent, mixed-valent or metallic phases. Nonzero residual requires a justified bonding/electronic-structure calculation.",
+    "electronic_validation": "not_computed"
+  },
+  "synthesis_status": "paused_by_configuration",
+  "failed_physics": [],
+  "discovery_established": false,
+  "experimental_validation": false,
+  "official_comparable": false,
+  "routes": {
+    "routes": []
+  },
+  "route_assessments": [],
+  "publication_notice": "Saved model reasoning and checks are unverified. Citation excerpts and underlying paper text are omitted; consult sources.json for provenance."
+}

@@ -1,0 +1,345 @@
+{
+  "id": "r00-c00",
+  "kind": "computational_hypothesis",
+  "hypothesis": {
+    "name": "cubic BSiN3-derived tetrahedral nitride (ordered B/Si on cation sublattice)",
+    "hypothesis": "A fully tetrahedral, wide-gap nitride near BSiN3 composition could exist as an ordered derivative of diamond-like AB networks, using alternating short B-N and longer Si-N bonds to preserve local valence balance while increasing bond ionicity relative to SiC. This is a crystal-structure hypothesis only; no direct synthesis or prior isolation evidence was provided in the supplied sources, so stability and order are uncertain.",
+    "crystal": {
+      "lattice": [
+        [
+          3.12,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          3.12,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          6.24
+        ]
+      ],
+      "species": [
+        "B",
+        "Si",
+        "N",
+        "N"
+      ],
+      "frac_coords": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.5,
+          0.25
+        ],
+        [
+          0.5,
+          0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.25
+        ]
+      ]
+    },
+    "expected_advantage": "If realizable as a dense ordered nitride, the all-light-element tetrahedral bonding could be favorable for dielectric behavior and heat transport, while avoiding oxygen-rich glassy chemistry that often lowers thermal transport in thin films.",
+    "closest_known_material": "BN zincblende and AlN zincblende, as tetrahedral wide-gap nitride reference points; also SiN_x thin films as a practical process reference.",
+    "falsification_test": "Attempt deposition in the B-Si-N composition space by reactive sputtering or PECVD followed by annealing. If XRD/TEM fail to show a reproducible crystalline ordered phase and spectroscopy instead indicates only amorphous SiN_x with B incorporation or phase-separated BN/Si3N4-like regions, this hypothesis is falsified as a distinct crystal candidate under those conditions.",
+    "citations": [
+      {
+        "source_id": "13d593388faf2285",
+        "chunk_id": "4:0"
+      },
+      {
+        "source_id": "13d593388faf2285",
+        "chunk_id": "4:4400"
+      },
+      {
+        "source_id": "13d593388faf2285",
+        "chunk_id": "7:2200"
+      }
+    ]
+  },
+  "evaluated_crystal": {
+    "lattice": [
+      [
+        2.548131999508978,
+        -0.0016558834502547013,
+        -0.05368080182709681
+      ],
+      [
+        -0.0035166959905025903,
+        4.806325995267507,
+        -0.03465630280397302
+      ],
+      [
+        -0.0789373284726519,
+        -0.09669875905846924,
+        5.434243232909229
+      ]
+    ],
+    "species": [
+      "B",
+      "Si",
+      "N",
+      "N"
+    ],
+    "frac_coords": [
+      [
+        0.9974249534376325,
+        0.8364133189811784,
+        0.09308128392818933
+      ],
+      [
+        0.5069400143993062,
+        0.3473014095491373,
+        0.20971441461413892
+      ],
+      [
+        0.4970026527438382,
+        0.6821396262294733,
+        0.08976516916614993
+      ],
+      [
+        0.9986324837039279,
+        0.13414567056057664,
+        0.10743928481928523
+      ]
+    ]
+  },
+  "hypothesis_citation_checks": [
+    {
+      "valid": false,
+      "full_text": false,
+      "reason": "Unknown source/chunk identity"
+    },
+    {
+      "valid": false,
+      "full_text": false,
+      "reason": "Unknown source/chunk identity"
+    },
+    {
+      "valid": false,
+      "full_text": false,
+      "reason": "Unknown source/chunk identity"
+    }
+  ],
+  "physics": {
+    "status": "partial",
+    "backend": "PET-MAD/1.0.2",
+    "input_digest": "11c1d5da688cd708de34671213dc6f8d0b9be754db305cf9b35883106d708425",
+    "relaxed": {
+      "lattice": [
+        [
+          2.548131999508978,
+          -0.0016558834502547013,
+          -0.05368080182709681
+        ],
+        [
+          -0.0035166959905025903,
+          4.806325995267507,
+          -0.03465630280397302
+        ],
+        [
+          -0.0789373284726519,
+          -0.09669875905846924,
+          5.434243232909229
+        ]
+      ],
+      "species": [
+        "B",
+        "Si",
+        "N",
+        "N"
+      ],
+      "frac_coords": [
+        [
+          0.9974249534376325,
+          0.8364133189811784,
+          0.09308128392818933
+        ],
+        [
+          0.5069400143993062,
+          0.3473014095491373,
+          0.20971441461413892
+        ],
+        [
+          0.4970026527438382,
+          0.6821396262294733,
+          0.08976516916614993
+        ],
+        [
+          0.9986324837039279,
+          0.13414567056057664,
+          0.10743928481928523
+        ]
+      ]
+    },
+    "converged": true,
+    "minimum_phonon_thz": -17.88844064899637,
+    "youngs_gpa": null,
+    "shear_gpa": null,
+    "kappa_w_mk": null,
+    "epsilon_static": null,
+    "epsilon_infinity": null,
+    "warnings": [
+      "Independent local prescreen; official model revision/settings unavailable.",
+      "Static dielectric evaluator is not configured; thermal transport runs only when explicitly enabled.",
+      "Phonons use finite displacements and a finite q mesh, without polar nonanalytic corrections; not a full convergence study.",
+      "Elasticity invalid or internally unconverged; moduli withheld"
+    ],
+    "artifacts": {
+      "packages": {
+        "pet-mad": "1.4.4",
+        "ase": "3.29.0",
+        "phonopy": "4.8.3",
+        "torch": "2.10.0"
+      },
+      "exported_model_sha256": "7d3c6856e7e56908afdf0b22e94e94c582dcc3ad019430dc6bc4fa7ffea6df07",
+      "energy_ev_per_atom": -8.084063529968262,
+      "max_force_ev_a": 0.024888032651223788,
+      "relaxation_steps": 48,
+      "phonon_supercell": [
+        2,
+        2,
+        2
+      ],
+      "phonon_mesh": [
+        6,
+        6,
+        6
+      ],
+      "phonon_displacements": 24,
+      "phonon_data": "phonons.npz",
+      "elastic_tensor_gpa": [
+        [
+          436.4940254297156,
+          102.71454963583636,
+          3.7559674553104205,
+          -0.9041518488420348,
+          -8.983199409877678,
+          -1.068563536872546
+        ],
+        [
+          102.71454963583636,
+          366.59988665711063,
+          4.87701949636512,
+          -2.9753364928952717,
+          -2.0521256760259705,
+          -0.5604007452469333
+        ],
+        [
+          3.7559674553104205,
+          4.87701949636512,
+          2.7087537489419238,
+          0.39837146931661044,
+          -0.17137531587125301,
+          0.11005897106563418
+        ],
+        [
+          -0.9041518488420348,
+          -2.9753364928952717,
+          0.39837146931661044,
+          -0.3859023527772877,
+          -0.03566738219164863,
+          -2.648241744395319
+        ],
+        [
+          -8.983199409877678,
+          -2.0521256760259705,
+          -0.17137531587125301,
+          -0.03566738219164863,
+          1.5071565845253487,
+          2.1811124551438463
+        ],
+        [
+          -1.068563536872546,
+          -0.5604007452469333,
+          0.11005897106563418,
+          -2.648241744395319,
+          2.1811124551438463,
+          131.0440737296848
+        ]
+      ],
+      "elastic_internal_relaxation_converged": true,
+      "elastic_strain": 0.005
+    }
+  },
+  "novelty": {
+    "structure_status": "unresolved",
+    "matches": [],
+    "coverage": [
+      {
+        "provider": "oqmd",
+        "endpoint": "https://www.oqmd.org/optimade/structures",
+        "retrieved_at": "2026-10-22T19:30:26.981613+00:00",
+        "complete": false,
+        "skipped_records": 0,
+        "status": "error",
+        "error_type": "ReadTimeout",
+        "records_checked": 0
+      },
+      {
+        "provider": "jarvis",
+        "endpoint": "https://jarvis.nist.gov/optimade/jarvisdft/v1/structures/",
+        "retrieved_at": "2026-10-22T19:30:47.196727+00:00",
+        "complete": false,
+        "skipped_records": 0,
+        "status": "empty_unverified",
+        "records_checked": 0
+      },
+      {
+        "provider": "materials_project",
+        "retrieved_at": "2026-10-22T19:30:49.406892+00:00",
+        "complete": false,
+        "status": "missing_optional_key",
+        "records_checked": 0
+      }
+    ],
+    "literature_novelty": "unresolved",
+    "scope": "Chemical-system structure search; thin-film/process novelty needs separate review"
+  },
+  "uncertainties": [
+    "Thermodynamic hull not computed: consistent-model competing phases are required.",
+    "Literature search is bounded; absence of a result is not global novelty.",
+    "Route review is uncalibrated and requires an experimentalist.",
+    "Static dielectric response requires a validated tensor model or DFT/DFPT.",
+    "Thermal conductivity has not been calculated for this candidate."
+  ],
+  "target_assessment": {
+    "thermal_conductivity": {
+      "target": 20.0,
+      "value": null,
+      "status": "unknown"
+    },
+    "static_dielectric": {
+      "target_max": 10.0,
+      "value": null,
+      "status": "unknown"
+    }
+  },
+  "assessment": null,
+  "critic": null,
+  "composition_audit": null,
+  "synthesis_status": null,
+  "failed_physics": [
+    "dynamic_stability"
+  ],
+  "discovery_established": false,
+  "experimental_validation": false,
+  "official_comparable": false,
+  "routes": {
+    "routes": []
+  },
+  "route_assessments": [],
+  "publication_notice": "Saved model reasoning and checks are unverified. Citation excerpts and underlying paper text are omitted; consult sources.json for provenance."
+}

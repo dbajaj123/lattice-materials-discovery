@@ -1,0 +1,20 @@
+{
+  "formula": "Si2BN3O",
+  "cell_composition": {
+    "Si": 2,
+    "B": 1,
+    "N": 3,
+    "O": 1
+  },
+  "label_discrepancies": [],
+  "nominal_oxidation_states": {
+    "Si": 4,
+    "B": 3,
+    "N": -3,
+    "O": -2
+  },
+  "nominal_charge_per_cell": 0,
+  "charge_status": "nominally_balanced",
+  "interpretation": "Formal charge counting tests the proposed ionic/closed-shell rationale, not the existence of covalent, mixed-valent or metallic phases. Nonzero residual requires a justified bonding/electronic-structure calculation.",
+  "electronic_validation": "not_computed"
+}

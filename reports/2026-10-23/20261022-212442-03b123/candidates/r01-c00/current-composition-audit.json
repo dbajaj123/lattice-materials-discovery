@@ -1,0 +1,15 @@
+{
+  "formula": "AlSi7C7N",
+  "cell_composition": {
+    "Al": 1,
+    "Si": 7,
+    "N": 1,
+    "C": 7
+  },
+  "label_discrepancies": [],
+  "nominal_oxidation_states": null,
+  "nominal_charge_per_cell": null,
+  "charge_status": "not_applicable",
+  "interpretation": "Formal charge counting tests the proposed ionic/closed-shell rationale, not the existence of covalent, mixed-valent or metallic phases. Nonzero residual requires a justified bonding/electronic-structure calculation.",
+  "electronic_validation": "not_computed"
+}

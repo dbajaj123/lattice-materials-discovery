@@ -48,6 +48,17 @@ def test_charge_and_formula_audit_rejects_false_balance_claim():
     assert result['electronic_validation']=='not_computed'
 
 
+def test_correct_formula_can_name_a_different_parent_prototype():
+    h=hypothesis();h.name='BSiN2 — SiC-derived framework'
+    h.crystal=Crystal(lattice=[[5,0,0],[0,5,0],[0,0,5]],species=['B','Si','N','N'],
+        frac_coords=[[0,0,0],[.5,.5,0],[.5,0,.5],[0,.5,.5]])
+    assert composition_audit(h)['label_discrepancies']==[]
+    h.name='SiC-derived framework'
+    assert composition_audit(h)['label_discrepancies']
+    h.name='BSiN2 or BSiN3'
+    assert composition_audit(h)['label_discrepancies'][0]['label_formula']=='BSiN3'
+
+
 def test_physics_unknowns_instability_and_withheld_properties():
     h=hypothesis();cfg=CampaignConfig()
     empty=assess_candidate(h,{'backend':'unconfigured'}, {},[],cfg)

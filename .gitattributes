@@ -1,0 +1,2 @@
+# Preserve the upstream bundle byte-for-byte; do not review minified vendor code as source.
+reports/**/assets/plotly.min.js -diff -whitespace linguist-vendored=true

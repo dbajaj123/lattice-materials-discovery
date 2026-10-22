@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "completed_candidates": [
+    "r00-c00",
+    "r00-c01",
+    "r01-c00",
+    "r01-c01"
+  ],
+  "rounds_completed": 2,
+  "errors": []
+}
