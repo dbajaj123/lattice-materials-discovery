@@ -1,0 +1,52 @@
+[
+  {
+    "id": "kawin-paper",
+    "title": "Kawin: An open source Kampmann\u2013Wagner Numerical phase precipitation and coarsening model",
+    "url": "https://doi.org/10.1016/j.actamat.2023.118988",
+    "role": "simulation methodology",
+    "status": "reference_identified"
+  },
+  {
+    "id": "kawin-strength-example",
+    "title": "Kawin Al-Sc strength modeling example",
+    "url": "https://github.com/materialsgenomefoundation/kawin/blob/f0c347967fcfc18f6615cec205f584573606e100/examples/05_Strength_Modeling.ipynb",
+    "role": "binary simulator parameter provenance",
+    "status": "code_inspected",
+    "parameters": {
+      "sc_diffusion_D0_m2_s": 0.00019,
+      "sc_diffusion_Q_j_mol": 164000,
+      "interfacial_energy_j_m2": 0.1
+    },
+    "limitation": "Example reproduction is not independent experimental validation."
+  },
+  {
+    "id": "marquis-2001",
+    "title": "Nanoscale structural evolution of Al3Sc precipitates in Al(Sc) alloys",
+    "url": "https://www.dunand.northwestern.edu/refs/files/Marquis-Nanoscale.pdf",
+    "role": "preparation analogue and initial experimental consistency benchmark",
+    "status": "methods_and_table_1_reviewed",
+    "limitation": "Three table endpoints compared using fixed parameters; not independent validation or uncertainty calibration."
+  },
+  {
+    "id": "precipitation-2001",
+    "title": "Precipitation of Al3Sc in binary Al\u2013Sc alloys",
+    "url": "https://doi.org/10.1016/S0921-5093(01)01326-0",
+    "role": "nucleation and growth benchmark, including failures of homogeneous-nucleation assumptions",
+    "status": "abstract_reviewed"
+  },
+  {
+    "id": "clouet-2006",
+    "title": "Complex Precipitation Pathways in Multi-Component Alloys",
+    "url": "https://arxiv.org/abs/cond-mat/0605738",
+    "role": "known Al-Sc-Zr family and composition-dependent precipitation pathways",
+    "status": "abstract_reviewed",
+    "implication": "Al-Sc-Zr and its precipitate architecture are established prior art; a new decimal composition is insufficient novelty."
+  },
+  {
+    "id": "deane-2022",
+    "title": "Utilization of Bayesian Optimization and KWN Modeling for Increased Efficiency of Al-Sc Precipitation Strengthening",
+    "url": "https://doi.org/10.3390/met12060975",
+    "role": "optimization baseline and directly related prior work",
+    "status": "reference_identified"
+  }
+]

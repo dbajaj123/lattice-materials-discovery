@@ -1,0 +1,7 @@
+{
+  "name": "Al–0.05Sc–0.10Zr at.% exploratory composition",
+  "composition_at_fraction": {"AL":0.9985,"SC":0.0005,"ZR":0.001},
+  "steps":[{"name":"first aging hold","temperature_c":350,"duration_h":4}],
+  "hypothesis":"Explore replacing some scandium with zirconium within a known precipitation-strengthened family. Thermodynamic screening alone cannot establish the resulting kinetics or mechanical benefit.",
+  "evidence_ids":["clouet-2006"]
+}

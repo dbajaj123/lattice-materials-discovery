@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mdb-harness"
+version = "0.1.0"
+description = "Independent Material Discovery Bench integration and research harness"
+requires-python = ">=3.12"
+dependencies = ["numpy", "pydantic>=2", "pymatgen", "ase", "phonopy", "requests", "plotly", "inspect-ai", "pypdf", "python-dotenv"]
+
+[project.optional-dependencies]
+simulation = ["pet-mad==1.4.4"]
+thermal = ["phono3py>=4.8,<5"]
+openai = ["openai>=3,<4"]
+test = ["pytest"]
+
+[project.scripts]
+mdb = "mdb_harness.cli:main"
+mdb-studio = "mdb_harness.live_server:main"
+
+[tool.setuptools.package-data]
+mdb_harness = ["web/*.html", "web/*.css", "web/*.js"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

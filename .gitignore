@@ -1,0 +1,24 @@
+.venv/
+.bench-venv/
+vendor/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.env
+__marimo__/
+.cache/
+runs/
+
+# Credentials and machine-local artifacts
+.env.*
+!.env.example
+*.pem
+*.key
+*.sqlite
+*.sqlite-*
+*.db
+*.log
+.DS_Store
+/data/
+/dist/
+/build/

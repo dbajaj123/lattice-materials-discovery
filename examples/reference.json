@@ -1,0 +1,21 @@
+{
+  "name": "Al\u20130.20 at.% Sc reference",
+  "composition_at_fraction": {
+    "AL": 0.998,
+    "SC": 0.002
+  },
+  "steps": [
+    {
+      "name": "age",
+      "temperature_c": 400.0,
+      "duration_h": 4.0,
+      "ramp_h": 0,
+      "purpose": "precipitate"
+    }
+  ],
+  "initial_state": "assumed_supersaturated_fcc",
+  "hypothesis": "Reproduce the upstream Al\u2013Sc strength example over a shorter aging window.",
+  "evidence_ids": [
+    "kawin-strength-example"
+  ]
+}

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alloy-discovery"
+version = "0.1.0"
+description = "Evidence-aware alloy composition and processing discovery harness"
+requires-python = ">=3.11"
+dependencies = ["kawin==0.5.0", "pycalphad==0.11.2", "pydantic>=2,<3", "numpy>=2", "plotly>=6", "marimo>=0.20", "requests>=2"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+alloy-discovery = "alloy_discovery.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+alloy_discovery = ["data/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["simulation: executes the real Kawin backend"]

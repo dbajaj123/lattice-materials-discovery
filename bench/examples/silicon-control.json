@@ -1,0 +1,41 @@
+{
+  "name": "Silicon simulator control",
+  "hypothesis": "Known diamond-cubic silicon checks relaxation and phonon integration; it is not a novel dielectric candidate.",
+  "crystal": {
+    "lattice": [
+      [
+        0.0,
+        2.715,
+        2.715
+      ],
+      [
+        2.715,
+        0.0,
+        2.715
+      ],
+      [
+        2.715,
+        2.715,
+        0.0
+      ]
+    ],
+    "species": [
+      "Si",
+      "Si"
+    ],
+    "frac_coords": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.24999999999999997,
+        0.25,
+        0.25
+      ]
+    ]
+  },
+  "synthesis": [],
+  "closest_prior_art": []
+}

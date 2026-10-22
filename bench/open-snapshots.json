@@ -1,0 +1,47 @@
+{
+  "jarvis-2025": {
+    "id": 64391379,
+    "name": "jdft_3d-9-24-2025.json.zip",
+    "size": 48447610,
+    "download_url": "https://ndownloader.figshare.com/files/64391379",
+    "computed_md5": "c3179161ef0d029cf1fa70da463aac6e",
+    "license": {
+      "value": 1,
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "article_url": "https://doi.org/10.6084/m9.figshare.6815699",
+    "article_version": 11,
+    "archive": "data/reference/downloads/jarvis-2025.zip"
+  },
+  "oqmd-2021": {
+    "id": 26790182,
+    "name": "all_oqmd.json.zip",
+    "size": 63227093,
+    "download_url": "https://ndownloader.figshare.com/files/26790182",
+    "computed_md5": "e0fab1c79ac8ceb51f98363abbccb723",
+    "license": {
+      "value": 1,
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "article_url": "https://doi.org/10.6084/m9.figshare.14206169",
+    "article_version": 1,
+    "archive": "data/reference/downloads/oqmd-2021.zip"
+  },
+  "arxiv-condmat-2023": {
+    "id": 40566137,
+    "name": "arxiv_summary.json.zip",
+    "size": 48878075,
+    "download_url": "https://ndownloader.figshare.com/files/40566137",
+    "computed_md5": "9ddfaa2bd71caeaf6ed0c5c1ea370428",
+    "license": {
+      "value": 1,
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "article_url": "https://doi.org/10.6084/m9.figshare.22817651",
+    "article_version": 1,
+    "archive": "data/literature/downloads/arxiv-condmat.zip"
+  }
+}

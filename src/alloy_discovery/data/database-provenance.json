@@ -1,0 +1,10 @@
+{
+  "source": "https://github.com/materialsgenomefoundation/kawin/blob/f0c347967fcfc18f6615cec205f584573606e100/examples/AlScZr.tdb",
+  "upstream_commit": "f0c347967fcfc18f6615cec205f584573606e100",
+  "license_file": "KAWIN_LICENSE.txt",
+  "attribution": "Kawin example database; source comments retained. Wang, Jin and Zhao (2001); upstream strength notebook also cites Bo et al. (2017).",
+  "retrieved": "2026-10-22",
+  "phases": ["FCC_A1", "AL3SC", "AL3ZR"],
+  "missing": ["liquid phase", "exhaustive competing phases", "complete ternary mobility assessment", "parameter uncertainty posterior"],
+  "approved_use_in_harness": "Restricted equilibrium screening and reproduction of upstream binary Al-Sc precipitation example; not exhaustive hull/solidus evaluation."
+}

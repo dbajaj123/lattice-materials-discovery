@@ -1,0 +1,11 @@
+{
+  "name": "Al–0.10 at.% Sc two-stage hypothesis",
+  "composition_at_fraction": {"AL": 0.999, "SC": 0.001},
+  "steps": [
+    {"name":"nucleation hold", "temperature_c":325, "duration_h":2, "purpose":"precipitate"},
+    {"name":"growth hold", "temperature_c":375, "duration_h":1, "ramp_h":0.1, "purpose":"precipitate"}
+  ],
+  "initial_state":"assumed_supersaturated_fcc",
+  "hypothesis":"An initial lower-temperature hold followed by a warmer growth hold may change the size distribution at lower scandium content. Test against an isothermal route before making any performance claim.",
+  "evidence_ids":["kawin-strength-example"]
+}

@@ -1,0 +1,29 @@
+{
+  "source_id": "marquis-2001",
+  "title": "Nanoscale structural evolution of Al3Sc precipitates in Al(Sc) alloys",
+  "url": "https://www.dunand.northwestern.edu/refs/files/Marquis-Nanoscale.pdf",
+  "doi": "10.1016/S1359-6454(01)00116-1",
+  "table_location": "Table 1, printed page 1915, PDF page 7",
+  "methods_location": "Section 2, printed page 1910, PDF page 2",
+  "extraction": "Manually transcribed numerical table and reviewed methods; 2026-10-22",
+  "conditions": {"aging_temperature_c":300,"aging_hours":72},
+  "observations": [
+    {"sc_weight_percent":0.1,"radius_nm":8.8,"radius_reported_error_nm":0.5,"density_m3":5e20,"density_reported_error_m3":2e20},
+    {"sc_weight_percent":0.2,"radius_nm":3.0,"radius_reported_error_nm":0.4,"density_m3":9e21,"density_reported_error_m3":2e21},
+    {"sc_weight_percent":0.3,"radius_nm":2.0,"radius_reported_error_nm":0.4,"density_m3":4e22,"density_reported_error_m3":2e22}
+  ],
+  "reported_error_interpretation": "Reported plus/minus values are retained; they are not assumed to be 95% confidence intervals or standard deviations.",
+  "preparation": [
+    {"operation":"cast", "inputs":["Al (99.9 wt% purity)","Al–0.5 wt% Sc master alloy"],"crucible":"alumina","mold":"graphite","temperature_c":null,"duration_h":null},
+    {"operation":"cold_roll", "target_thickness_um":350},
+    {"operation":"solution_anneal", "temperature_c":648,"duration_h":24,"atmosphere":"air"},
+    {"operation":"quench", "medium":"cold water","cooling_rate_k_s":null},
+    {"operation":"age", "reported_temperature_c":[300,350,400,450],"reported_duration_range_h":[1,350],"atmosphere":"air"}
+  ],
+  "limitations": [
+    "Thin-foil geometry and deformation history matter; this is not a validated bulk-part protocol.",
+    "The low-Sc alloy exhibits heterogeneous nucleation and non-spherical particles, contrary to the current bulk-nucleation spherical model.",
+    "This source is related to the upstream model parameter literature; comparison is not a blind independent holdout.",
+    "Three endpoints cannot calibrate experimental uncertainty or validate an alloy family."
+  ]
+}
